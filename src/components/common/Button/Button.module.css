@@ -1,0 +1,95 @@
+:root {
+    --btn-border-radius: 6px;
+    --btn-padding: 4px 16px 8px 16px;
+    --btn-border-width: 6px;
+    --btn-border-hover-width: 3px;
+    --btn-box-shadow-inset: 0 2px 0 0;
+    --btn-color-text: var(--monochrome-1, #FFF);
+}
+
+/* Common styles for all buttons*/
+.button-wrapper {
+    display: flex;
+    width: fit-content;
+    border-radius: var(--btn-border-radius);
+    background: var(--monochrome-8, #000);
+    padding: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all var(--transition-time, 0.3s ease);
+    user-select: none;
+    transform-origin: bottom;
+}
+
+.button-wrapper:hover {
+    transform: scale(98%);
+}
+
+.button-span {
+    position: relative;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: calc(var(--btn-border-radius) - 3px);
+    overflow: hidden;
+    color: var(--btn-color-text, #FFF);
+    padding: var(--btn-padding);
+    background: var(--btn-bg-color);
+    box-shadow: var(--btn-box-shadow-inset) var(--btn-box-shadow-color) inset;
+    transition: background var(--transition-time, 0.3s ease);
+}
+
+/* Pseudo element for bottom border */
+.button-span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--btn-border-width);
+    background-color: var(--btn-border-color);
+    transition: height var(--transition-time, 0.3s ease);
+}
+
+.button-span:hover::after {
+    height: var(--btn-border-hover-width);
+}
+
+.button-span:hover {
+    background: var(--btn-hover-bg-color);
+}
+
+.button-span:active {
+    background: var(--btn-hover-bg-color);
+}
+
+.link {
+    --btn-border-radius: 0;
+    --btn-padding: 14px 14px 14px 14px;
+    --btn-color-text: var(--monochrome-8, #000);
+}
+
+.primary {
+    --btn-border-color: var(--pink-2, #C83A6A);
+    --btn-bg-color: var(--pink-5, #FC7DA8);
+    --btn-box-shadow-color: var(--pink-6, #FFC9DB);
+    --btn-hover-bg-color: var(--pink-3, #F56093);
+}
+
+.secondary {
+    --btn-border-color: var(--beige-3, #AE8C56);
+    --btn-bg-color: var(--beige-6, #EAD1AA);
+    --btn-box-shadow-color: var(--beige-9, #FFF6E8);
+    --btn-hover-bg-color: var(--beige-5, #DABF97);
+}
+
+.secondary2 {
+    --btn-border-color: var(--blue-7, #1078FF);
+    --btn-bg-color: var(--blue-10, #57C4FF);
+    --btn-box-shadow-color: var(--blue-13, #AEE3FF);
+    --btn-hover-bg-color: var(--blue-10, #57C4FF);
+}

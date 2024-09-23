@@ -1,0 +1,184 @@
+@import "reset.css";
+@import "typography.css";
+
+:root {
+    font-family: Bai Jamjuree, "Jersey 20", Inter, system-ui, Arial, sans-serif;
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Basic fonts */
+    --font-family-primary: 'Bai Jamjuree', sans-serif;
+    --font-family-secondary: 'Jersey 20', sans-serif;
+
+    /* General values */
+    --letter-spacing-0: 0;
+    --line-height-100: 100%;
+    --line-height-120: 120%;
+    --line-height-130: 130%;
+    --line-height-140: 140%;
+
+    /* Text sizes */
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 20px;
+    --font-size-body-l: 20px;
+    --font-size-body-m: 16px;
+    --font-size-body-s: 14px;
+    --font-size-body-xs: 13px;
+
+    /* Monochrome */
+    --monochrome-1: #FFFFFF;
+    --monochrome-2: #FFFFFF;
+    --monochrome-3: #F0F0F0;
+    --monochrome-4: #BCBCBC;
+    --monochrome-5: #4D4D4D;
+    --monochrome-6: #4F403B;
+    --monochrome-7: #1A1717;
+    --monochrome-8: #000000;
+
+    /* Purple */
+    --purple-7: #B59DEE;
+    --purple-6: #A690FF;
+    --purple-5: #7144DE;
+    --purple-4: #552C88;
+    --purple-3: #3C159C;
+    --purple-2: #25017D;
+    --purple-1: #0D0627;
+
+    /* Pink */
+    --pink-7: #FFC7F3;
+    --pink-6: #FFC9DB;
+    --pink-5: #FC7DA8;
+    --pink-4: #FF6BC3;
+    --pink-3: #F56093;
+    --pink-2: #C83A6A;
+    --pink-1: #1B0620;
+
+    /* Beige */
+    --beige-9: #FFF6E8;
+    --beige-8: #F4E8D5;
+    --beige-7: #F1DFC3;
+    --beige-6: #EAD1AA;
+    --beige-5: #DABF97;
+    --beige-4: #CFB388;
+    --beige-3: #AE8C56;
+    --beige-2: #967E5A;
+    --beige-1: #6D5B3E;
+
+    /* Green */
+    --green-7: #D9F7C7;
+    --green-6: #AAF288;
+    --green-5: #90D470;
+    --green-4: #4AE47F;
+    --green-3: #2AE6B0;
+    --green-2: #6FC746;
+    --green-1: #039700;
+
+    /* Red */
+    --red-1: #FF3C3C;
+
+    /* Blue */
+    --blue-14: #C0CFFF;
+    --blue-13: #AEE3FF;
+    --blue-12: #83CEF6;
+    --blue-11: #40F4FF;
+    --blue-10: #57C4FF;
+    --blue-9: #3AA7E1;
+    --blue-8: #5577EF;
+    --blue-7: #1078FF;
+    --blue-6: #3A57BC;
+    --blue-5: #223C98;
+    --blue-4: #74879D;
+    --blue-3: #36475B;
+    --blue-2: #081827;
+    --blue-1: #040C27;
+
+    /* Yellow */
+    --yellow-6: #FFEDC0;
+    --yellow-5: #FFD979;
+    --yellow-4: #FFE500;
+    --yellow-3: #EDD400;
+    --yellow-2: #DBB759;
+    --yellow-1: #FFA030;
+
+    /* Breakpoints */
+    --breakpoint-tablet: 768px;
+    --breakpoint-mobile: 480px;
+
+    /* Контейнер */
+    --container-width: 100%;
+    --container-max-width: 1440px;
+
+    /* Text color */
+    --text-color: var(--monochrome-8);
+
+    /* Цвета фона */
+    --bg-color: var(--monochrome-1);
+
+    /* Минимальная высота для main */
+    --main-min-height: calc(100vh - 60px);
+
+    --transition-time: 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family-primary), sans-serif;
+    color: var(--text-color);
+    background-color: var(--monochrome-1);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: var(--main-min-height);
+}
+
+section {
+    width: 100%;
+}
+
+.container {
+    width: var(--container-width);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Media Queries */
+
+/* Tablet styles */
+@media (max-width: var(--breakpoint-tablet)) {
+    :root {
+        --font-size-h1: 28px;
+        --font-size-h2: 22px;
+        --font-size-h3: 18px;
+        --font-size-body-l: 18px;
+        --font-size-body-m: 15px;
+        --font-size-body-s: 13px;
+        --font-size-body-xs: 12px;
+    }
+
+    .container {
+        padding: 0 15px; /* Уменьшение отступов на планшетах */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: var(--breakpoint-mobile)) {
+    :root {
+        --font-size-h1: 24px;
+        --font-size-h2: 20px;
+        --font-size-h3: 16px;
+        --font-size-body-l: 16px;
+        --font-size-body-m: 14px;
+        --font-size-body-s: 12px;
+        --font-size-body-xs: 11px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}

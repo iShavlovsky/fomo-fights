@@ -1,0 +1,73 @@
+h1 {
+    font-family: var(--font-family-secondary), sans-serif;
+    font-size: var(--font-size-h1);
+    line-height: 110%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: bold;
+}
+
+h2 {
+    font-family: var(--font-family-secondary), sans-serif;
+    font-size: var(--font-size-h2);
+    line-height: 100%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: bold;
+}
+
+h3 {
+    font-family: var(--font-family-primary), sans-serif;
+    font-size: var(--font-size-h3);
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: bold;
+}
+
+button {
+    font-family: var(--font-family-secondary), sans-serif;
+    font-size: var(--font-size-body-l);
+    line-height: 100%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    font-family: var(--font-family-primary), sans-serif;
+    color: var(--text-color);
+}
+
+/* Body Large (L) */
+.body-l {
+    font-family: var(--font-family-secondary), sans-serif;
+    font-size: var(--font-size-body-l);
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: normal;
+}
+
+/* Body Medium (M) */
+.body-m {
+    font-family: var(--font-family-primary), sans-serif;
+    font-size: var(--font-size-body-m);
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: 600; /* SemiBold */
+}
+
+/* Body Small (S) */
+.body-s {
+    font-family: var(--font-family-primary), sans-serif;
+    font-size: var(--font-size-body-s);
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: bold;
+}
+
+/* Body Extra Small (XS) */
+.body-xs {
+    font-family: var(--font-family-primary), sans-serif;
+    font-size: var(--font-size-body-xs);
+    line-height: 130%;
+    letter-spacing: var(--letter-spacing-0);
+    font-weight: bold;
+}
