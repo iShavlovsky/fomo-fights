@@ -89,9 +89,9 @@ const Modal = (props: Props) => {
     return isMounted
         ? (
                 <Portal id={MODAL_CONTAINER_ID}>
-                    <div className={styles.modal_wrap} ref={rootRef} data-testid="wrap">
+                    <div className={styles.modal_wrap} ref={rootRef}>
                         <div>
-                            <header className={HeadModelStyle.head}>
+                            <header className={`${HeadModelStyle.head}`}>
                                 {title}
                                 <Button
                                     type="default"

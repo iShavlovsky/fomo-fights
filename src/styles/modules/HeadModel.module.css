@@ -33,31 +33,31 @@
     --shadow-color: var(--beige-6, #EAD1AA);
 }
 
-.head-purple{
+.head-purple {
     --border-color-right-left: var(--purple-2, #25017D);
     --background-color: var(--purple-4, #552CB8);
     --shadow-color: var(--purple-7, #B59DEE);
 }
 
-.head-dark-pink{
+.head-dark-pink {
     --border-color-right-left: var(--pink-2, #C83A6A);
     --background-color: var(--pink-5, #FC7DA8);
     --shadow-color: var(--pink-6, #FFC9DB);
 }
 
-.head-light-pink{
+.head-light-pink {
     --border-color-right-left: var(--pink-4, #FF6BC3);
     --background-color: var(--pink-4, #FF6BC3);
     --shadow-color: var(--monochrome-1, #FFF);
 }
 
-.head-green{
+.head-green {
     --border-color-right-left: var(--green-1, #039700);
     --background-color: var(--green-3, #2AEB60);
     --shadow-color: var(--green-7, #D9F7C7);
 }
 
-.head-yellow{
+.head-yellow {
     --border-color-right-left: var(--yellow-2, #DBB759);
     --background-color: var(--yellow-6, #FFEDC0);
     --shadow-color: var(--monochrome-1, #FFF);

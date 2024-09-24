@@ -1,0 +1,49 @@
+:root {
+    --gap: 12px;
+}
+
+.radio-button-group {
+    display: flex;
+    gap: var(--gap, 12px);
+    padding: 10px;
+}
+
+.radio-button {
+    align-items: center;
+    background-color: var(--beige-9, #FFF6E8);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    padding: 6px 8px;
+    position: relative;
+}
+
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.radio-icon {
+    border-radius: 50%;
+    height: 16px;
+    overflow: hidden;
+    width: 16px;
+}
+
+.radio-label {
+    color: var(--beige-1, #6D5B3E);
+    user-select: none;
+}
+
+.custom-radio {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+
+.custom-radio.checked{
+    background-color: var(--beige-1, #6D5B3E);
+    border-color: var(--beige-9, #FFF6E8);
+}

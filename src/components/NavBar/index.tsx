@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
 
+import styles from './NavBar.module.css';
+
+import Button from '@components/common/Button/Button.tsx';
 import GithubIcon from '@icon/github-16.svg';
 import InstagramIcon from '@icon/instagram-16.svg';
 import LinktreeIcon from '@icon/linktree-16.svg';
 import TelegramIcon from '@icon/telegram-16.svg';
 import TwitterXIcon from '@icon/twitterX-16.svg';
-
-import styles from './NavBar.module.css';
 
 function NavBar() {
     const socialLinks = [
@@ -55,6 +56,7 @@ function NavBar() {
                     ))
                 }
             </ul>
+            <Button type="primary">connect wallet</Button>
         </header>
     );
 }
