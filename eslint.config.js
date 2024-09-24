@@ -72,7 +72,8 @@ export default tseslint.config(
                     ['^\\u0000'],
                     ['^react', '^@?\\w'],
                     ['^@/'],
-                    ['^@views/', '^@components/', '^@assets/', '^@icon/'],
+                    ['^\\.\\./', '^\\./.*\\.css$'],
+                    ['^@styles/', '^@views/', '^@components/', '^@assets/', '^@icon/', '^@hooks/'],
                     ['^\\.']
                 ]
             }],

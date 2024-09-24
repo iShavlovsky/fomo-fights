@@ -24,7 +24,7 @@
 
     /* Monochrome */
     --monochrome-1: #FFF;
-    --monochrome-2: #FFF;
+    --monochrome-2: rgb(255 255 255 / 50%);
     --monochrome-3: #F0F0F0;
     --monochrome-4: #BCBCBC;
     --monochrome-5: #4D4D4D;
@@ -66,7 +66,7 @@
     --green-6: #AAF288;
     --green-5: #90D470;
     --green-4: #4AE47F;
-    --green-3: #2AE6B0;
+    --green-3: #2AEB60;
     --green-2: #6FC746;
     --green-1: #039700;
 

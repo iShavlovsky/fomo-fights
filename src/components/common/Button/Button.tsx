@@ -8,12 +8,13 @@ interface BaseButtonProps {
     type?: ButtonType;
     href?: string;
     children: React.ReactNode;
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    className?: string;
 }
 
-const Button = ({ type = 'primary', href, children, onClick }: BaseButtonProps) => {
+const Button = ({ type = 'primary', href, children, onClick, className }: BaseButtonProps) => {
     const buttonClass = `${styles.buttonSpan}`;
-    const wrapperClass = `${styles.buttonWrapper} ${href ? styles.link : ''} ${styles[type]}`;
+    const wrapperClass = `${styles.buttonWrapper} ${href ? styles.link : ''} ${styles[type]} ${className}`;
 
     return (
         href

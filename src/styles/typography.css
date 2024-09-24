@@ -22,7 +22,7 @@ h3 {
     line-height: 140%;
 }
 
-button {
+.button-text, button {
     font-family: var(--font-family-secondary), sans-serif;
     font-size: var(--font-size-body-l);
     font-style: normal;

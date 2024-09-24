@@ -35,8 +35,14 @@
       "@assets/*": [
         "src/assets/*"
       ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
       "@icon/*": [
         "src/assets/icon/*"
+      ],
+      "@styles/*": [
+        "./src/styles/modules/*"
       ]
     },
     "allowSyntheticDefaultImports": true

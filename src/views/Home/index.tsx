@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import Lottie from 'lottie-react';
 
 import Button from '@components/common/Button/Button.tsx';
+import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
 import Screen1LottieBg from '@assets/animation/screen1/screen1_with_background.json';
 import Screen1Lottie from '@assets/animation/screen1/screen1_without_background.json';
@@ -25,8 +27,29 @@ function HomePage() {
         console.log('Selected:', value);
     };
 
+    const [isModalActive, setModalActive] = useState(false);
+
+    const handleModalOpen = () => {
+        setModalActive(true);
+    };
+    const handleModalClose = () => {
+        setModalActive(false);
+    };
+
     return (
         <>
+            <div>
+                {isModalActive && (
+                    <Modal onClose={handleModalClose} title={<h2>CONNECT WALLET</h2>}>
+                        <div>
+                            <h2>Hello world</h2>
+                            <Button type="secondary">
+                                <p className="button-text">I don’t have a Wallet</p>
+                            </Button>
+                        </div>
+                    </Modal>
+                )}
+            </div>
             <section>
                 <div className="container">
                     <h1>HomePage</h1>
@@ -36,7 +59,7 @@ function HomePage() {
                         gap: '20px'
                     }}
                     >
-                        <Button type="primary">Primary</Button>
+                        <Button onClick={handleModalOpen} type="primary">OPEN MODAL</Button>
                         <Button type="primary">HOW+PRESS</Button>
                         <Button type="secondary">Secondary</Button>
                         <Button type="secondary">HOW+PRESS</Button>
