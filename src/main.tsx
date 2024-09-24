@@ -1,21 +1,24 @@
-import {createRoot} from 'react-dom/client'
-import App from './App.tsx'
-import './styles/index.css'
-import {BrowserRouter} from "react-router-dom";
+import './styles/index.css';
 
-const container = document.getElementById('root');
-const root = createRoot(container!);
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
-// root.render(
-//     <StrictMode>
-//         <BrowserRouter>
-//             <App/>
-//         </BrowserRouter>
-//     </StrictMode>,
-// )
+import App from './App.tsx';
+
+const container = document.getElementById('root') as HTMLElement;
+const root = createRoot(container);
 
 root.render(
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
-)
+    <StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </StrictMode>
+);
+
+// root.render(
+//     <BrowserRouter>
+//         <App />
+//     </BrowserRouter>
+// );

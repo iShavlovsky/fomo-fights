@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useRef} from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 type LifeCycleEvent =
     | 'onMount'
@@ -11,15 +11,15 @@ interface LifeLoggerProps {
     name: string;
     events?: LifeCycleEvent[];
     visible: boolean;
-    data?: any;
+    data?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 const useLifeLogger = ({
-                           name,
-                           events = ['onMount', 'onUpdate', 'onUnmount'],
-                           visible,
-                           data
-                       }: LifeLoggerProps) => {
+    name,
+    events = ['onMount', 'onUpdate', 'onUnmount'],
+    visible,
+    data
+}: LifeLoggerProps) => {
     const renderCount = useRef(0);
     const prevProps = useRef(data);
 
@@ -30,7 +30,8 @@ const useLifeLogger = ({
         if (visible) {
             if (data) {
                 console.log(`%c${message}`, style, ...extra, `Render count: ${renderCount.current}`);
-            } else {
+            }
+            else {
                 console.log(`%c${message}`, style, `Render count: ${renderCount.current}`);
             }
         }
@@ -41,7 +42,7 @@ const useLifeLogger = ({
         onUpdate: 'background: yellow; color: black',
         onUnmount: 'background: red; color: white',
         onRender: 'background: cyan; color: black',
-        all: '',
+        all: ''
     };
 
     const shouldLog = useCallback((event: LifeCycleEvent) => events.includes(event) || events.includes('all'), [events]);

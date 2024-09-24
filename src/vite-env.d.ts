@@ -5,10 +5,10 @@ interface ImportMeta {
     readonly glob: (
         path: string,
         config: object,
-    ) => Record<string, () => Promise<{ default: any }>>;
+    ) => Record<string, () => Promise<{ default: any }>>; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
-declare module "*.svg" {
+declare module '*.svg' {
     import * as React from 'react';
     const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     export default ReactComponent;
