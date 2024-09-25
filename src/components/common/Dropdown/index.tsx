@@ -1,61 +1,78 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useRef, useState } from 'react';
 
 import styles from './dropdown.module.css';
 
-interface DropdownOption {
-    type: 'button' | 'link';
+import useClickOutside from '@hooks/useClickOutside.ts';
+
+export type DropdownOption = {
     label: ReactNode;
     onClick?: () => void;
     href?: string;
-}
+};
+
+export type DropdownOptionSelected = {
+    abbreviation: string;
+    label: ReactNode;
+    onClick?: () => void;
+    href?: string;
+};
 
 interface DropdownProps {
-    options: DropdownOption[];
-    ddTitle?: ReactNode;
+    ddTitle: string;
+    ddIcon?: ReactNode;
+    ddToggleIcon?: ReactNode;
+    autoClose?: boolean;
 }
 
-const Dropdown = ({ options, ddTitle }: DropdownProps) => {
+export type DropdownPropsSelected = DropdownProps & {
+    selectedLabel: true;
+    options: DropdownOptionSelected[];
+};
+
+export type DropdownPropsDefault = DropdownProps & {
+    selectedLabel: false;
+    options: DropdownOption[];
+};
+
+const Dropdown = ({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoClose = true }: DropdownPropsDefault | DropdownPropsSelected) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [label, setSelectedLabel] = useState<string>(ddTitle);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    const handleOutsideClick = (event: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    useClickOutside(dropdownRef, () => setIsOpen(false));
+
+    const handleOptionClick = <T extends DropdownOption | DropdownOptionSelected > (option: T) => {
+        if (!option.href && option.onClick) {
+            option.onClick();
+            if (selectedLabel) {
+                const ab = option as DropdownOptionSelected;
+                setSelectedLabel(ab.abbreviation);
+            }
+        }
+        if (autoClose) {
             setIsOpen(false);
         }
-    };
-
-    useEffect(() => {
-        document.addEventListener('mousedown', handleOutsideClick);
-        return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
-        };
-    }, []);
-
-    const handleOptionClick = (option: DropdownOption) => {
-        if (option.type === 'button' && option.onClick) {
-            option.onClick();
-        }
-
-        setIsOpen(false);
     };
 
     return (
         <div ref={dropdownRef} className={styles.dropdown}>
             <button className={styles.dropdownToggle} onClick={() => setIsOpen(!isOpen)}>
-                {ddTitle}
+                {ddIcon ? <span>{ddIcon}</span> : null}
+                <span className="body-m">{label}</span>
+                {ddToggleIcon ? <span className={`${styles.dropdownToggleIcon} ${isOpen ? '' : styles.active}`}>{ddToggleIcon}</span> : null}
             </button>
             {isOpen && (
                 <ul className={styles.dropdownMenu}>
                     {options.map((option, index) => (
                         <li key={index} className={styles.dropdownItem}>
-                            {option.type === 'button'
+                            {option.href
                                 ? (
-                                        <button onClick={() => handleOptionClick(option)}>{option.label}</button>
-                                    )
-                                : (
                                         <a href={option.href} target="_blank" rel="noopener noreferrer">
                                             {option.label}
                                         </a>
+                                    )
+                                : (
+                                        <button onClick={() => handleOptionClick(option)}>{option.label}</button>
                                     )}
                         </li>
                     ))}

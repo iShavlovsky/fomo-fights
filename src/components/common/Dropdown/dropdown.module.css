@@ -9,7 +9,23 @@
     background-color: white;
     border: 1px solid #ccc;
     cursor: pointer;
-    color: var(--blue-14)
+    color: var(--blue-14);
+    display: flex;
+    gap: 4px;
+}
+
+.dropdownToggle span {
+    display: flex;
+    place-self: center center;
+}
+
+.dropdownToggleIcon svg{
+    transition: transform 0.3s ease;
+}
+
+.dropdownToggleIcon.active svg{
+    transition: transform 0.3s ease;
+    transform: rotateX(180deg);
 }
 
 .dropdownMenu {

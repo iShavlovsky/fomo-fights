@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Lottie from 'lottie-react';
 
 import Button from '@components/common/Button/Button.tsx';
-import Dropdown from '@components/common/Dropdown';
+import Dropdown, { DropdownOptionSelected } from '@components/common/Dropdown';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
 import { Tabs } from '@components/common/Tabs';
@@ -12,11 +12,13 @@ import Screen2Lottie from '@assets/animation/screen2/screen2_with_background.jso
 import Screen3Lottie from '@assets/animation/screen3/screen3_steps_with_background.json';
 import Screen4Lottie from '@assets/animation/screen4/screen4_with_background.json';
 import Screen5Lottie from '@assets/animation/screen5/footer_with_background.json';
+import ArrowIcon from '@icon/arrow-16.svg';
 import ClosedIcon from '@icon/closed-16.svg';
 import ETHIcon from '@icon/eth-16.svg';
 import FloppyDiskBlueIcon from '@icon/floppyDisk-blue-34.svg';
 import FloppyDiskGreenIcon from '@icon/floppyDisk-green-34.svg';
 import FloppyDiskYellowIcon from '@icon/floppyDisk-yellow-34.svg';
+import LanguageIcon from '@icon/language-16.svg';
 import TwitterXIcon from '@icon/twitterX-20.svg';
 import USDCIcon from '@icon/usdc-16.svg';
 import USDTIcon from '@icon/usdt-16.svg';
@@ -87,23 +89,25 @@ function HomePage() {
         }
     ];
 
-    const optionsdd = [
+    const optionals: DropdownOptionSelected[] = [
         {
-            type: 'button',
+            abbreviation: '1asdsd',
             label: (<p className="body-m">About</p>),
-            onClick: () => alert('Button 1 clicked')
+            onClick: () => console.log('Button 1 clicked')
         },
         {
-            type: 'link',
-            label: 'Google', href: 'https://www.google.com'
+            abbreviation: '2asdsd',
+            label: 'Google',
+            onClick: () => console.log('Button 1 clicked')
         },
         {
-            type: 'button',
-            label: 'Button 2', onClick: () => alert('Button 2 clicked')
+            abbreviation: '3asdsd',
+            label: 'Button 2', onClick: () => console.log('Button 2 clicked')
         },
         {
-            type: 'link',
-            label: 'React', href: 'https://reactjs.org'
+            abbreviation: '4asdsd',
+            label: 'React',
+            onClick: () => console.log('Button 1 clicked')
         }
     ];
 
@@ -139,7 +143,7 @@ function HomePage() {
             <section>
                 <div className="container" style={{ height: '500px', width: '100%' }}>
                     <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
-                    <Dropdown options={optionsdd} ddTitle={<p className="body-m">DDtitle</p>} />
+                    <Dropdown options={optionals} autoClose={false} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={false} />
                 </div>
             </section>
             <section>
