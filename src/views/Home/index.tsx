@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Lottie from 'lottie-react';
 
 import Button from '@components/common/Button/Button.tsx';
+import Dropdown from '@components/common/Dropdown';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
 import { Tabs } from '@components/common/Tabs';
@@ -56,12 +57,11 @@ function HomePage() {
             ),
             content: (
                 <div>
-                    <h2>$FOFI</h2>
+                    <h2>About $FOFI</h2>
                     <p className="body-m">
-                        In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
-                        Floki, or Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through
-                        the
-                        leaderboard as you compete against other players.
+                        With the $FOFI token, you’re more than just a player — you become part of the game's development
+                        and can benefit from its success. Secure your tokens at the Presale price, stake them, and grow
+                        together with us as we build the future of FOMO Fights.
                     </p>
                 </div>
             )
@@ -77,13 +77,33 @@ function HomePage() {
                 <div>
                     <h2>Community</h2>
                     <p className="body-m">
-                        In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
-                        Floki, or Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through
-                        the
-                        leaderboard as you compete against other players.
+                        By holding $FOFI and joining our community on social media, you can help shape the game's
+                        direction, connect with fellow players, and stay updated on the latest developments. Once the
+                        game is live, use $FOFI to purchase in-game items and earn even more by jumping right into the
+                        battle!
                     </p>
                 </div>
             )
+        }
+    ];
+
+    const optionsdd = [
+        {
+            type: 'button',
+            label: (<p className="body-m">About</p>),
+            onClick: () => alert('Button 1 clicked')
+        },
+        {
+            type: 'link',
+            label: 'Google', href: 'https://www.google.com'
+        },
+        {
+            type: 'button',
+            label: 'Button 2', onClick: () => alert('Button 2 clicked')
+        },
+        {
+            type: 'link',
+            label: 'React', href: 'https://reactjs.org'
         }
     ];
 
@@ -119,6 +139,7 @@ function HomePage() {
             <section>
                 <div className="container" style={{ height: '500px', width: '100%' }}>
                     <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
+                    <Dropdown options={optionsdd} ddTitle={<p className="body-m">DDtitle</p>} />
                 </div>
             </section>
             <section>
