@@ -56,7 +56,7 @@
     cursor: pointer;
 }
 
-.dropdownItem button {
+.dropdownItem {
     background: none;
     border: none;
     cursor: pointer;
