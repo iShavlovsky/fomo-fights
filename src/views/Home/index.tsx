@@ -1,17 +1,11 @@
-import { useState } from 'react';
-import Lottie from 'lottie-react';
+import React, { useEffect, useState } from 'react';
 
-import Index from '@components/common/Button';
+import BaseButton from '@components/common/Button/baseButton.tsx';
 import Dropdown, { DropdownOptionSelected } from '@components/common/Dropdown';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
+import ScrollContainer from '@components/common/ScrollContainer';
 import { Tabs } from '@components/common/Tabs';
-import Screen1LottieBg from '@assets/animation/screen1/screen1_with_background.json';
-import Screen1Lottie from '@assets/animation/screen1/screen1_without_background.json';
-import Screen2Lottie from '@assets/animation/screen2/screen2_with_background.json';
-import Screen3Lottie from '@assets/animation/screen3/screen3_steps_with_background.json';
-import Screen4Lottie from '@assets/animation/screen4/screen4_with_background.json';
-import Screen5Lottie from '@assets/animation/screen5/footer_with_background.json';
 import ArrowIcon from '@icon/arrow-16.svg';
 import ClosedIcon from '@icon/closed-16.svg';
 import ETHIcon from '@icon/eth-16.svg';
@@ -22,8 +16,45 @@ import LanguageIcon from '@icon/language-16.svg';
 import TwitterXIcon from '@icon/twitterX-20.svg';
 import USDCIcon from '@icon/usdc-16.svg';
 import USDTIcon from '@icon/usdt-16.svg';
+import { useMediaQuery } from '@hooks/useMediaQuery.ts';
+
+const Lottie = React.lazy(() => import('lottie-react'));
 
 function HomePage() {
+    const isAboveMobile = useMediaQuery('(min-width: 769px)'); // Определяем брейкпоинт выше мобильного
+    const [animations, setAnimations] = useState<unknown[]>([]);
+    const [activeTab, setActiveTab] = useState(0);
+
+    const [isModalActive, setModalActive] = useState(false);
+
+    const handleModalOpen = () => {
+        setModalActive(true);
+    };
+    const handleModalClose = () => {
+        setModalActive(false);
+    };
+
+    useEffect(() => {
+        if (isAboveMobile) {
+            // Используем Promise.allSettled для обработки всех промисов независимо от их статуса
+            Promise.allSettled([
+                import('@assets/animation/screen1/screen1_without_background.json'),
+                import('@assets/animation/screen2/screen2_with_background.json'),
+                import('@assets/animation/screen3/screen3_steps_with_background.json'),
+                import('@assets/animation/screen4/screen4_with_background.json'),
+                import('@assets/animation/screen5/footer_with_background.json')
+            ])
+                .then((results) => {
+                    const loadedAnimations = results.map((result) =>
+                        result.status === 'fulfilled' ? result.value.default : null
+                    );
+                    setAnimations(loadedAnimations);
+                    return true;
+                })
+                .catch((error) => console.error('Error loading animations:', error));
+        }
+    }, [isAboveMobile]);
+
     const options = [
         { label: 'ETH', value: 'eth', icon: <ETHIcon /> },
         { label: 'BTC', value: 'btc', icon: <USDTIcon /> },
@@ -116,17 +147,6 @@ function HomePage() {
         console.log('Selected:', value);
     };
 
-    const [activeTab, setActiveTab] = useState(0);
-
-    const [isModalActive, setModalActive] = useState(false);
-
-    const handleModalOpen = () => {
-        setModalActive(true);
-    };
-    const handleModalClose = () => {
-        setModalActive(false);
-    };
-
     return (
         <>
             <div>
@@ -134,18 +154,91 @@ function HomePage() {
                     <Modal onClose={handleModalClose} title={<h2>CONNECT WALLET</h2>}>
                         <div>
                             <h2>Hello world</h2>
-                            <Index type="secondary">
+                            <BaseButton type="secondary">
                                 <p className="button-text">I don’t have a Wallet</p>
-                            </Index>
+                            </BaseButton>
                         </div>
                     </Modal>
                 )}
             </div>
-            <section>
+            <section className="mt-64">
+                <div className="container" style={{ height: '500px', width: '100%' }}>
+                    <ScrollContainer
+                        onScroll={(e) => console.log(e)}
+                        header={
+                            (<h2>FAQ</h2>)
+                        }
+                        height={456}
+                        width={440}
+                    >
+                        <div>
+                            <h3>What is FOMO Fights?</h3>
+                            <p className="body-m">
+                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
+                                where you can pick your favorite character, battle other memes,
+                                and
+                                earn rewards.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>What is FOMO Fights?</h3>
+                            <p className="body-m">
+                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
+                                where you can pick your favorite character, battle other memes,
+                                and
+                                earn rewards.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>What is FOMO Fights?</h3>
+                            <p className="body-m">
+                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
+                                where you can pick your favorite character, battle other memes,
+                                and
+                                earn rewards.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>What is FOMO Fights?</h3>
+                            <p className="body-m">
+                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
+                                where you can pick your favorite character, battle other memes,
+                                and
+                                earn rewards.
+                            </p>
+                        </div>
+                        <div>
+                            <h3>What is FOMO Fights?</h3>
+                            <p className="body-m">
+                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
+                                where you can pick your favorite character, battle other memes,
+                                and
+                                earn rewards.
+                            </p>
+                        </div>
+                    </ScrollContainer>
+
+                </div>
+
+            </section>
+            <section className="mt-64">
                 <div className="container" style={{ height: '500px', width: '100%' }}>
                     <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
-                    <Dropdown options={optionals} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={false} />
-                    <Dropdown options={optionals} autoClose={false} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={true} />
+                    <Dropdown
+                        options={optionals}
+                        ddTitle="DDtitle"
+                        ddIcon={<LanguageIcon />}
+                        ddToggleIcon={<ArrowIcon />}
+                        selectedLabel={false}
+                    />
+                    <Dropdown
+                        options={optionals}
+                        autoClose={false}
+                        ddTitle="DDtitle"
+                        ddIcon={<LanguageIcon />}
+                        ddToggleIcon={<ArrowIcon />}
+                        selectedLabel={true}
+                    />
 
                 </div>
             </section>
@@ -159,30 +252,30 @@ function HomePage() {
                         gap: '20px'
                     }}
                     >
-                        <Index onClick={handleModalOpen} type="primary">OPEN MODAL</Index>
-                        <Index type="primary">HOW+PRESS</Index>
-                        <Index type="secondary">Secondary</Index>
-                        <Index type="secondary">HOW+PRESS</Index>
-                        <Index type="secondary2">Secondary 2</Index>
-                        <Index type="secondary2">Secondary 2</Index>
-                        <Index type="default">
+                        <BaseButton onClick={handleModalOpen} type="primary">OPEN MODAL</BaseButton>
+                        <BaseButton type="primary">HOW+PRESS</BaseButton>
+                        <BaseButton type="secondary">Secondary</BaseButton>
+                        <BaseButton type="secondary">HOW+PRESS</BaseButton>
+                        <BaseButton type="secondary2">Secondary 2</BaseButton>
+                        <BaseButton type="secondary2">Secondary 2</BaseButton>
+                        <BaseButton type="default">
                             <ClosedIcon />
-                        </Index>
+                        </BaseButton>
                         {
                             options.map((option) => (
-                                <Index type="secondary" key={option.value}>
+                                <BaseButton type="secondary" key={option.value}>
                                     <>
                                         {option.icon}
                                         <span>{option.label}</span>
                                     </>
-                                </Index>
+                                </BaseButton>
                             ))
                         }
 
                     </div>
-                    <Index type="secondary" href="https://x.com">
+                    <BaseButton type="secondary" href="https://x.com">
                         <TwitterXIcon />
-                    </Index>
+                    </BaseButton>
                     <div>
                         <RadioButtonGroup
                             options={options}
@@ -194,47 +287,59 @@ function HomePage() {
             </section>
 
             <section>
-                <Lottie
-                    animationData={Screen1LottieBg}
-                    loop={true}
-                    autoplay={true}
-                />
+                {isAboveMobile && animations[0]
+                    ? (
+                            <Lottie animationData={animations[0]} loop={true} autoplay={true} />
+                        )
+                    : (
+                            <div> Bakground </div>
+                        )}
             </section>
             <section>
-                <Lottie
-                    animationData={Screen1Lottie}
-                    loop={true}
-                    autoplay={true}
-                />
+                {isAboveMobile && animations[1]
+                    ? (
+                            <Lottie animationData={animations[1]} loop={true} autoplay={true} />
+                        )
+                    : (
+                            <div> Bakground </div>
+                        )}
 
             </section>
             <section>
-                <Lottie
-                    animationData={Screen2Lottie}
-                    loop={true}
-                    autoplay={true}
-                />
+                {isAboveMobile && animations[2]
+                    ? (
+                            <Lottie animationData={animations[2]} loop={true} autoplay={true} />
+                        )
+                    : (
+                            <div> Bakground </div>
+                        )}
             </section>
             <section>
-                <Lottie
-                    animationData={Screen3Lottie}
-                    loop={true}
-                    autoplay={true}
-                />
+                {isAboveMobile && animations[3]
+                    ? (
+                            <Lottie animationData={animations[3]} loop={true} autoplay={true} />
+                        )
+                    : (
+                            <div> Bakground </div>
+                        )}
             </section>
             <section>
-                <Lottie
-                    animationData={Screen4Lottie}
-                    loop={true}
-                    autoplay={true}
-                />
+                {isAboveMobile && animations[4]
+                    ? (
+                            <Lottie animationData={animations[4]} loop={true} autoplay={true} />
+                        )
+                    : (
+                            <div> Bakground </div>
+                        )}
             </section>
             <section>
-                <Lottie
-                    animationData={Screen5Lottie}
-                    loop={true}
-                    autoplay={true}
-                />
+                {isAboveMobile && animations[5]
+                    ? (
+                            <Lottie animationData={animations[5]} loop={true} autoplay={true} />
+                        )
+                    : (
+                            <div> Bakground </div>
+                        )}
             </section>
         </>
     );

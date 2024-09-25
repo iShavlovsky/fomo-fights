@@ -7,6 +7,34 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+        minify: 'esbuild',
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (id.includes('node_modules')) {
+                        if (id.includes('react')) {
+                            return 'react';
+                        }
+                        if (id.includes('lottie-web')) {
+                            return 'lottie-web';
+                        }
+
+                        if (id.includes('lottie-react')) {
+                            return 'lottie-react';
+                        }
+
+                        return id
+                            .toString()
+                            .split('node_modules/')[1]
+                            .split('/')[0]
+                            .toString();
+                    }
+                    return null;
+                }
+            }
+        }
+    },
     plugins: [
         react(),
         svgr({
@@ -14,7 +42,62 @@ export default defineConfig({
             svgrOptions: {
                 plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
                 svgoConfig: {
-                    floatPrecision: 2
+                    multipass: true,
+                    plugins: [
+                        {
+                            name: 'cleanupIds',
+                            params: {
+                                remove: false,
+                                minify: false
+                            }
+                        },
+                        {
+                            name: 'cleanupAttrs',
+                            params: {
+                                newlines: true,
+                                trim: true,
+                                spaces: true
+                            }
+                        },
+                        {
+                            name: 'cleanupNumericValues',
+                            params: {
+                                floatPrecision: 2
+                            }
+                        },
+                        { name: 'collapseGroups' },
+                        {
+                            name: 'convertColors',
+                            params: {
+                                names2hex: true,
+                                rgb2hex: true
+                            }
+                        },
+                        {
+                            name: 'convertEllipseToCircle'
+                        },
+                        {
+                            name: 'convertPathData',
+                            params: {
+                                applyTransforms: true,
+                                applyTransformsStroked: true,
+                                makeArcs: {
+                                    threshold: 2.5,
+                                    tolerance: 0.5
+                                }
+                            }
+                        },
+                        'convertShapeToPath',
+                        'convertTransform',
+                        'mergeStyles',
+                        'inlineStyles',
+                        'minifyStyles',
+                        'removeComments',
+                        'removeMetadata',
+                        'sortAttrs',
+                        'sortDefsChildren',
+                        'removeUselessDefs'
+                    ]
                 }
             }
         })

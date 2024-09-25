@@ -8,9 +8,12 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: 10px 8px 10px 16px;
-    gap: 16px;
-    border: 2px solid var(--monochrome-8, #000);
+
+    /* padding: 10px 8px 10px 16px; */
+
+    /* gap: 16px; */
+
+    /* border: 2px solid var(--monochrome-8, #000); */
     background: var(--background-color);
     box-shadow: 2px 2px 0 0 var(--shadow-color) inset;
 }
@@ -47,7 +50,7 @@
 
 .head-light-pink {
     --border-color-right-left: var(--pink-4, #FF6BC3);
-    --background-color: var(--pink-4, #FF6BC3);
+    --background-color: var(--pink-7, #FFC7F3);
     --shadow-color: var(--monochrome-1, #FFF);
 }
 

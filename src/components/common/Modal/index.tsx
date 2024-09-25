@@ -6,21 +6,22 @@ import { createContainer } from '@/utils/portal.ts';
 import styles from './index.module.css';
 
 import HeadModelStyle from '@styles/baseBlock.module.css';
-import Index from '@components/common/Button';
+import BaseButton from '@components/common/Button/baseButton.tsx';
 import Portal from '@components/common/Portal';
 import ClosedIcon from '@icon/closed-16.svg';
 
 const MODAL_CONTAINER_ID = 'modal-container-id';
 
-type Props = {
-    title: React.ReactNode;
-    onClose?: () => void;
-    children?: React.ReactNode | React.ReactNode[];
-};
+interface ModalProps {
+    'onClose': () => void;
+    'title': React.ReactNode;
+    'id'?: string;
+    'role'?: string;
+    'aria-labelledby'?: string;
+    'children': React.ReactNode;
+}
 
-const Modal = (props: Props) => {
-    const { title, onClose, children } = props;
-
+const Modal = ({ title, onClose, children, ...attrs }: ModalProps) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const [isMounted, setMounted] = useState(false);
 
@@ -89,16 +90,16 @@ const Modal = (props: Props) => {
     return isMounted
         ? (
                 <Portal id={MODAL_CONTAINER_ID}>
-                    <div className={styles.modal_wrap} ref={rootRef}>
+                    <div className={styles.modal_wrap} ref={rootRef} {...attrs}>
                         <div>
-                            <header className={`${HeadModelStyle.head}`}>
+                            <header className={`${styles.modal_header} ${HeadModelStyle.head}`}>
                                 {title}
-                                <Index
+                                <BaseButton
                                     type="default"
                                     onClick={handleClose}
                                 >
                                     <ClosedIcon />
-                                </Index>
+                                </BaseButton>
                             </header>
                             <div className={styles.modal_content}>
                                 {children}

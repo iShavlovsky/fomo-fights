@@ -32,6 +32,18 @@
     --monochrome-7: #1A1717;
     --monochrome-8: #000;
 
+    /* Indents */
+    --indents-64: 64px;
+    --indents-56: 56px;
+    --indents-48: 48px;
+    --indents-40: 40px;
+    --indents-32: 32px;
+    --indents-24: 24px;;
+    --indents-16: 16px;
+    --indents-12: 12px;
+    --indents-8: 8px;
+    --indents-4: 4px;
+
     /* Purple */
     --purple-7: #B59DEE;
     --purple-6: #A690FF;
@@ -137,6 +149,7 @@ main {
 
 section {
     width: 100%;
+    height: 100%;
 }
 
 .container {
@@ -146,9 +159,50 @@ section {
     width: var(--container-width);
 }
 
+.mt-4 {
+    margin-top: var(--indents-4, 4px);
+}
+
+.mt-8 {
+    margin-top: var(--indents-8, 8px);
+}
+
+.mt-12 {
+    margin-top: var(--indents-12, 12px);
+}
+
+.mt-16 {
+    margin-top: var(--indents-16, 16px);
+}
+
+.mt-24 {
+    margin-top: var(--indents-24, 24px);
+}
+
+.mt-32 {
+    margin-top: var(--indents-32, 32px);
+}
+
+.mt-40 {
+    margin-top: var(--indents-40, 40px);
+}
+
+.mt-48 {
+    margin-top: var(--indents-48, 48px);
+}
+
+.mt-56 {
+    margin-top: var(--indents-56, 56px);
+}
+
+.mt-64 {
+    margin-top: var(--indents-64, 64px);
+}
+
 /* Media Queries */
 
 /* Tablet styles */
+
 @media (width <= 768px) {
     :root {
         --font-size-h1: 28px;

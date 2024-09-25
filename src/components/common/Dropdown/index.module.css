@@ -52,18 +52,13 @@
 }
 
 .dropdownItem {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.dropdownItem {
     background: none;
     border: none;
     cursor: pointer;
     width: 100%;
     text-align: left;
-    padding: 0;
-    color: var(--blue-14)
+    color: var(--blue-14);
+    padding: 10px;
 }
 
 .dropdownItem a {
