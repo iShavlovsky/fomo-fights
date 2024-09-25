@@ -4,7 +4,7 @@ import Lottie from 'lottie-react';
 import Button from '@components/common/Button/Button.tsx';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
-import { Tab, Tabs } from '@components/common/Tabs';
+import { Tabs } from '@components/common/Tabs';
 import Screen1LottieBg from '@assets/animation/screen1/screen1_with_background.json';
 import Screen1Lottie from '@assets/animation/screen1/screen1_without_background.json';
 import Screen2Lottie from '@assets/animation/screen2/screen2_with_background.json';
@@ -29,7 +29,7 @@ function HomePage() {
 
     const tabs = [
         {
-            lable: (
+            tab: (
                 <>
                     <FloppyDiskBlueIcon />
                     <span className="body-s">About</span>
@@ -48,7 +48,7 @@ function HomePage() {
             )
         },
         {
-            lable: (
+            tab: (
                 <>
                     <FloppyDiskYellowIcon />
                     <span className="body-s">$FOFI</span>
@@ -67,7 +67,7 @@ function HomePage() {
             )
         },
         {
-            lable: (
+            tab: (
                 <>
                     <FloppyDiskGreenIcon />
                     <span className="body-s">Community</span>
@@ -118,12 +118,7 @@ function HomePage() {
             </div>
             <section>
                 <div className="container" style={{ height: '500px', width: '100%' }}>
-                    <Tabs activeTab={activeTab} onTabChange={setActiveTab}>
-                        {
-                            tabs.map((tab, index) => (<Tab key={index} lable={tab.lable}>{tab.content}</Tab>))
-                        }
-                    </Tabs>
-
+                    <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
                 </div>
             </section>
             <section>

@@ -14,15 +14,34 @@
     border-radius: 6px 6px 0 0;
     background-color: var(--monochrome-3);
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
 }
 
 .tab.active {
     background-color: var(--blue-14);
 }
 
+.tab-content-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
 .tab-content {
+    position: absolute;
     background-color: var(--monochrome-3);
-    padding: 32px 24px;
     border: 2px solid var(--monochrome-8);
+    padding: 32px 24px;
     border-radius: 0 8px 0 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.tab-content.active {
+    position: relative;
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.3s ease;
 }

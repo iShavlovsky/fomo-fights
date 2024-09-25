@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 
 import useLifeLogger from '@/hooks/useLifeLogger.ts';
 
@@ -7,7 +7,7 @@ import styles from './RadioButtonGroup.module.css';
 interface RadioButtonOption<T extends string | number> {
     label: string;
     value: T;
-    icon: React.ReactNode;
+    icon: ReactNode;
 }
 
 interface RadioButtonGroupProp<T extends string | number> {

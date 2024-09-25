@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import styles from './Button.module.css';
 
@@ -7,7 +7,7 @@ type ButtonType = 'primary' | 'secondary' | 'secondary2' | 'default';
 interface BaseButtonProps {
     type?: ButtonType;
     href?: string;
-    children: React.ReactNode;
+    children: ReactNode;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     className?: string;
 }
