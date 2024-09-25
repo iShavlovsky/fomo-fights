@@ -45,7 +45,9 @@ export default tseslint.config(
                 quotes: 'single',
                 semi: true,
                 jsx: true,
-                commaDangle: 'only-multiline'
+                commaDangle: 'only-multiline',
+                arrowParens: true
+
             }),
             promise.configs['flat/recommended'],
             react.configs.flat.recommended,
@@ -135,7 +137,7 @@ export default tseslint.config(
             'linebreak-style': ['error', 'windows'],
             'no-console': 'off',
             'no-debugger': 'error',
-            'arrow-parens': ['error', 'as-needed'],
+            'arrow-parens': ['error', 'always'],
             'no-unused-expressions': 'error',
             'no-param-reassign': 'off',
             'no-bitwise': ['error', { allow: ['~'] }],

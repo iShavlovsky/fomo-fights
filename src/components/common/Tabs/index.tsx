@@ -22,8 +22,17 @@ const Tabs = ({ activeTab, onTabChange, tabs }: TabsProps) => {
                         key={index}
                         role="tab"
                         aria-selected={activeTab === index}
+                        aria-controls={`tabpanel-${index}`}
+                        id={`tab-${index}`}
+                        tabIndex={activeTab === index ? 0 : -1}
                         className={`${styles.tab} ${activeTab === index ? styles.active : ''}`}
                         onClick={() => onTabChange(index)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                onTabChange(index);
+                            }
+                        }}
                     >
                         {tabItem.tab}
                     </li>
@@ -34,8 +43,10 @@ const Tabs = ({ activeTab, onTabChange, tabs }: TabsProps) => {
                 {tabs.map((tabItem, index) => (
                     <div
                         key={index}
-                        className={`${styles.tabContent} ${activeTab === index ? styles.active : ''}`}
+                        id={`tabpanel-${index}`}
                         role="tabpanel"
+                        aria-labelledby={`tab-${index}`}
+                        className={`${styles.tabContent} ${activeTab === index ? styles.active : ''}`}
                     >
                         {tabItem.content}
                     </div>

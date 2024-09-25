@@ -25,23 +25,26 @@
 .tab-content-wrapper {
     position: relative;
     overflow: hidden;
+    min-height: max-content;
+    transition: max-height 0.3s ease;
 }
 
 .tab-content {
-    position: absolute;
     background-color: var(--monochrome-3);
     border: 2px solid var(--monochrome-8);
-    padding: 32px 24px;
     border-radius: 0 8px 0 0;
+    position: absolute;
     transition: all 0.3s ease;
     opacity: 0;
-    z-index: -1;
-    width: 100%;
+    visibility: hidden;
+    padding: 32px 24px;
+    inset: 0;
+    z-index: 0;
 }
 
 .tab-content.active {
     position: relative;
     opacity: 1;
+    visibility: visible;
     z-index: 1;
-    transition: all 0.3s ease;
 }

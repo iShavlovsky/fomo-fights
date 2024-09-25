@@ -144,7 +144,7 @@ function HomePage() {
             <section>
                 <div className="container" style={{ height: '500px', width: '100%' }}>
                     <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
-                    <Dropdown options={optionals} autoClose={false} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={false} />
+                    <Dropdown options={optionals} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={false} />
                     <Dropdown options={optionals} autoClose={false} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={true} />
 
                 </div>
