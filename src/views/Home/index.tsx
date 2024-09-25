@@ -4,6 +4,7 @@ import Lottie from 'lottie-react';
 import Button from '@components/common/Button/Button.tsx';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
+import { Tab, Tabs } from '@components/common/Tabs';
 import Screen1LottieBg from '@assets/animation/screen1/screen1_with_background.json';
 import Screen1Lottie from '@assets/animation/screen1/screen1_without_background.json';
 import Screen2Lottie from '@assets/animation/screen2/screen2_with_background.json';
@@ -12,6 +13,9 @@ import Screen4Lottie from '@assets/animation/screen4/screen4_with_background.jso
 import Screen5Lottie from '@assets/animation/screen5/footer_with_background.json';
 import ClosedIcon from '@icon/closed-16.svg';
 import ETHIcon from '@icon/eth-16.svg';
+import FloppyDiskBlueIcon from '@icon/floppyDisk-blue-34.svg';
+import FloppyDiskGreenIcon from '@icon/floppyDisk-green-34.svg';
+import FloppyDiskYellowIcon from '@icon/floppyDisk-yellow-34.svg';
 import TwitterXIcon from '@icon/twitterX-20.svg';
 import USDCIcon from '@icon/usdc-16.svg';
 import USDTIcon from '@icon/usdt-16.svg';
@@ -23,9 +27,71 @@ function HomePage() {
         { label: 'SOL', value: 'sol', icon: <USDCIcon /> }
     ];
 
+    const tabs = [
+        {
+            lable: (
+                <>
+                    <FloppyDiskBlueIcon />
+                    <span className="body-s">About</span>
+                </>
+            ),
+            content: (
+                <div>
+                    <h2>About FOMO Fights</h2>
+                    <p className="body-m">
+                        In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
+                        Floki, or Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through
+                        the
+                        leaderboard as you compete against other players.
+                    </p>
+                </div>
+            )
+        },
+        {
+            lable: (
+                <>
+                    <FloppyDiskYellowIcon />
+                    <span className="body-s">$FOFI</span>
+                </>
+            ),
+            content: (
+                <div>
+                    <h2>$FOFI</h2>
+                    <p className="body-m">
+                        In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
+                        Floki, or Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through
+                        the
+                        leaderboard as you compete against other players.
+                    </p>
+                </div>
+            )
+        },
+        {
+            lable: (
+                <>
+                    <FloppyDiskGreenIcon />
+                    <span className="body-s">Community</span>
+                </>
+            ),
+            content: (
+                <div>
+                    <h2>Community</h2>
+                    <p className="body-m">
+                        In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
+                        Floki, or Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through
+                        the
+                        leaderboard as you compete against other players.
+                    </p>
+                </div>
+            )
+        }
+    ];
+
     const handleRadioChange = (value: string | number) => {
         console.log('Selected:', value);
     };
+
+    const [activeTab, setActiveTab] = useState(0);
 
     const [isModalActive, setModalActive] = useState(false);
 
@@ -51,7 +117,18 @@ function HomePage() {
                 )}
             </div>
             <section>
+                <div className="container" style={{ height: '500px', width: '100%' }}>
+                    <Tabs activeTab={activeTab} onTabChange={setActiveTab}>
+                        {
+                            tabs.map((tab, index) => (<Tab key={index} lable={tab.lable}>{tab.content}</Tab>))
+                        }
+                    </Tabs>
+
+                </div>
+            </section>
+            <section>
                 <div className="container">
+
                     <h1>HomePage</h1>
                     <div style={{
                         display: 'grid',
@@ -92,6 +169,7 @@ function HomePage() {
                     </div>
                 </div>
             </section>
+
             <section>
                 <Lottie
                     animationData={Screen1LottieBg}
@@ -105,6 +183,7 @@ function HomePage() {
                     loop={true}
                     autoplay={true}
                 />
+
             </section>
             <section>
                 <Lottie
