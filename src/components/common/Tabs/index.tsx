@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import styles from './tabs.module.css';
+import styles from './index.module.css';
 
 interface TabItem {
     tab: ReactNode;

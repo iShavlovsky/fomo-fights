@@ -1,6 +1,6 @@
 import { ReactNode, useRef, useState } from 'react';
 
-import styles from './dropdown.module.css';
+import styles from './index.module.css';
 
 import useClickOutside from '@hooks/useClickOutside.ts';
 

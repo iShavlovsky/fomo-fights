@@ -97,17 +97,17 @@
     --yellow-2: #DBB759;
     --yellow-1: #FFA030;
 
-    /* Контейнер */
+    /* container */
     --container-width: 100%;
     --container-max-width: 1440px;
 
     /* Text color */
     --text-color: var(--monochrome-8);
 
-    /* Цвета фона */
+    /* Background colors */
     --bg-color: var(--monochrome-1);
 
-    /* Минимальная высота для main */
+    /* Minimum height for main */
     --main-min-height: calc(100vh - 60px);
     --transition-time: 0.3s ease;
 
@@ -161,7 +161,7 @@ section {
     }
 
     .container {
-        padding: 0 15px; /* Уменьшение отступов на планшетах */
+        padding: 0 15px;
     }
 }
 

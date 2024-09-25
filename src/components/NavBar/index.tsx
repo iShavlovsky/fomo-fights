@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-import styles from './NavBar.module.css';
+import styles from './index.module.css';
 
-import Button from '@components/common/Button/Button.tsx';
+import Index from '@components/common/Button';
 import GithubIcon from '@icon/github-16.svg';
 import InstagramIcon from '@icon/instagram-16.svg';
 import LinktreeIcon from '@icon/linktree-16.svg';
@@ -42,7 +42,7 @@ function NavBar() {
             </nav>
             <ul className={styles.nav_ul}>
                 {
-                    socialLinks.map(link => (
+                    socialLinks.map((link) => (
 
                         <li key={link.href}>
                             <a
@@ -56,7 +56,7 @@ function NavBar() {
                     ))
                 }
             </ul>
-            <Button type="primary">connect wallet</Button>
+            <Index type="primary">connect wallet</Index>
         </header>
     );
 }

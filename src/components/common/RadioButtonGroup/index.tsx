@@ -50,7 +50,7 @@ const RadioButtonGroup = <T extends string | number >({
 
     return (
         <div className={styles.radioButtonGroup}>
-            {options.map(option => (
+            {options.map((option) => (
                 <label
                     key={String(option.value)}
                     className={`${styles.radioButton} ${selectedValue === option.value ? styles.selected : ''}`}

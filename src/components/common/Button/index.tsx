@@ -12,7 +12,7 @@ interface BaseButtonProps {
     className?: string;
 }
 
-const Button = ({ type = 'primary', href, children, onClick, className }: BaseButtonProps) => {
+const Index = ({ type = 'primary', href, children, onClick, className }: BaseButtonProps) => {
     const buttonClass = `${styles.buttonSpan}`;
     const wrapperClass = `${styles.buttonWrapper} ${href ? styles.link : ''} ${styles[type]} ${className}`;
 
@@ -31,4 +31,4 @@ const Button = ({ type = 'primary', href, children, onClick, className }: BaseBu
     );
 };
 
-export default Button;
+export default Index;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Lottie from 'lottie-react';
 
-import Button from '@components/common/Button/Button.tsx';
+import Index from '@components/common/Button';
 import Dropdown, { DropdownOptionSelected } from '@components/common/Dropdown';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
@@ -134,9 +134,9 @@ function HomePage() {
                     <Modal onClose={handleModalClose} title={<h2>CONNECT WALLET</h2>}>
                         <div>
                             <h2>Hello world</h2>
-                            <Button type="secondary">
+                            <Index type="secondary">
                                 <p className="button-text">I don’t have a Wallet</p>
-                            </Button>
+                            </Index>
                         </div>
                     </Modal>
                 )}
@@ -159,30 +159,30 @@ function HomePage() {
                         gap: '20px'
                     }}
                     >
-                        <Button onClick={handleModalOpen} type="primary">OPEN MODAL</Button>
-                        <Button type="primary">HOW+PRESS</Button>
-                        <Button type="secondary">Secondary</Button>
-                        <Button type="secondary">HOW+PRESS</Button>
-                        <Button type="secondary2">Secondary 2</Button>
-                        <Button type="secondary2">Secondary 2</Button>
-                        <Button type="default">
+                        <Index onClick={handleModalOpen} type="primary">OPEN MODAL</Index>
+                        <Index type="primary">HOW+PRESS</Index>
+                        <Index type="secondary">Secondary</Index>
+                        <Index type="secondary">HOW+PRESS</Index>
+                        <Index type="secondary2">Secondary 2</Index>
+                        <Index type="secondary2">Secondary 2</Index>
+                        <Index type="default">
                             <ClosedIcon />
-                        </Button>
+                        </Index>
                         {
-                            options.map(option => (
-                                <Button type="secondary" key={option.value}>
+                            options.map((option) => (
+                                <Index type="secondary" key={option.value}>
                                     <>
                                         {option.icon}
                                         <span>{option.label}</span>
                                     </>
-                                </Button>
+                                </Index>
                             ))
                         }
 
                     </div>
-                    <Button type="secondary" href="https://x.com">
+                    <Index type="secondary" href="https://x.com">
                         <TwitterXIcon />
-                    </Button>
+                    </Index>
                     <div>
                         <RadioButtonGroup
                             options={options}

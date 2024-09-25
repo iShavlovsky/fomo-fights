@@ -23,7 +23,7 @@ const useLifeLogger = ({
     const renderCount = useRef(0);
     const prevProps = useRef(data);
 
-    // Логирование происходит только в режиме разработки и если visible = true
+    // Logging occurs only in development mode and if visible = true
     const debug = process.env.NODE_ENV === 'development' && visible;
 
     const log = useCallback((message: string, extra: unknown[] = [], style: string = '') => {
@@ -47,7 +47,6 @@ const useLifeLogger = ({
 
     const shouldLog = useCallback((event: LifeCycleEvent) => events.includes(event) || events.includes('all'), [events]);
 
-    // Хук вызывается всегда, условие находится внутри
     useEffect(() => {
         if (!debug) return;
 
@@ -67,15 +66,15 @@ const useLifeLogger = ({
     useEffect(() => {
         if (!debug) return;
 
-        // Счётчик рендеров
+        // Render counter
         renderCount.current += 1;
 
         if (renderCount.current > 1 && shouldLog('onUpdate')) {
             log(`${name} updated`, [data], styles.onUpdate);
         }
 
-        // Отслеживаем изменение пропсов
-        const changedProps = Object.keys(data || {}).filter(key => data[key] !== prevProps.current[key]);
+        // Monitoring changes in props
+        const changedProps = Object.keys(data || {}).filter((key) => data[key] !== prevProps.current[key]);
         if (changedProps.length > 0 && shouldLog('onUpdate')) {
             log(`${name} props changed:`, changedProps, styles.onUpdate);
         }

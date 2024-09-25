@@ -3,10 +3,10 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { createContainer } from '@/utils/portal.ts';
 
-import styles from './Modal.module.css';
+import styles from './index.module.css';
 
-import HeadModelStyle from '@styles/HeadModel.module.css';
-import Button from '@components/common/Button/Button.tsx';
+import HeadModelStyle from '@styles/baseBlock.module.css';
+import Index from '@components/common/Button';
 import Portal from '@components/common/Portal';
 import ClosedIcon from '@icon/closed-16.svg';
 
@@ -93,12 +93,12 @@ const Modal = (props: Props) => {
                         <div>
                             <header className={`${HeadModelStyle.head}`}>
                                 {title}
-                                <Button
+                                <Index
                                     type="default"
                                     onClick={handleClose}
                                 >
                                     <ClosedIcon />
-                                </Button>
+                                </Index>
                             </header>
                             <div className={styles.modal_content}>
                                 {children}
