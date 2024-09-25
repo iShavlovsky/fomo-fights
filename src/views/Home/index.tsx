@@ -61,7 +61,7 @@ function HomePage() {
                 <div>
                     <h2>About $FOFI</h2>
                     <p className="body-m">
-                        With the $FOFI token, you’re more than just a player — you become part of the game's development
+                        With the $FOFI token, you’re more than just a player — you become part of the game&apos;s development
                         and can benefit from its success. Secure your tokens at the Presale price, stake them, and grow
                         together with us as we build the future of FOMO Fights.
                     </p>
@@ -79,7 +79,7 @@ function HomePage() {
                 <div>
                     <h2>Community</h2>
                     <p className="body-m">
-                        By holding $FOFI and joining our community on social media, you can help shape the game's
+                        By holding $FOFI and joining our community on social media, you can help shape the game&apos;s
                         direction, connect with fellow players, and stay updated on the latest developments. Once the
                         game is live, use $FOFI to purchase in-game items and earn even more by jumping right into the
                         battle!
@@ -89,27 +89,28 @@ function HomePage() {
         }
     ];
 
-    const optionals: DropdownOptionSelected[] = [
+    const optionals = [
         {
-            abbreviation: '1asdsd',
+            abbreviation: 'About',
             label: (<p className="body-m">About</p>),
             onClick: () => console.log('Button 1 clicked')
         },
         {
-            abbreviation: '2asdsd',
-            label: 'Google',
+            abbreviation: 'Google',
+            label: (<p className="body-m">Google</p>),
             onClick: () => console.log('Button 1 clicked')
         },
         {
-            abbreviation: '3asdsd',
-            label: 'Button 2', onClick: () => console.log('Button 2 clicked')
+            abbreviation: 'Button 2',
+            label: (<p className="body-m">Button 2</p>),
+            onClick: () => console.log('Button 2 clicked')
         },
         {
-            abbreviation: '4asdsd',
-            label: 'React',
+            abbreviation: 'Button 3',
+            label: (<p className="body-m">Button 3</p>),
             onClick: () => console.log('Button 1 clicked')
         }
-    ];
+    ] satisfies DropdownOptionSelected[];
 
     const handleRadioChange = (value: string | number) => {
         console.log('Selected:', value);
@@ -144,6 +145,8 @@ function HomePage() {
                 <div className="container" style={{ height: '500px', width: '100%' }}>
                     <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
                     <Dropdown options={optionals} autoClose={false} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={false} />
+                    <Dropdown options={optionals} autoClose={false} ddTitle="DDtitle" ddIcon={<LanguageIcon />} ddToggleIcon={<ArrowIcon />} selectedLabel={true} />
+
                 </div>
             </section>
             <section>

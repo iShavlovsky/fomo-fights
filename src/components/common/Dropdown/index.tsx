@@ -6,49 +6,48 @@ import useClickOutside from '@hooks/useClickOutside.ts';
 
 export type DropdownOption = {
     label: ReactNode;
-    onClick?: () => void;
     href?: string;
+    onClick?: () => void;
 };
 
-export type DropdownOptionSelected = {
+export type DropdownOptionSelected = DropdownOption & {
     abbreviation: string;
-    label: ReactNode;
-    onClick?: () => void;
-    href?: string;
 };
 
-interface DropdownProps {
+interface DropdownPropsMain {
     ddTitle: string;
     ddIcon?: ReactNode;
     ddToggleIcon?: ReactNode;
     autoClose?: boolean;
 }
 
-export type DropdownPropsSelected = DropdownProps & {
+type DropdownPropsSelected = DropdownPropsMain & {
     selectedLabel: true;
     options: DropdownOptionSelected[];
 };
 
-export type DropdownPropsDefault = DropdownProps & {
+type DropdownPropsDefault = DropdownPropsMain & {
     selectedLabel: false;
     options: DropdownOption[];
 };
 
-const Dropdown = ({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoClose = true }: DropdownPropsDefault | DropdownPropsSelected) => {
+export type DropdownProps = DropdownPropsSelected | DropdownPropsDefault;
+
+function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoClose = true }: DropdownProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [label, setSelectedLabel] = useState<string>(ddTitle);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     useClickOutside(dropdownRef, () => setIsOpen(false));
 
-    const handleOptionClick = <T extends DropdownOption | DropdownOptionSelected > (option: T) => {
+    const handleOptionClick = (option: DropdownOption | DropdownOptionSelected) => {
         if (!option.href && option.onClick) {
             option.onClick();
-            if (selectedLabel) {
-                const ab = option as DropdownOptionSelected;
-                setSelectedLabel(ab.abbreviation);
+            if (selectedLabel && 'abbreviation' in option && label !== option.abbreviation) {
+                setSelectedLabel(option.abbreviation);
             }
         }
+
         if (autoClose) {
             setIsOpen(false);
         }
@@ -56,30 +55,65 @@ const Dropdown = ({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoC
 
     return (
         <div ref={dropdownRef} className={styles.dropdown}>
-            <button className={styles.dropdownToggle} onClick={() => setIsOpen(!isOpen)}>
+            <button
+                className={styles.dropdownToggle}
+                onClick={() => setIsOpen(!isOpen)}
+                aria-haspopup="listbox"
+                aria-expanded={isOpen}
+                aria-controls="dropdown-list"
+                id="dropdown-button"
+            >
                 {ddIcon ? <span>{ddIcon}</span> : null}
                 <span className="body-m">{label}</span>
-                {ddToggleIcon ? <span className={`${styles.dropdownToggleIcon} ${isOpen ? '' : styles.active}`}>{ddToggleIcon}</span> : null}
+                {ddToggleIcon
+                    ? (
+                            <span
+                                className={`${styles.dropdownToggleIcon} ${isOpen ? '' : styles.active}`}
+                            >
+                                {ddToggleIcon}
+                            </span>
+                        )
+                    : null}
             </button>
-            {isOpen && (
-                <ul className={styles.dropdownMenu}>
-                    {options.map((option, index) => (
-                        <li key={index} className={styles.dropdownItem}>
-                            {option.href
-                                ? (
-                                        <a href={option.href} target="_blank" rel="noopener noreferrer">
-                                            {option.label}
-                                        </a>
-                                    )
-                                : (
-                                        <button onClick={() => handleOptionClick(option)}>{option.label}</button>
-                                    )}
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <div className={`${styles.dropdownMenuWrapper} ${isOpen ? styles.open : ''}`}>
+                {isOpen && (
+                    <ul
+                        id="dropdown-list"
+                        className={styles.dropdownMenu}
+                        role="listbox"
+                        aria-labelledby="dropdown-button"
+                    >
+                        {options.map((option, index) => (
+                            <li
+                                onClick={() => handleOptionClick(option)}
+                                key={index}
+                                className={styles.dropdownItem}
+                                role="option"
+                                aria-selected={label === (option as DropdownOptionSelected).abbreviation}
+                            >
+                                {option.href
+                                    ? (
+                                            <a
+                                                href={option.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {option.label}
+                                            </a>
+                                        )
+                                    : (
+                                            <>
+                                                {option.label}
+                                            </>
+                                        )}
+                            </li>
+                        ))}
+                    </ul>
+
+                )}
+            </div>
         </div>
     );
-};
+}
 
 export default Dropdown;

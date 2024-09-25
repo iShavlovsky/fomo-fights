@@ -24,18 +24,31 @@
 }
 
 .dropdownToggleIcon.active svg{
-    transition: transform 0.3s ease;
     transform: rotateX(180deg);
 }
 
-.dropdownMenu {
+.dropdownMenuWrapper {
     position: absolute;
     width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: transparent;
+    border:none;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height 0.3s ease;
+    user-select: none;
+}
+
+.dropdownMenuWrapper.open {
     max-height: 200px;
+    border: 1px solid #ccc;
+}
+
+.dropdownMenu {
+    width: 100%;
+    height: 100%;
     overflow-y: auto;
     z-index: 1;
+    cursor: pointer;
 }
 
 .dropdownItem {
