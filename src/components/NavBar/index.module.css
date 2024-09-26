@@ -1,8 +1,5 @@
 .header {
-    padding: 12px 60px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    padding: 9px 0;
     background: var(--purple-4, #552CB8);
 }
 
@@ -68,4 +65,16 @@
 .walletsItem:active {
     background: var(--beige-4, #CFB388);
     transform: scale(98%);
+}
+
+.nav-bar-logo {
+    position: absolute;
+    top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 338px;
+    height: 147px;
+    background-color: #2AEB60;
 }

@@ -79,7 +79,8 @@ function HomePage() {
                 <div>
                     <h2>About $FOFI</h2>
                     <p className="body-m">
-                        With the $FOFI token, you’re more than just a player — you become part of the game&apos;s development
+                        With the $FOFI token, you’re more than just a player — you become part of the game&apos;s
+                        development
                         and can benefit from its success. Secure your tokens at the Presale price, stake them, and grow
                         together with us as we build the future of FOMO Fights.
                     </p>

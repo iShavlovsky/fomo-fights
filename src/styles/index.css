@@ -1,6 +1,7 @@
 @import url("reset.css");
 @import url("fonts.css");
 @import url("typography.css");
+@import url("mods.css");
 
 :root {
     /* Basic fonts */
@@ -156,7 +157,7 @@ section {
 .container {
     margin: 0 auto;
     max-width: var(--container-max-width);
-    padding: 0 20px;
+    padding: 0 60px;
     width: var(--container-width);
 }
 

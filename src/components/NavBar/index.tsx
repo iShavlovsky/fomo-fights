@@ -122,102 +122,114 @@ function NavBar() {
 
     return (
         <header className={styles.header} role="banner" aria-label="Main navigation">
-            <nav className={styles.nav} aria-label="Primary">
-                <ul className={styles.nav_ul} role="list">
-                    <li>
-                        <NavLink
-                            to="/"
-                            className={({ isActive }) => (isActive ? 'active-link' : '')}
-                        >
-                            Home
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/about"
-                            className={({ isActive }) => (isActive ? 'active-link' : '')}
-                        >
-                            Staking
-                        </NavLink>
-                    </li>
-                </ul>
-            </nav>
-            <ul className={styles.nav_ul} role="list">
-                {socialLinks.map((link) => (
-                    <li key={link.href}>
-                        <a
-                            className={styles.nav_link}
-                            href={link.href}
-                            aria-label={`Visit our ${link.label}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {link.icon}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-            <BaseButton
-                onClick={handleModalOpen}
-                type="primary"
-                aria-controls="connect-wallet-modal"
-            >
-                Connect Wallet
-            </BaseButton>
-
-            <Dropdown
-                options={optionalsLocale}
-                autoClose={false}
-                ddTitle="En"
-                ddIcon={<LanguageIcon />}
-                ddToggleIcon={<ArrowIcon />}
-                onSelect={handleSelect}
-                selectedLabel={true}
-            />
-
-            <Dropdown
-                options={optionalsMenu}
-                ddTitle="Menu"
-                ddIcon={<MenuIcon />}
-                ddToggleIcon={<ArrowIcon />}
-                selectedLabel={false}
-            />
-            <div>
-                {isOpenConnectWallet && (
-                    <Modal
-                        onClose={handleModalClose}
-                        title={<h2>CONNECT WALLET</h2>}
-                        id="connect-wallet-modal"
-                        role="dialog"
-                        aria-labelledby="connect-wallet-title"
+            <div className="container flex flex-row justify-between">
+                <div className="flex flex-row gap-24px">
+                    <nav className={styles.nav} aria-label="Primary">
+                        <ul className={styles.nav_ul} role="list">
+                            <li>
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) => `body-m ${isActive ? 'active-link' : ''}`}
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/about"
+                                    className={({ isActive }) => `body-m ${isActive ? 'active-link' : ''}`}
+                                >
+                                    Staking
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                    <ul className={styles.nav_ul} role="list">
+                        {socialLinks.map((link) => (
+                            <li key={link.href}>
+                                <a
+                                    className={styles.nav_link}
+                                    href={link.href}
+                                    aria-label={`Visit our ${link.label}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {link.icon}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className={styles.navBarLogo}>logo</div>
+                <div className="flex flex-row items-center gap-24px">
+                    <BaseButton
+                        onClick={handleModalOpen}
+                        type="primary"
+                        aria-controls="connect-wallet-modal"
                     >
+                        Connect Wallet
+                    </BaseButton>
+                    <div className="flex flex-row gap-4px">
+                        <Dropdown
+                            options={optionalsLocale}
+                            autoClose={false}
+                            ddTitle="En"
+                            ddIcon={<LanguageIcon />}
+                            ddToggleIcon={<ArrowIcon />}
+                            onSelect={handleSelect}
+                            selectedLabel={true}
+                        />
+
+                        <Dropdown
+                            options={optionalsMenu}
+                            ddTitle="Menu"
+                            ddIcon={<MenuIcon />}
+                            ddToggleIcon={<ArrowIcon />}
+                            selectedLabel={false}
+                        />
+
                         <div>
-                            <ul className={styles.walletsList} role="list">
-                                {wallets.map((wallet) => (
-                                    <li
-                                        className={styles.walletsItem}
-                                        key={wallet.name}
-                                        onClick={wallet.fc}
-                                        role="button"
-                                        tabIndex={0}
-                                        aria-label={`Connect to ${wallet.name}`}
-                                    >
-                                        {wallet.icon}
-                                        <p className="body-m">{wallet.name}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                            <BaseButton
-                                className="button-text mt-12"
-                                onClick={handleModalClose}
-                                type="secondary"
-                            >
-                                <p className="button-text">I don’t have a Wallet</p>
-                            </BaseButton>
+                            {isOpenConnectWallet && (
+                                <Modal
+                                    onClose={handleModalClose}
+                                    title={<h2>CONNECT WALLET</h2>}
+                                    id="connect-wallet-modal"
+                                    role="dialog"
+                                    aria-labelledby="connect-wallet-title"
+                                >
+                                    <div>
+                                        <ul className={styles.walletsList} role="list">
+                                            {wallets.map((wallet) => (
+                                                <li
+                                                    className={styles.walletsItem}
+                                                    key={wallet.name}
+                                                    onClick={wallet.fc}
+                                                    role="button"
+                                                    tabIndex={0}
+                                                    aria-label={`Connect to ${wallet.name}`}
+                                                >
+                                                    {wallet.icon}
+                                                    <p className="body-m">{wallet.name}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <BaseButton
+                                            className="button-text mt-12"
+                                            onClick={handleModalClose}
+                                            type="secondary"
+                                        >
+                                            <p className="button-text">I don’t have a Wallet</p>
+                                        </BaseButton>
+                                    </div>
+                                </Modal>
+                            )}
                         </div>
-                    </Modal>
-                )}
+
+                    </div>
+                </div>
+
             </div>
+
         </header>
 
     );
