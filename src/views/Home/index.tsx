@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import BaseButton from '@components/common/Button/baseButton.tsx';
-import Dropdown, { DropdownOptionSelected } from '@components/common/Dropdown';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
 import ScrollContainer from '@components/common/ScrollContainer';
 import { Tabs } from '@components/common/Tabs';
-import ArrowIcon from '@icon/arrow-16.svg';
 import ClosedIcon from '@icon/closed-16.svg';
 import ETHIcon from '@icon/eth-16.svg';
 import FloppyDiskBlueIcon from '@icon/floppyDisk-blue-34.svg';
 import FloppyDiskGreenIcon from '@icon/floppyDisk-green-34.svg';
 import FloppyDiskYellowIcon from '@icon/floppyDisk-yellow-34.svg';
-import LanguageIcon from '@icon/language-16.svg';
 import TwitterXIcon from '@icon/twitterX-20.svg';
 import USDCIcon from '@icon/usdc-16.svg';
 import USDTIcon from '@icon/usdt-16.svg';
-import { useMediaQuery } from '@hooks/useMediaQuery.ts';
+import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
 
 const Lottie = React.lazy(() => import('lottie-react'));
 
+const animationsLottie = [
+    () => import('@assets/animation/screen1/screen1_without_background.json'),
+    () => import('@assets/animation/screen2/screen2_with_background.json'),
+    () => import('@assets/animation/screen3/screen3_steps_with_background.json'),
+    () => import('@assets/animation/screen4/screen4_with_background.json')
+];
+
 function HomePage() {
-    const isAboveMobile = useMediaQuery('(min-width: 769px)'); // Определяем брейкпоинт выше мобильного
-    const [animations, setAnimations] = useState<unknown[]>([]);
     const [activeTab, setActiveTab] = useState(0);
 
     const [isModalActive, setModalActive] = useState(false);
@@ -34,26 +36,9 @@ function HomePage() {
         setModalActive(false);
     };
 
-    useEffect(() => {
-        if (isAboveMobile) {
-            // Используем Promise.allSettled для обработки всех промисов независимо от их статуса
-            Promise.allSettled([
-                import('@assets/animation/screen1/screen1_without_background.json'),
-                import('@assets/animation/screen2/screen2_with_background.json'),
-                import('@assets/animation/screen3/screen3_steps_with_background.json'),
-                import('@assets/animation/screen4/screen4_with_background.json'),
-                import('@assets/animation/screen5/footer_with_background.json')
-            ])
-                .then((results) => {
-                    const loadedAnimations = results.map((result) =>
-                        result.status === 'fulfilled' ? result.value.default : null
-                    );
-                    setAnimations(loadedAnimations);
-                    return true;
-                })
-                .catch((error) => console.error('Error loading animations:', error));
-        }
-    }, [isAboveMobile]);
+    const { animations, isAboveMobile } = useAnimationsLoader(
+        '(min-width: 769px)',
+        animationsLottie);
 
     const options = [
         { label: 'ETH', value: 'eth', icon: <ETHIcon /> },
@@ -120,29 +105,6 @@ function HomePage() {
         }
     ];
 
-    const optionals = [
-        {
-            abbreviation: 'About',
-            label: (<p className="body-m">About</p>),
-            onClick: () => console.log('Button 1 clicked')
-        },
-        {
-            abbreviation: 'Google',
-            label: (<p className="body-m">Google</p>),
-            onClick: () => console.log('Button 1 clicked')
-        },
-        {
-            abbreviation: 'Button 2',
-            label: (<p className="body-m">Button 2</p>),
-            onClick: () => console.log('Button 2 clicked')
-        },
-        {
-            abbreviation: 'Button 3',
-            label: (<p className="body-m">Button 3</p>),
-            onClick: () => console.log('Button 1 clicked')
-        }
-    ] satisfies DropdownOptionSelected[];
-
     const handleRadioChange = (value: string | number) => {
         console.log('Selected:', value);
     };
@@ -162,6 +124,7 @@ function HomePage() {
                 )}
             </div>
             <section className="mt-64">
+                <h1>HomePage</h1>
                 <div className="container" style={{ height: '500px', width: '100%' }}>
                     <ScrollContainer
                         onScroll={(e) => console.log(e)}
@@ -224,28 +187,10 @@ function HomePage() {
             <section className="mt-64">
                 <div className="container" style={{ height: '500px', width: '100%' }}>
                     <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
-                    <Dropdown
-                        options={optionals}
-                        ddTitle="DDtitle"
-                        ddIcon={<LanguageIcon />}
-                        ddToggleIcon={<ArrowIcon />}
-                        selectedLabel={false}
-                    />
-                    <Dropdown
-                        options={optionals}
-                        autoClose={false}
-                        ddTitle="DDtitle"
-                        ddIcon={<LanguageIcon />}
-                        ddToggleIcon={<ArrowIcon />}
-                        selectedLabel={true}
-                    />
-
                 </div>
             </section>
             <section>
                 <div className="container">
-
-                    <h1>HomePage</h1>
                     <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(2, 1fr)',

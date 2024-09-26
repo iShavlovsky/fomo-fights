@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 
 import styles from './index.module.css';
 
@@ -19,6 +19,8 @@ interface DropdownPropsMain {
     ddIcon?: ReactNode;
     ddToggleIcon?: ReactNode;
     autoClose?: boolean;
+    position?: 'right' | 'left';
+    onSelect?: (option: DropdownOption | DropdownOptionSelected) => void;
 }
 
 type DropdownPropsSelected = DropdownPropsMain & {
@@ -33,7 +35,7 @@ type DropdownPropsDefault = DropdownPropsMain & {
 
 export type DropdownProps = DropdownPropsSelected | DropdownPropsDefault;
 
-function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoClose = true }: DropdownProps) {
+function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoClose = true, position = 'right', onSelect }: DropdownProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [label, setSelectedLabel] = useState<string>(ddTitle);
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -46,6 +48,10 @@ function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoC
             if (selectedLabel && 'abbreviation' in option && label !== option.abbreviation) {
                 setSelectedLabel(option.abbreviation);
             }
+        }
+
+        if (onSelect) {
+            onSelect(option);
         }
 
         if (autoClose) {
@@ -68,14 +74,14 @@ function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoC
                 {ddToggleIcon
                     ? (
                             <span
-                                className={`${styles.dropdownToggleIcon} ${isOpen ? '' : styles.active}`}
+                                className={`${styles.dropdownToggleIcon} ${isOpen ? styles.active : ''}`}
                             >
                                 {ddToggleIcon}
                             </span>
                         )
                     : null}
             </button>
-            <div className={`${styles.dropdownMenuWrapper} ${isOpen ? styles.open : ''}`}>
+            <div className={`${styles.dropdownMenuWrapper} ${isOpen ? styles.open : ''} ${styles[position]}`}>
                 {isOpen && (
                     <ul
                         id="dropdown-list"
@@ -87,7 +93,7 @@ function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoC
                             <li
                                 onClick={() => handleOptionClick(option)}
                                 key={index}
-                                className={styles.dropdownItem}
+                                className={styles.dropdownLi}
                                 role="option"
                                 aria-selected={label === (option as DropdownOptionSelected).abbreviation}
                             >

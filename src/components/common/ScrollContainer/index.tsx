@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import React, { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import styles from './index.module.css';
 
@@ -79,7 +79,7 @@ const ScrollContainer = ({ onScroll, header, headerColor = 'head-dark-pink', chi
 
             if (thumb) {
                 const thumbHeight = (clientHeight / scrollHeight) * clientHeight;
-                thumb.style.height = `${thumbHeight}px`;
+                thumb.style.height = `${thumbHeight - 2}px`;
             }
         }
     };

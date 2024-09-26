@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { useMount } from './useMount';
+import useMount from './useMount';
 
-export function useMediaQuery(query: string): boolean {
+export default function useMediaQuery(query: string): boolean {
     const [matches, setMatches] = useState(false);
 
     useMount(() => {
