@@ -1,2 +1,3 @@
 # React + TypeScript + Vite
-https://lottiereact.com/
+Lottie player https://lottiereact.com/
+Slider https://react-slick.neostack.com/

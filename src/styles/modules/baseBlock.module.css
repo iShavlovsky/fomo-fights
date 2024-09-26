@@ -60,6 +60,7 @@
     --shadow-color: var(--green-7, #D9F7C7);
 }
 
+
 .head-yellow {
     --border-color-right-left: var(--yellow-2, #DBB759);
     --background-color: var(--yellow-6, #FFEDC0);

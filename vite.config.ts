@@ -13,23 +13,28 @@ export default defineConfig({
             output: {
                 manualChunks(id) {
                     if (id.includes('node_modules')) {
-                        if (id.includes('react')) {
-                            return 'react';
-                        }
-                        if (id.includes('lottie-web')) {
-                            return 'lottie-web';
-                        }
+                        const libraries = [
+                            'react',
+                            'lottie-web',
+                            'lottie-react',
+                            'react-slick',
+                            'slick-carousel'
+                        ];
+                        const pattern = new RegExp(
+                            '/node_modules/(' + libraries.join('|') + ')/'
+                        );
 
-                        if (id.includes('lottie-react')) {
-                            return 'lottie-react';
+                        const match = id.match(pattern);
+                        if (match) {
+                            return match[1];
                         }
-
                         return id
                             .toString()
                             .split('node_modules/')[1]
                             .split('/')[0]
                             .toString();
                     }
+
                     return null;
                 }
             }

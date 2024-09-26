@@ -1,0 +1,29 @@
+ :root {
+    --border: 2px solid var(--monochrome-8, #000);
+ }
+
+ .slider-progress-bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--border);
+ }
+
+ .slider-progress-item {
+    height: 33px;
+    width: 100%;
+    border-right: var(--border);
+    transition: all var(--transition-time, 0.3s ease);
+ }
+
+ .slider-progress-item.disabled {
+    background: #46B5F1;
+    box-shadow: 0 4px 0 0 #9BDCFF inset;
+
+ }
+
+ .slider-progress-item:last-child {
+    border-right: 0;
+ }
+

@@ -1,0 +1,10 @@
+.slick-slide {
+    margin-right: 10px;
+    max-width: 326px;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.slick-slide:last-child {
+    margin-right: 0;
+}
