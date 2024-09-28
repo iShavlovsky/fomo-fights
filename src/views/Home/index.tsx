@@ -7,6 +7,7 @@ import RadioButtonGroup from '@components/common/RadioButtonGroup';
 import ScrollContainer from '@components/common/ScrollContainer';
 import SliderCustom from '@components/common/SliderCustom';
 import { Tabs } from '@components/common/Tabs';
+import StakingForm from '@components/StakingForm';
 import ClosedIcon from '@icon/closed-16.svg';
 import ETHIcon from '@icon/eth-16.svg';
 import FloppyDiskBlueIcon from '@icon/floppyDisk-blue-34.svg';
@@ -20,7 +21,7 @@ import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
 const Lottie = React.lazy(() => import('lottie-react'));
 
 const animationsLottie = [
-    () => import('@assets/animation/screen1/screen1_without_background.json'),
+    () => import('@assets/animation/screen1/screen1_with_background.json'),
     () => import('@assets/animation/screen2/screen2_with_background.json'),
     () => import('@assets/animation/screen3/screen3_steps_with_background.json'),
     () => import('@assets/animation/screen4/screen4_with_background.json')
@@ -53,13 +54,13 @@ function HomePage() {
             tab: (
                 <>
                     <FloppyDiskBlueIcon />
-                    <span className="body-s">About</span>
+                    <span className="body-s-1">About</span>
                 </>
             ),
             content: (
                 <div>
                     <h2>About FOMO Fights</h2>
-                    <p className="body-m">
+                    <p className="body-m-1">
                         In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
                         Floki, or Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through
                         the
@@ -72,13 +73,13 @@ function HomePage() {
             tab: (
                 <>
                     <FloppyDiskYellowIcon />
-                    <span className="body-s">$FOFI</span>
+                    <span className="body-s-1">$FOFI</span>
                 </>
             ),
             content: (
                 <div>
                     <h2>About $FOFI</h2>
-                    <p className="body-m">
+                    <p className="body-m-1">
                         With the $FOFI token, you’re more than just a player — you become part of the game&apos;s
                         development
                         and can benefit from its success. Secure your tokens at the Presale price, stake them, and grow
@@ -91,13 +92,13 @@ function HomePage() {
             tab: (
                 <>
                     <FloppyDiskGreenIcon />
-                    <span className="body-s">Community</span>
+                    <span className="body-s-1">Community</span>
                 </>
             ),
             content: (
                 <div>
                     <h2>Community</h2>
-                    <p className="body-m">
+                    <p className="body-m-1">
                         By holding $FOFI and joining our community on social media, you can help shape the game&apos;s
                         direction, connect with fellow players, and stay updated on the latest developments. Once the
                         game is live, use $FOFI to purchase in-game items and earn even more by jumping right into the
@@ -126,6 +127,22 @@ function HomePage() {
                     </Modal>
                 )}
             </div>
+            <section className="bg-purple-4">
+                <div className="container relative">
+                    <div className="flex flex-row">
+                        <StakingForm />
+                    </div>
+                    <div className="animation-w absolute">
+                        {isAboveMobile && animations[0]
+                            ? (
+                                    <Lottie animationData={animations[0]} loop={true} autoplay={true} />
+                                )
+                            : (
+                                    <div> Bakground </div>
+                                )}
+                    </div>
+                </div>
+            </section>
             <section className="mt-64">
                 <h1>HomePage</h1>
                 <div className="container" style={{ height: '500px', width: '100%' }}>
@@ -139,7 +156,7 @@ function HomePage() {
                     >
                         <div>
                             <h3>What is FOMO Fights?</h3>
-                            <p className="body-m">
+                            <p className="body-m-1">
                                 FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
                                 where you can pick your favorite character, battle other memes,
                                 and
@@ -148,7 +165,7 @@ function HomePage() {
                         </div>
                         <div>
                             <h3>What is FOMO Fights?</h3>
-                            <p className="body-m">
+                            <p className="body-m-1">
                                 FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
                                 where you can pick your favorite character, battle other memes,
                                 and
@@ -157,7 +174,7 @@ function HomePage() {
                         </div>
                         <div>
                             <h3>What is FOMO Fights?</h3>
-                            <p className="body-m">
+                            <p className="body-m-1">
                                 FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
                                 where you can pick your favorite character, battle other memes,
                                 and
@@ -166,7 +183,7 @@ function HomePage() {
                         </div>
                         <div>
                             <h3>What is FOMO Fights?</h3>
-                            <p className="body-m">
+                            <p className="body-m-1">
                                 FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
                                 where you can pick your favorite character, battle other memes,
                                 and
@@ -175,7 +192,7 @@ function HomePage() {
                         </div>
                         <div>
                             <h3>What is FOMO Fights?</h3>
-                            <p className="body-m">
+                            <p className="body-m-1">
                                 FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
                                 where you can pick your favorite character, battle other memes,
                                 and
@@ -230,7 +247,7 @@ function HomePage() {
                             }}
                             >
                                 <h3>Purchase $FOFI</h3>
-                                <p className="body-m">
+                                <p className="body-m-1">
                                     In the widget, select the network of your choice,
                                     input the amount, and proceed to purchase your $FOFI.
                                 </p>
@@ -275,7 +292,7 @@ function HomePage() {
                             }}
                             >
                                 <h3>Purchase $FOFI</h3>
-                                <p className="body-m">
+                                <p className="body-m-1">
                                     In the widget, select the network of your choice,
                                     input the amount, and proceed to purchase your $FOFI.
                                 </p>
@@ -320,7 +337,7 @@ function HomePage() {
                             }}
                             >
                                 <h3>Purchase $FOFI</h3>
-                                <p className="body-m">
+                                <p className="body-m-1">
                                     In the widget, select the network of your choice,
                                     input the amount, and proceed to purchase your $FOFI.
                                 </p>
@@ -365,7 +382,7 @@ function HomePage() {
                             }}
                             >
                                 <h3>Purchase $FOFI</h3>
-                                <p className="body-m">
+                                <p className="body-m-1">
                                     In the widget, select the network of your choice,
                                     input the amount, and proceed to purchase your $FOFI.
                                 </p>

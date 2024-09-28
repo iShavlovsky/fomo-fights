@@ -51,19 +51,19 @@ function NavBar() {
 
     const optionalsMenu = [
         {
-            label: (<p className="body-m">About</p>),
+            label: (<p className="body-m-1">About</p>),
             onClick: () => console.log('About clicked')
         },
         {
-            label: (<p className="body-m">Roadmap</p>),
+            label: (<p className="body-m-1">Roadmap</p>),
             onClick: () => console.log('Roadmap clicked')
         },
         {
-            label: (<p className="body-m">How to Buy</p>),
+            label: (<p className="body-m-1">How to Buy</p>),
             onClick: () => console.log('Buy clicked')
         },
         {
-            label: (<p className="body-m">FAQ</p>),
+            label: (<p className="body-m-1">FAQ</p>),
             onClick: () => console.log('FAQ clicked')
         }
     ] satisfies DropdownOption[];
@@ -74,7 +74,7 @@ function NavBar() {
             label: (
                 <>
                     <BulgarianIcon />
-                    <p className="body-m">Bulgarian</p>
+                    <p className="body-m-1">Bulgarian</p>
                 </>),
             onClick: () => console.log('Selected Bulgarian')
         },
@@ -83,7 +83,7 @@ function NavBar() {
             label: (
                 <>
                     <EnglishIcon />
-                    <p className="body-m">English</p>
+                    <p className="body-m-1">English</p>
                 </>),
             onClick: () => console.log('Selected English')
         },
@@ -92,7 +92,7 @@ function NavBar() {
             label: (
                 <>
                     <ChineseIcon />
-                    <p className="body-m">Chinese</p>
+                    <p className="body-m-1">Chinese</p>
                 </>),
             onClick: () => console.log('Selected Chinese')
         },
@@ -101,7 +101,7 @@ function NavBar() {
             label: (
                 <>
                     <CzechIcon />
-                    <p className="body-m">Czech</p>
+                    <p className="body-m-1">Czech</p>
                 </>),
             onClick: () => console.log('Selected Czech')
         },
@@ -110,7 +110,7 @@ function NavBar() {
             label: (
                 <>
                     <DutchIcon />
-                    <p className="body-m">Dutch</p>
+                    <p className="body-m-1">Dutch</p>
                 </>),
             onClick: () => console.log('Selected Dutch')
         }
@@ -209,7 +209,7 @@ function NavBar() {
                                                     aria-label={`Connect to ${wallet.name}`}
                                                 >
                                                     {wallet.icon}
-                                                    <p className="body-m">{wallet.name}</p>
+                                                    <p className="body-m-1">{wallet.name}</p>
                                                 </li>
                                             ))}
                                         </ul>

@@ -12,6 +12,12 @@
     flex-direction: column;
 }
 
+/* ----------------------- Flex Grow ------------------------------ */
+
+.grow {
+    flex-grow: 1;
+}
+
 /* ----------------------- justify-content ------------------------------ */
 
 .justify-between {
@@ -24,18 +30,52 @@
     align-items: center;
 }
 
+/* ----------------------- Justify Self ------------------------------ */
+
+.justify-self-center {
+    justify-self: center;
+}
+
+/* ----------------------- Justify Content ------------------------------ */
+
+.justify-content-center {
+    justify-content: center;
+}
+
 /* ----------------------- gap ------------------------------ */
 
 .gap-4px {
     gap: 4px;
 }
 
+.gap-6px {
+    gap: 6px;
+}
+
 .gap-8px {
     gap: 8px;
 }
 
+.gap-12px {
+    gap: 12px;
+}
+
+.gap-16px {
+    gap: 16px;
+}
+
+.gap-20px {
+    gap: 20px;
+}
+
 .gap-24px {
     gap: 24px;
+}
+
+/* ----------------------- Padding ------------------------------ */
+
+.p-16 {
+    padding: 16px;
 }
 
 /* ----------------------- Position ------------------------------ */
@@ -46,4 +86,56 @@
 
 .absolute {
     position: absolute;
+}
+
+
+/* ----------------------- bg colors ----------------------- */
+.bg-purple-4 {
+    background: var(--purple-4);
+}
+
+/* ----------------------- text colors ----------------------- */
+
+.text-color-monochrome-1 {
+    color: var(--monochrome-1);
+}
+
+.text-color-monochrome-2 {
+    color: var(--monochrome-2);
+}
+
+.text-color-monochrome-6 {
+    color: var(--monochrome-6);
+}
+
+.text-color-pink-2 {
+    color: var(--pink-2);
+}
+
+.text-color-red-1 {
+    color: var(--red-1);
+}
+
+.text-color-beige-3 {
+    color: var(--beige-3);
+}
+
+.text-color-monochrome-7-6 {
+    color: var(--monochrome-7-6);
+}
+
+/* ----------------------- Text Align ------------------------------ */
+
+.text-center {
+    text-align: center;
+}
+
+/* ----------------------- Width ------------------------------ */
+.w-full {
+    width: 100%;
+}
+
+/* ----------------------- Overflow ------------------------------ */
+.overflow-hidden {
+    overflow: hidden;
 }

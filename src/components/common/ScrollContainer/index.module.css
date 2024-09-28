@@ -1,23 +1,12 @@
-:root {
-    --border: 2px solid var(--monochrome-8, #000);
-}
-
 .scrollContainerWrapper {
     position: relative;
-    border: var(--border);
+    border: var(--border-monochrome-10);
     background: var(--beige-9, #FFF6E8);
     overflow: hidden;
     width: min-content;
     height: min-content;
 }
 
-.customScrollHeader {
-    width: auto;
-    padding: 10px 8px 10px 16px;
-    gap: 16px;
-    border-bottom: var(--border);
-    z-index: 1;
-}
 
 .customScrollContentWrapper {;
     display: flex;
@@ -32,13 +21,13 @@
     gap: 12px;
     flex: 1 0 0;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE и старые Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none; /* IE и старые Edge */
+    scrollbar-width: none; /* Firefox */
     position: relative;
 }
 
 .customScrollContent::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari и Opera */
+    display: none; /* Chrome, Safari и Opera */
 }
 
 .customScrollBar {
@@ -52,7 +41,7 @@
     right: 0;
     margin: auto;
     height: 100%;
-    border-left: var(--border);
+    border-left: var(--border-monochrome-10);
     justify-content: space-between;
     transition: opacity var(--transition-time, 0.3s ease);
 }
@@ -70,23 +59,23 @@
     flex-direction: column;
     align-self: stretch;
     background: var(--blue-6, #3A57BC);
-    box-shadow: 0 -2px 0 0 var(--monochrome-8, #000),
-                0 2px 0 0 var(--monochrome-8, #000),
-                0 4px 0 0 var(--beige-3, #AE8C56);
+    box-shadow: 0 -2px 0 0 var(--monochrome-10, #000),
+    0 2px 0 0 var(--monochrome-10, #000),
+    0 4px 0 0 var(--beige-3, #AE8C56);
     z-index: 0;
     transition: height var(--transition-time, 0.1s ease);
 }
 
-.customScrollBarThumb path:first-child  {
+.customScrollBarThumb path:first-child {
     fill: var(--blue-5, #223C98);
 }
 
-.customScrollBarThumb path:last-child  {
+.customScrollBarThumb path:last-child {
     fill: var(--blue-8, #5577EF);
 }
 
 .customScrollButtonWrapper {
-    border-top:  var(--border);
+    border-top: var(--border-monochrome-10);
     z-index: 1;
 }
 
@@ -112,7 +101,7 @@
 
 .customScrollButton:disabled {
     background: var(--monochrome-4, #BCBCBC);
-    color: var(--monochrome-5, #BCBCBC);
+    color: var(--monochrome-7, #4D4D4D);
 }
 
 .customScrollButton svg:hover {

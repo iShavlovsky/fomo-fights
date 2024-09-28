@@ -9,7 +9,7 @@
     flex-direction: row;
     padding: 12px 16px 12px 12px;
     gap: 8px;
-    border: 2px solid var(--monochrome-8);
+    border: 2px solid var(--monochrome-10);
     border-bottom: 0;
     border-radius: 6px 6px 0 0;
     background-color: var(--monochrome-3);
@@ -31,7 +31,7 @@
 
 .tab-content {
     background-color: var(--monochrome-3);
-    border: 2px solid var(--monochrome-8);
+    border: 2px solid var(--monochrome-10);
     border-radius: 0 8px 0 0;
     position: absolute;
     transition: all 0.3s ease;

@@ -13,7 +13,14 @@ interface ScrollContainerProps {
     height: number;
 }
 
-const ScrollContainer = ({ onScroll, header, headerColor = 'head-dark-pink', children, width, height }: ScrollContainerProps) => {
+const ScrollContainer = ({
+    onScroll,
+    header,
+    headerColor = 'head-dark-pink',
+    children,
+    width,
+    height
+}: ScrollContainerProps) => {
     const [scrollPercentage, setScrollPercentage] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [isScrollable, setIsScrollable] = useState(false);
@@ -114,14 +121,19 @@ const ScrollContainer = ({ onScroll, header, headerColor = 'head-dark-pink', chi
     return (
         <div className={styles.scrollContainerWrapper} role="region" aria-label="Scroll Container">
             <header
-                className={`${styles.customScrollHeader} ${stylesHead.head} ${stylesHead[headerColor]}`}
+                className={`${stylesHead.head} ${stylesHead[headerColor]} title-w`}
                 role="banner"
                 aria-label="Container Header"
             >
                 {header}
             </header>
             <div className={styles.customScrollContentWrapper} style={{ width: `${width}px`, height: `${height}px` }}>
-                <div className={`${styles.customScrollBar} ${!isScrollable ? styles.disabled : ''}`} ref={scrollBarRef} role="scrollbar" aria-controls="scrollable-content">
+                <div
+                    className={`${styles.customScrollBar} ${!isScrollable ? styles.disabled : ''}`}
+                    ref={scrollBarRef}
+                    role="scrollbar"
+                    aria-controls="scrollable-content"
+                >
                     <div
                         className={styles.customScrollBarThumb}
                         ref={thumbRef}

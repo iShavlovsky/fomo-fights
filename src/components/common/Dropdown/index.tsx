@@ -35,7 +35,16 @@ type DropdownPropsDefault = DropdownPropsMain & {
 
 export type DropdownProps = DropdownPropsSelected | DropdownPropsDefault;
 
-function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoClose = true, position = 'right', onSelect }: DropdownProps) {
+function Dropdown({
+    selectedLabel,
+    options,
+    ddIcon,
+    ddTitle,
+    ddToggleIcon,
+    autoClose = true,
+    position = 'right',
+    onSelect
+}: DropdownProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [label, setSelectedLabel] = useState<string>(ddTitle);
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -70,7 +79,7 @@ function Dropdown({ selectedLabel, options, ddIcon, ddTitle, ddToggleIcon, autoC
                 id="dropdown-button"
             >
                 {ddIcon ? <span>{ddIcon}</span> : null}
-                <span className="body-m">{label}</span>
+                <span className="body-m-1">{label}</span>
                 {ddToggleIcon
                     ? (
                             <span
