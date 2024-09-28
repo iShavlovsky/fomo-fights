@@ -129,7 +129,7 @@ function NavBar() {
                             <li>
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => `body-m ${isActive ? 'active-link' : ''}`}
+                                    className={({ isActive }) => `${styles.mainNavLink} navbar-nav-link body-m-2 ${isActive ? 'active-link' : ''}`}
                                 >
                                     Home
                                 </NavLink>
@@ -137,7 +137,7 @@ function NavBar() {
                             <li>
                                 <NavLink
                                     to="/about"
-                                    className={({ isActive }) => `body-m ${isActive ? 'active-link' : ''}`}
+                                    className={({ isActive }) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
                                 >
                                     Staking
                                 </NavLink>
@@ -160,7 +160,7 @@ function NavBar() {
                         ))}
                     </ul>
                 </div>
-                <div className={styles.navBarLogo}>logo</div>
+                <div className={styles.navBarLogo} />
                 <div className="flex flex-row items-center gap-24px">
                     <BaseButton
                         onClick={handleModalOpen}

@@ -1,6 +1,7 @@
 .header {
     padding: 9px 0;
     background: var(--purple-4, #552CB8);
+    z-index: 30;
 }
 
 .nav {
@@ -12,6 +13,18 @@
     flex-direction: row;
     align-items: center;
     gap: 4px;
+}
+
+.main-nav-link {
+    background: transparent;
+    color: var(--monochrome-1);
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+
+    &:hover {
+        background: var(--purple-2, #25017D);
+    }
 }
 
 .nav_link {
@@ -69,12 +82,16 @@
 
 .nav-bar-logo {
     position: absolute;
+    z-index: 20;
     top: 16px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    width: 338px;
-    height: 147px;
-    background-color: #2AEB60;
+    width: 30%;
+    max-width: 338px;
+    aspect-ratio: 2/1;
+    background-image: url("src/assets/icon/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
