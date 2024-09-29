@@ -1,0 +1,49 @@
+.s1-container-w {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 135px 0;
+}
+
+.s1-h1-content-w {
+    max-width: 362px;
+    justify-self: end;
+}
+
+.s2-container-w {
+    padding-top: 188px;
+    padding-bottom: 202px;
+    background-image: url("src/assets/bg/s2-bg.webp");
+}
+
+.row-slider-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.row-slide-w {
+    padding: 16px;
+    background-color: var(--beige-7);
+    position: relative;
+    border: 8px solid var(--monochrome-10);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 278px;
+    min-width: 278px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+        border: 2px solid var(--purple-2);
+        outline: 6px solid var(--purple-5);
+    }
+}
+
+.yellow-title-bg {
+
+}

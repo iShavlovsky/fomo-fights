@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import styles from './index.module.css';
+
 import stylesHead from '@styles/baseBlock.module.css';
 import BaseButton from '@components/common/Button/baseButton.tsx';
 import Modal from '@components/common/Modal';
@@ -129,7 +131,10 @@ function HomePage() {
             </div>
             <section className="bg-purple-4">
                 <div className="container relative">
-                    <div className="flex flex-row">
+                    <div className={`${styles.s1ContainerW}`}>
+                        <div className={`${styles.s1H1ContentW}`}>
+                            <h1>FOMO Fights</h1>
+                        </div>
                         <StakingForm />
                     </div>
                     <div className="animation-w absolute">
@@ -143,6 +148,42 @@ function HomePage() {
                     </div>
                 </div>
             </section>
+
+            <section className="bg-purple-4">
+                <div className={`container ${styles.s2ContainerW}`}>
+                    <div className={`${styles.rowSliderContainer} overflow-hidden`}>
+                        <div className={`${styles.rowSlideW}`}>
+                            <h3>Title</h3>
+                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
+                        </div>
+                        <div className={`${styles.rowSlideW}`}>
+                            <h3>Title</h3>
+                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
+                        </div>
+                        <div className={`${styles.rowSlideW}`}>
+                            <h3>Title</h3>
+                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
+                        </div>
+                        <div className={`${styles.rowSlideW}`}>
+                            <h3>Title</h3>
+                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
+                        </div>
+                        <div className={`${styles.rowSlideW}`}>
+                            <h3>Title</h3>
+                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
+                        </div>
+                        <div className={`${styles.rowSlideW}`}>
+                            <h3>Title</h3>
+                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className={`${styles.yellowTitleBg}`}>
+                <div className="container">adf</div>
+            </section>
+
             <section className="mt-64">
                 <h1>HomePage</h1>
                 <div className="container" style={{ height: '500px', width: '100%' }}>
