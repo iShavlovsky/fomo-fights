@@ -14,6 +14,9 @@
     padding-top: 188px;
     padding-bottom: 202px;
     background-image: url("src/assets/bg/s2-bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .row-slider-container {
@@ -51,6 +54,7 @@
 .s3-container-w {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 24px;
     padding-top: 131px;
     padding-bottom: 131px;
@@ -78,7 +82,93 @@
 }
 
 .s3-animation-w {
+    min-width: 50%;
     background-image: url("src/assets/animation/screen2/background.png");
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.s4-container-w {
+}
+
+.s5-section {
+    background-image: url("src/assets/bg/Screen-5-bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.s5-container-w {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding-bottom: 170px;
+    padding-top: 170px;
+}
+
+.s5-features-w {
+    width: 100%;
+    max-width: 500px;
+}
+
+.s5-tokenomic-w {
+    width: 100%;
+    max-width: 517px;
+}
+
+.s5-content-w {
+    display: flex;
+    flex-direction: column;
+    border: var(--border-monochrome-10);
+    background: var(--monochrome-3);
+}
+
+.s5-title-w {
+    padding: 16px;
+    border-bottom: var(--border-monochrome-10);
+}
+
+.s5-feature-card-w {
+    display: flex;
+    border-bottom: 2px solid var(--monochrome-4);
+}
+
+.s5-list {
+    li:last-child {
+        border-bottom: none;
+    }
+}
+
+.s5-feature-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    text-align: center;
+    padding: 16px 20px;
+    min-width: 120px;
+    border-right: 2px solid var(--monochrome-4);
+}
+
+.s5-feature-card-content {
+    padding: 16px 28px 16px 20px;
+}
+
+.s5-bottom-divider-w {
+    padding: 10px;
+    border-top: var(--border-monochrome-10);
+}
+
+.s5-tokenomiks-w {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 32px;
+}
+
+.s5-tokenomiks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }

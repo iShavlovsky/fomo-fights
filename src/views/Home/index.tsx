@@ -12,10 +12,20 @@ import { Tabs } from '@components/common/Tabs';
 import StakingForm from '@components/StakingForm';
 import SoldProofFolderIcon from '@icon/About-FOMO-Fights.svg';
 import ClosedIcon from '@icon/closed-16.svg';
+import DotFoundsIcon from '@icon/dot-Funds.svg';
+import DotLiquidIcon from '@icon/dot-Liquidity.svg';
+import DotMarketingIcon from '@icon/dot-Marketing.svg';
+import DotPresaleIcon from '@icon/dot-Presale.svg';
+import DotRewardsIcon from '@icon/dot-Rewards.svg';
+import DotStakingIcon from '@icon/dot-Staking.svg';
+import EarnIcon from '@icon/Earn-while-playing.svg';
 import ETHIcon from '@icon/eth-16.svg';
 import FloppyDiskBlueIcon from '@icon/floppyDisk-blue-34.svg';
 import FloppyDiskGreenIcon from '@icon/floppyDisk-green-34.svg';
 import FloppyDiskYellowIcon from '@icon/floppyDisk-yellow-34.svg';
+import FunctionalityIcon from '@icon/Functionality.svg';
+import FundraisingIcon from '@icon/Fundraising.svg';
+import ScheduleIcon from '@icon/Schedule.svg';
 import TwitterXIcon from '@icon/twitterX-20.svg';
 import USDCIcon from '@icon/usdc-16.svg';
 import USDTIcon from '@icon/usdt-16.svg';
@@ -52,6 +62,34 @@ function HomePage() {
         { label: 'SOL', value: 'sol', icon: <USDCIcon /> }
     ];
 
+    const optionsTokenFeatures = [
+        {
+            label: 'Fundraising',
+            icon: <FundraisingIcon />,
+            text: '$FOFI will help us raise funds to bring FOMO Fights to life. Buying early supports the game and allows you to benefit from potential price increases as the game progresses.'
+        },
+        {
+            label: 'Earn while playing',
+            icon: <EarnIcon />,
+            text: 'Receive $FOFI as rewards as you advance through game levels. Once the token is listed on exchanges, convert it to other cryptocurrencies on DEXs and CEXs.'
+        },
+
+        {
+            label: 'Functionality',
+            icon: <FunctionalityIcon />,
+            text: 'Use $FOFI within the game to purchase items, skins, and unlock special features. Customize your character with hundreds of unique combinations.'
+        }
+    ];
+
+    const optionsTokenomics = [
+        { icon: <DotPresaleIcon />, label: 'Presale', value: '40%' },
+        { icon: <DotMarketingIcon />, label: 'Marketing', value: '16.5%' },
+        { icon: <DotLiquidIcon />, label: 'Liquidity', value: '14.5%' },
+        { icon: <DotStakingIcon />, label: 'Staking', value: '12%' },
+        { icon: <DotRewardsIcon />, label: 'Community rewards', value: '9.5%' },
+        { icon: <DotFoundsIcon />, label: 'Project funds', value: '7.5%' }
+    ];
+
     const tabs = [
         {
             tab: (
@@ -61,7 +99,7 @@ function HomePage() {
                 </>
             ),
             content: (
-                <div>
+                <div className="flex flex-col gap-16px">
                     <h2>About FOMO Fights</h2>
                     <p className="body-m-1">
                         In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
@@ -80,7 +118,7 @@ function HomePage() {
                 </>
             ),
             content: (
-                <div>
+                <div className="flex flex-col gap-16px">
                     <h2>About $FOFI</h2>
                     <p className="body-m-1">
                         With the $FOFI token, you’re more than just a player — you become part of the game&apos;s
@@ -99,7 +137,7 @@ function HomePage() {
                 </>
             ),
             content: (
-                <div>
+                <div className="flex flex-col gap-16px">
                     <h2>Community</h2>
                     <p className="body-m-1">
                         By holding $FOFI and joining our community on social media, you can help shape the game&apos;s
@@ -204,6 +242,67 @@ function HomePage() {
                             : (
                                     <div> Bakground </div>
                                 )}
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div className="container">
+                    <p className="h2-1">RoadMAP</p>
+                </div>
+            </section>
+
+            <section className={`${styles.s5Section}`}>
+                <div className={`container ${styles.s5ContainerW}`}>
+                    <div className={`${styles.s5ContentW}`}>
+                        <div className={`${styles.s5TitleW} ${stylesHead.head} ${stylesHead.headYellow}`}>
+                            <h2>$FOFI Token Features</h2>
+                        </div>
+                        <ul className={`${styles.s5List} grow`}>
+
+                            {
+                                optionsTokenFeatures.map((option) => (
+                                    <li className={`${styles.s5FeatureCardW}`} key={option.label}>
+                                        <div className={`${styles.s5FeatureTitle}`}>
+                                            {option.icon}
+                                            <p className="body-s-1">{option.label}</p>
+                                        </div>
+                                        <div className={`${styles.s5FeatureCardContent}`}>
+                                            <p className="body-s-1">
+                                                {option.text}
+                                            </p>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                        <div className={`${styles.s5BottomDividerW} ${stylesHead.head} ${stylesHead.headYellow}`} />
+                    </div>
+
+                    <div className={`${styles.s5ContentW}`}>
+                        <div className={`${styles.s5TitleW} ${stylesHead.head} ${stylesHead.headLightPink}`}>
+                            <h2>Tokenomics</h2>
+                        </div>
+                        <div className={`${styles.s5TokenomiksW} grow`}>
+                            <ScheduleIcon />
+                            <ul className={`${styles.s5TokenomiksList}`}>
+                                {
+                                    optionsTokenomics.map((option) => (
+                                        <li className="flex flex-row items-center gap-6px" key={option.label}>
+                                            {option.icon}
+                                            <p className="body-l-1">
+                                                {option.label}
+                                                {' '}
+                                                -
+                                                {' '}
+                                                {option.value}
+                                            </p>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        <div className={`${styles.s5BottomDividerW} ${stylesHead.head} ${stylesHead.headLightPink}`} />
                     </div>
                 </div>
             </section>
