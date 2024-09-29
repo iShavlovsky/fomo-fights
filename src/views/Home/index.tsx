@@ -36,8 +36,8 @@ const Lottie = React.lazy(() => import('lottie-react'));
 const animationsLottie = [
     () => import('@assets/animation/screen1/screen1_with_background.json'),
     () => import('@assets/animation/screen2/screen2_without_background.json'),
-    () => import('@assets/animation/screen3/screen3_steps_with_background.json'),
-    () => import('@assets/animation/screen4/screen4_with_background.json')
+    () => import('@assets/animation/screen3/screen3_steps_without_background.json'),
+    () => import('@assets/animation/screen4/screen4_without_background.json')
 ];
 
 function HomePage() {
@@ -307,15 +307,152 @@ function HomePage() {
                 </div>
             </section>
 
-            <section className="mt-64">
-                <h1>HomePage</h1>
-                <div className="container" style={{ height: '500px', width: '100%' }}>
+            <section className={`${styles.s6Section}`}>
+                <div className={`container relative ${styles.s6ContainerW}`}>
+                    <SliderCustom classNameContainer="">
+                        <div>
+                            <div
+                                className={`${stylesHead.head} ${stylesHead.headLightPink}`}
+                            >
+                                <div className={`${styles.s6SliderTitleW}`}>
+                                    <h2 className="h2-2">Step 1</h2>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="112"
+                                        height="14"
+                                        viewBox="0 0 112 14"
+                                        fill="none"
+                                    >
+                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
+                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
+                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
+                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
+                                    </svg>
+                                    <h2>Connect</h2>
+                                </div>
+
+                            </div>
+                            <div className={`${styles.s6SliderContentW}`}>
+                                <h3>Connect your wallet</h3>
+                                <p className="body-m-1">
+                                    Connect your wallet to the presale widget at the top of this page. When you click
+                                    Connect Wallet, you will see the list of the wallets we support.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                className={`${stylesHead.head} ${stylesHead.headGreen}`}
+                            >
+                                <div className={`${styles.s6SliderTitleW}`}>
+                                    <h2 className="h2-2">Step 2</h2>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="112"
+                                        height="14"
+                                        viewBox="0 0 112 14"
+                                        fill="none"
+                                    >
+                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
+                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
+                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
+                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
+                                    </svg>
+                                    <h2>Checking</h2>
+                                </div>
+
+                            </div>
+                            <div className={`${styles.s6SliderContentW}`}>
+                                <h3>Сheck your wallet</h3>
+                                <p className="body-m-1">
+                                    Make sure you have a sufficient amount of crypto (ETH, BNB, SOL, USDT) in your
+                                    wallet to cover the transaction cost and gas fees.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                className={`${stylesHead.head} ${stylesHead.headDarkBeige}`}
+                            >
+                                <div className={`${styles.s6SliderTitleW}`}>
+                                    <h2 className="h2-2">Step 3</h2>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="112"
+                                        height="14"
+                                        viewBox="0 0 112 14"
+                                        fill="none"
+                                    >
+                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
+                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
+                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
+                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
+                                    </svg>
+                                    <h2>Purchase</h2>
+                                </div>
+
+                            </div>
+                            <div className={`${styles.s6SliderContentW}`}>
+                                <h3>Purchase $FOFI</h3>
+                                <p className="body-m-1">
+                                    Select the network of your choice, input the amount, and proceed to purchase your
+                                    $FOFI.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                className={`${stylesHead.head} ${stylesHead.headPurple}`}
+                            >
+                                <div className={`${styles.s6SliderTitleW}`}>
+                                    <h2 className="h2-2">Step 31</h2>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="112"
+                                        height="14"
+                                        viewBox="0 0 112 14"
+                                        fill="none"
+                                    >
+                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
+                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
+                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
+                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
+                                    </svg>
+                                    <h2>Purchase</h2>
+                                </div>
+
+                            </div>
+                            <div className={`${styles.s6SliderContentW}`}>
+                                <h3>Purchase $FOFI</h3>
+                                <p className="body-m-1">
+                                    In the widget, select the network of your choice,
+                                    input the amount, and proceed to purchase your $FOFI.
+                                </p>
+                            </div>
+                        </div>
+                    </SliderCustom>
+
+                    <div className={`absolute ${styles.s6AnimationW}`}>
+                        {isAboveMobile && animations[2]
+                            ? (
+                                    <Lottie animationData={animations[2]} loop={true} autoplay={true} />
+                                )
+                            : (
+                                    <div> Bakground </div>
+                                )}
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.s7Section}>
+
+                <div className={`container relative ${styles.s7ContainerW}`}>
                     <ScrollContainer
                         onScroll={(e) => console.log(e)}
                         header={
                             (<h2>FAQ</h2>)
                         }
-                        height={456}
+                        height={400}
                         width={440}
                     >
                         <div>
@@ -364,196 +501,21 @@ function HomePage() {
                             </p>
                         </div>
                     </ScrollContainer>
-
+                    <div className={`absolute ${styles.s7AnimationW}`}>
+                        {isAboveMobile && animations[3]
+                            ? (
+                                    <Lottie animationData={animations[3]} loop={true} autoplay={true} />
+                                )
+                            : (
+                                    <div> Bakground </div>
+                                )}
+                    </div>
                 </div>
 
             </section>
 
             <section className="mt-64">
-                <div className="container" style={{ height: '500px', width: '1000px' }}>
-                    <SliderCustom classNameContainer="mt-24">
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headLightPink}`}
-                            >
-                                <div style={{
-                                    padding: '16px',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    gap: '12px'
-                                }}
-                                >
-                                    <h2>Step 3</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Purchase</h2>
-                                </div>
-
-                            </div>
-                            <div style={{
-                                padding: '16px',
-                                display: 'flex',
-                                gap: '8px',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                textAlign: 'left'
-                            }}
-                            >
-                                <h3>Purchase $FOFI</h3>
-                                <p className="body-m-1">
-                                    In the widget, select the network of your choice,
-                                    input the amount, and proceed to purchase your $FOFI.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headGreen}`}
-                            >
-                                <div style={{
-                                    padding: '16px',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    gap: '12px'
-                                }}
-                                >
-                                    <h2>Step 3</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Purchase</h2>
-                                </div>
-
-                            </div>
-                            <div style={{
-                                padding: '16px',
-                                display: 'flex',
-                                gap: '8px',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                textAlign: 'left'
-                            }}
-                            >
-                                <h3>Purchase $FOFI</h3>
-                                <p className="body-m-1">
-                                    In the widget, select the network of your choice,
-                                    input the amount, and proceed to purchase your $FOFI.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headDarkBeige}`}
-                            >
-                                <div style={{
-                                    padding: '16px',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    gap: '12px'
-                                }}
-                                >
-                                    <h2>Step 3</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Purchase</h2>
-                                </div>
-
-                            </div>
-                            <div style={{
-                                padding: '16px',
-                                display: 'flex',
-                                gap: '8px',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                textAlign: 'left'
-                            }}
-                            >
-                                <h3>Purchase $FOFI</h3>
-                                <p className="body-m-1">
-                                    In the widget, select the network of your choice,
-                                    input the amount, and proceed to purchase your $FOFI.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headPurple}`}
-                            >
-                                <div style={{
-                                    padding: '16px',
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    gap: '12px'
-                                }}
-                                >
-                                    <h2>Step 3</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Purchase</h2>
-                                </div>
-
-                            </div>
-                            <div style={{
-                                padding: '16px',
-                                display: 'flex',
-                                gap: '8px',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                textAlign: 'left'
-                            }}
-                            >
-                                <h3>Purchase $FOFI</h3>
-                                <p className="body-m-1">
-                                    In the widget, select the network of your choice,
-                                    input the amount, and proceed to purchase your $FOFI.
-                                </p>
-                            </div>
-                        </div>
-                    </SliderCustom>
-                </div>
+                <div className="container" style={{ height: '500px', width: '1000px' }} />
             </section>
             <section className="mt-64">
                 <div className="container" style={{ height: '500px', width: '100%' }}>
