@@ -15,7 +15,7 @@ interface TabsProps {
 
 const Tabs = ({ activeTab, onTabChange, tabs }: TabsProps) => {
     return (
-        <div>
+        <div className="flex flex-col grow">
             <ul className={styles.tabList} role="tablist">
                 {tabs.map((tabItem, index) => (
                     <li
@@ -39,7 +39,7 @@ const Tabs = ({ activeTab, onTabChange, tabs }: TabsProps) => {
                 ))}
             </ul>
 
-            <div className={styles.tabContentWrapper}>
+            <div className={`${styles.tabContentWrapper} grow`}>
                 {tabs.map((tabItem, index) => (
                     <div
                         key={index}

@@ -108,6 +108,10 @@
     color: var(--monochrome-6);
 }
 
+.text-color-blue-3 {
+    color: var(--blue-3);
+}
+
 .text-color-pink-2 {
     color: var(--pink-2);
 }

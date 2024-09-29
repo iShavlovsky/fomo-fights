@@ -10,6 +10,7 @@ import ScrollContainer from '@components/common/ScrollContainer';
 import SliderCustom from '@components/common/SliderCustom';
 import { Tabs } from '@components/common/Tabs';
 import StakingForm from '@components/StakingForm';
+import SoldProofFolderIcon from '@icon/About-FOMO-Fights.svg';
 import ClosedIcon from '@icon/closed-16.svg';
 import ETHIcon from '@icon/eth-16.svg';
 import FloppyDiskBlueIcon from '@icon/floppyDisk-blue-34.svg';
@@ -24,7 +25,7 @@ const Lottie = React.lazy(() => import('lottie-react'));
 
 const animationsLottie = [
     () => import('@assets/animation/screen1/screen1_with_background.json'),
-    () => import('@assets/animation/screen2/screen2_with_background.json'),
+    () => import('@assets/animation/screen2/screen2_without_background.json'),
     () => import('@assets/animation/screen3/screen3_steps_with_background.json'),
     () => import('@assets/animation/screen4/screen4_with_background.json')
 ];
@@ -181,7 +182,30 @@ function HomePage() {
             </section>
 
             <section className={`${styles.yellowTitleBg}`}>
-                <div className="container">adf</div>
+                <div className={`container ${styles.s3ContainerW}`}>
+                    <div className={`${styles.s3TabW}`}>
+                        <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
+                        <div className={`${styles.s3TabBottomPanel}`}>
+                            <div className={`${styles.s3TabBottomPanelTitleW}`}>
+                                <p className="body-m-2 text-color-blue-3">Audit by</p>
+                            </div>
+                            <div className="flex flex-row items-center gap-8px p-16 grow">
+                                <SoldProofFolderIcon />
+                                <p className="body-s-2">SoldProof</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={`${styles.s3AnimationW}`}>
+                        {isAboveMobile && animations[1]
+                            ? (
+                                    <Lottie animationData={animations[1]} loop={true} autoplay={true} />
+                                )
+                            : (
+                                    <div> Bakground </div>
+                                )}
+                    </div>
+                </div>
             </section>
 
             <section className="mt-64">
