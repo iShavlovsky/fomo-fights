@@ -119,7 +119,6 @@
 }
 
 p {
-    color: var(--text-color);
     font-family: var(--font-family-primary), sans-serif;
 }
 

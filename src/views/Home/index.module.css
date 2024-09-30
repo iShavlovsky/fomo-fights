@@ -27,7 +27,7 @@
 
 .row-slide-w {
     padding: 16px;
-    background-color: var(--beige-7);
+    background-color: var(--beige-9);
     position: relative;
     border: 8px solid var(--monochrome-10);
     border-radius: 8px;
@@ -88,7 +88,161 @@
     background-repeat: no-repeat;
 }
 
+.s4-section {
+    background: #020010;
+    background-image: url("src/assets/animation/roadmap/roadmap-bg.webp");
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .s4-container-w {
+    display: flex;
+    flex-direction: column;
+    gap: 148px;
+    padding-top: 169px;
+    padding-bottom: 140px;
+}
+
+.s4-title-w {
+    background-color: var(--pink-5);
+    padding: 16px;
+    border-top: var(--border-monochrome-10);
+    border-bottom: var(--border-monochrome-10);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+
+    h2:after {
+        content: 'RoadMAP RoadMAP RoadMAP RoadMAP RoadMAP';
+        position: absolute;
+        left: calc(100% + 10px);
+        text-wrap: nowrap;
+        color: var(--pink-2);
+    }
+
+    h2:before {
+        content: 'RoadMAP RoadMAP RoadMAP RoadMAP RoadMAP';
+        position: absolute;
+        right: calc(100% + 10px);
+        text-wrap: nowrap;
+        color: var(--pink-2);
+    }
+
+}
+
+.s4-row {
+    display: grid;
+    grid-template-columns: minmax(300px, min-content) minmax(300px, min-content);
+    gap: 55px;
+    padding: 0 100px;
+
+
+    &.s4-row-2 {
+        justify-content: flex-end;
+    }
+}
+
+.s4-card-line-and-planet-w {
+    position: absolute;
+    z-index: -1;
+
+    &.line-1 {
+        top: 24px;
+        right: 100%;
+
+        .s4-card-planet-1 {
+            width: 231px;
+            height: 165px;
+            background-image: url("src/assets/animation/roadmap/planet-round-1.webp");
+            top: 80%;
+            right: 10%;
+        }
+    }
+
+    &.line-2 {
+        bottom: 88px;
+        left: 80%;
+
+        .s4-card-planet-2 {
+            width: 160px;
+            height: 160px;
+            background-image: url("src/assets/animation/roadmap/planet-round-2.webp");
+            left: 35%;
+            bottom: 100%;
+        }
+    }
+
+    &.line-3 {
+        top: 24px;
+        right: 100%;
+
+        .s4-card-planet-3 {
+            width: 256px;
+            height: 256px;
+            background-image: url("src/assets/animation/roadmap/planet-round-3.webp");
+            top: 100%;
+            left: -95%;
+        }
+    }
+
+    &.line-4 {
+        top: -100px;
+        left: 209px;
+
+        .s4-card-planet-4 {
+            width: 440px;
+            height: 440px;
+            background-image: url("src/assets/animation/roadmap/planet-round-4.webp");
+            left: 45%;
+            bottom: 70%;
+        }
+    }
+}
+
+
+.s4-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+}
+
+.s4-card-title {
+    padding: 12px 24px;
+}
+
+.s4-card-content {
+    width: 100%;
+    padding: 24px 38px;
+    list-style-type: disc;
+    color: var(--monochrome-1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &.round-1 {
+        background-color: var(--purple-1);
+        border: 1px solid var(--purple-5);
+    }
+
+    &.round-2 {
+        background-color: var(--pink-1);
+        border: 1px solid var(--pink-4);
+    }
+
+    &.round-3 {
+        background-color: var(--blue-2);
+        border: 1px solid var(--blue-11);
+    }
+
+    &.round-4 {
+        background-color: var(--blue-1);
+        border: 1px solid var(--blue-7);
+    }
 }
 
 .s5-section {

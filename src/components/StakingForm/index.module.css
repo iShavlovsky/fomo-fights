@@ -29,7 +29,7 @@
     padding: 6px;
     border-radius: 6px;
 
-    &::after {
+    ::after {
         content: '';
         position: absolute;
         top: 9px;

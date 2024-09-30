@@ -94,6 +94,22 @@
     background: var(--purple-4);
 }
 
+.bg-purple-5 {
+    background: var(--purple-5);
+}
+
+.bg-pink-4 {
+    background: var(--pink-4);
+}
+
+.bg-blue-11 {
+    background: var(--blue-11);
+}
+
+.bg-blue-7 {
+    background: var(--blue-7);
+}
+
 /* ----------------------- text colors ----------------------- */
 
 .text-color-monochrome-1 {

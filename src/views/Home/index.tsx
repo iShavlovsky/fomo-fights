@@ -25,6 +25,10 @@ import FloppyDiskGreenIcon from '@icon/floppyDisk-green-34.svg';
 import FloppyDiskYellowIcon from '@icon/floppyDisk-yellow-34.svg';
 import FunctionalityIcon from '@icon/Functionality.svg';
 import FundraisingIcon from '@icon/Fundraising.svg';
+import RoadMapLine1Icon from '@icon/rodamap-line-1.svg';
+import RoadMapLine2Icon from '@icon/rodamap-line-2.svg';
+import RoadMapLine3Icon from '@icon/rodamap-line-3.svg';
+import RoadMapLine4Icon from '@icon/rodamap-line-4.svg';
 import ScheduleIcon from '@icon/Schedule.svg';
 import TwitterXIcon from '@icon/twitterX-20.svg';
 import USDCIcon from '@icon/usdc-16.svg';
@@ -246,9 +250,80 @@ function HomePage() {
                 </div>
             </section>
 
-            <section>
-                <div className="container">
-                    <p className="h2-1">RoadMAP</p>
+            <section className={`relative ${styles.s4Section}`}>
+                <div className={`container ${styles.s4ContainerW}`}>
+                    <div className={`flex flex-row justify-content-center ${styles.s4TitleW}`}>
+                        <h2 className="h2-1 relative">RoadMAP</h2>
+                    </div>
+                    <div className={`${styles.s4Row}`}>
+                        <div className={`${styles.s4Card}`}>
+
+                            <div className={`bg-purple-5 ${styles.s4CardTitle}`}>
+                                <h3 className="h2-2">Round 1</h3>
+                            </div>
+
+                            <ul className={`${styles.s4CardContent} ${styles.round1}`}>
+                                <li><p className="body-m-1">Fundraising via Presale</p></li>
+                                <li><p className="body-m-1">Contract Audit</p></li>
+                                <li><p className="body-m-1">Initial Marketing Campaign</p></li>
+                            </ul>
+                            <div className={`${styles.s4CardLineAndPlanetW} ${styles.line1}`}>
+                                <RoadMapLine1Icon />
+                                <div className={`absolute ${styles.s4CardPlanet1}`} />
+                            </div>
+                        </div>
+                        <div className={`${styles.s4Card}`}>
+
+                            <div className={`bg-pink-4 ${styles.s4CardTitle}`}>
+                                <h3 className="h2-2">Round 2</h3>
+                            </div>
+
+                            <ul className={`${styles.s4CardContent}  ${styles.round2}`}>
+                                <li><p className="body-m-1">Main Marketing Campaign</p></li>
+                                <li><p className="body-m-1">Game Testing</p></li>
+                                <li><p className="body-m-1">Beta Version Release</p></li>
+                            </ul>
+                            <div className={`${styles.s4CardLineAndPlanetW} ${styles.line2}`}>
+                                <RoadMapLine2Icon />
+                                <div className={`absolute ${styles.s4CardPlanet2}`} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`${styles.s4Row} ${styles.s4Row2}`}>
+                        <div className={`${styles.s4Card}`}>
+
+                            <div className={`bg-blue-11 ${styles.s4CardTitle}`}>
+                                <h3 className="h2-2">Round 3</h3>
+                            </div>
+
+                            <ul className={`${styles.s4CardContent}  ${styles.round3}`}>
+                                <li><p className="body-m-1">Main Marketing Campaign</p></li>
+                                <li><p className="body-m-1">Game Testing</p></li>
+                                <li><p className="body-m-1">Beta Version Release</p></li>
+                            </ul>
+                            <div className={`${styles.s4CardLineAndPlanetW} ${styles.line3}`}>
+                                <RoadMapLine3Icon />
+                                <div className={`absolute ${styles.s4CardPlanet3}`} />
+                            </div>
+                        </div>
+
+                        <div className={`${styles.s4Card}`}>
+
+                            <div className={`bg-blue-7 ${styles.s4CardTitle}`}>
+                                <h3 className="h2-2">Round 4</h3>
+                            </div>
+
+                            <ul className={`${styles.s4CardContent}  ${styles.round4}`}>
+                                <li><p className="body-m-1">Full Game Launch</p></li>
+                                <li><p className="body-m-1">Community Airdrop</p></li>
+                                <li><p className="body-m-1">$FOFI Token Listing on CEXs</p></li>
+                            </ul>
+                            <div className={`${styles.s4CardLineAndPlanetW} ${styles.line4}`}>
+                                <RoadMapLine4Icon />
+                                <div className={`absolute ${styles.s4CardPlanet4}`} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -496,8 +571,7 @@ function HomePage() {
                             <p className="body-m-1">
                                 FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
                                 where you can pick your favorite character, battle other memes,
-                                and
-                                earn rewards.
+                                and earn rewards.
                             </p>
                         </div>
                     </ScrollContainer>
@@ -512,15 +586,6 @@ function HomePage() {
                     </div>
                 </div>
 
-            </section>
-
-            <section className="mt-64">
-                <div className="container" style={{ height: '500px', width: '1000px' }} />
-            </section>
-            <section className="mt-64">
-                <div className="container" style={{ height: '500px', width: '100%' }}>
-                    <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
-                </div>
             </section>
             <section>
                 <div className="container">
@@ -564,61 +629,6 @@ function HomePage() {
                 </div>
             </section>
 
-            <section>
-                {isAboveMobile && animations[0]
-                    ? (
-                            <Lottie animationData={animations[0]} loop={true} autoplay={true} />
-                        )
-                    : (
-                            <div> Bakground </div>
-                        )}
-            </section>
-            <section>
-                {isAboveMobile && animations[1]
-                    ? (
-                            <Lottie animationData={animations[1]} loop={true} autoplay={true} />
-                        )
-                    : (
-                            <div> Bakground </div>
-                        )}
-
-            </section>
-            <section>
-                {isAboveMobile && animations[2]
-                    ? (
-                            <Lottie animationData={animations[2]} loop={true} autoplay={true} />
-                        )
-                    : (
-                            <div> Bakground </div>
-                        )}
-            </section>
-            <section>
-                {isAboveMobile && animations[3]
-                    ? (
-                            <Lottie animationData={animations[3]} loop={true} autoplay={true} />
-                        )
-                    : (
-                            <div> Bakground </div>
-                        )}
-            </section>
-            <section>
-                {isAboveMobile && animations[4]
-                    ? (
-                            <Lottie animationData={animations[4]} loop={true} autoplay={true} />
-                        )
-                    : (
-                            <div> Bakground </div>
-                        )}
-            </section>
-            <section>
-                {isAboveMobile && animations[5]
-                    ? (
-                            <Lottie animationData={animations[5]} loop={true} autoplay={true} />
-                        )
-                    : (
-                            <div> Bakground </div>
-                        )}
-            </section>
         </>
     );
 }
