@@ -2,6 +2,10 @@ import styles from './index.module.css';
 
 import stylesHead from '@styles/baseBlock.module.css';
 import BaseButton from '@components/common/Button/baseButton.tsx';
+import AutorizeWindow from '@components/StakingForm/autorizeWindow.tsx';
+import BalanceRadioBtns from '@components/StakingForm/balanceRadioBtns.tsx';
+import ErrorWindow from '@components/StakingForm/errorWindow.tsx';
+import PresaleLimit from '@components/StakingForm/presaleLimit.tsx';
 import FistIcon from '@icon/fist-20.svg';
 
 function StakingForm() {
@@ -35,31 +39,7 @@ function StakingForm() {
                         ))}
                     </div>
 
-                    <div className={`${styles.stakingFormPriceW} flex flex-col gap-8px`}>
-                        <p className="body-s-2 text-color-monochrome-1 text-center">
-                            $1000 / $1 200 000
-                        </p>
-                        <div className="flex flex-col gap-4px">
-                            <div className={`${styles.stakingFormIndicatorW} overflow-hidden`}>
-                                <div
-                                    className={`${stylesHead.head} ${stylesHead.headGreen}`}
-                                    style={{ height: '100%', width: '30%' }}
-                                />
-                            </div>
-                            <div className="flex flex-row justify-between">
-                                <p className="body-s-2 text-color-monochrome-2">
-                                    Current price:
-                                    {' '}
-                                    <span className="text-color-monochrome-1">$0.20</span>
-                                </p>
-                                <p className="body-s-2 text-color-monochrome-2">
-                                    Next price:
-                                    {' '}
-                                    <span className="text-color-red-1">$0.40</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <PresaleLimit />
 
                     <div className="flex flex-row gap-16px text-color-monochrome-6">
 
@@ -88,9 +68,8 @@ function StakingForm() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-12px">
-                    <div>
-                        <p className="h1">radio btn</p>
-                    </div>
+                    <BalanceRadioBtns />
+
                     <div className="flex flex-row gap-8px">
                         <div className="flex flex-col gap-6px grow overflow-hidden">
                             <div className="flex flex-row justify-between">
@@ -115,7 +94,22 @@ function StakingForm() {
                             />
                         </div>
                     </div>
+                    <div className={`flex flex-col gap-8px text-center ${styles.stakingFormTextInfo}`}>
+                        <p className="body-s-1">
+                            0.005 ETH is reserved for gas. The actual amount used will depend on the
+                            network.
+                        </p>
+
+                        <p className="body-xs-2 text-color-red-1">
+                            Make sure you have 0.005 ETH for gas and ETH for token exchange
+                        </p>
+                    </div>
+                    <AutorizeWindow />
+                    <ErrorWindow />
                     <BaseButton type="primary" className="w-full">connect wallet</BaseButton>
+                    <BaseButton type="secondary2" className="w-full">Buy and stake for 84%</BaseButton>
+                    <BaseButton type="secondary" className="w-full">Not enough ETH? Top up now</BaseButton>
+
                 </div>
             </div>
         </div>

@@ -124,6 +124,14 @@
     color: var(--monochrome-6);
 }
 
+.text-color-monochrome-9 {
+    color: var(--monochrome-9);
+}
+
+.text-color-monochrome-8 {
+    color: var(--monochrome-8);
+}
+
 .text-color-blue-3 {
     color: var(--blue-3);
 }

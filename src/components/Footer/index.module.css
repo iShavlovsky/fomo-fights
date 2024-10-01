@@ -26,3 +26,20 @@
     background-image: url("src/assets/icon/logo.svg");
     background-size: contain;
 }
+
+@media (width <= 1024px) {
+    .footer {
+        background-image: none;
+    }
+
+    .footer-container-w {
+        padding-top: 193px;
+        padding-bottom: 380px;
+        background-image: url("src/assets/animation/screen5/BgFooterTablet.webp");
+        background-size: cover;
+    }
+}
+
+@media (width <= 480px) {
+
+}

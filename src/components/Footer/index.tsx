@@ -19,7 +19,7 @@ const Lottie = React.lazy(() => import('lottie-react'));
 
 function Footer() {
     const { animations, isAboveMobile } = useAnimationsLoader(
-        '(min-width: 769px)',
+        '(min-width: 1025px)',
         animationsLottie
     );
 
@@ -55,7 +55,7 @@ function Footer() {
                                 <Lottie animationData={animations[0]} loop={true} autoplay={true} />
                             )
                         : (
-                                <div> Bakground </div>
+                                <div />
                             )}
                 </div>
             </div>

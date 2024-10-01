@@ -60,3 +60,41 @@
     border: var(--border-beige-5);
     color: var(--monochrome-10);
 }
+
+.staking-form-text-info {
+    padding: 0 23px;
+}
+
+.staking-form-autorize-window {
+    padding: var(--window-padding);
+    border: var(--border-beige-5);
+    background: var(--beige-7);
+    border-radius: 4px;
+}
+
+.staking-form-autorize-progress-bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--border-monochrome-10);
+    max-width: 140px;
+
+    .staking-form-autorize-progress-item:last-child {
+        border-right: none;
+    }
+}
+
+.staking-form-autorize-progress-item {
+    height: 12px;
+    width: 100%;
+    border-right: var(--border-monochrome-10);
+    transition: all var(--transition-time, 0.3s ease);
+}
+
+.staking-form-error-window {
+    padding: var(--window-padding);
+    border: var(--border-red-1);
+    background: var(--pink-6);
+    border-radius: 4px;
+}
