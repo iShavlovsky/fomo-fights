@@ -10,10 +10,12 @@ export interface SliderBarProps {
     slideTotal: number;
 }
 
-const SliderBar = ({ numberOfItems = 20, activeIndex, slideTotal }: SliderBarProps) => {
+const SliderBar = ({ numberOfItems = 9, activeIndex, slideTotal }: SliderBarProps) => {
     const activeItem = `${stylesHead.head} ${stylesHead.headPurple}`;
 
-    const itemsPerSlide = slideTotal > 0 ? Math.ceil(numberOfItems / slideTotal) : 0;
+    const barItemMultiply = Math.ceil(numberOfItems * slideTotal);
+
+    const itemsPerSlide = slideTotal > 0 ? Math.ceil(barItemMultiply / slideTotal) : 0;
 
     const filledItemsCount = useMemo(() => {
         if (itemsPerSlide === 0) return 0;
@@ -22,7 +24,7 @@ const SliderBar = ({ numberOfItems = 20, activeIndex, slideTotal }: SliderBarPro
 
     return (
         <div className={styles.sliderProgressBar}>
-            {Array.from({ length: numberOfItems }).map((_, index) => (
+            {Array.from({ length: barItemMultiply }).map((_, index) => (
                 <span
                     key={index}
                     className={`${styles.sliderProgressItem} ${(index + 1) <= filledItemsCount ? activeItem : styles.disabled}`}

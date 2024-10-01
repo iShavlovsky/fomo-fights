@@ -3,8 +3,8 @@
 }
 
 .slider-progress-bar {
+    margin: 0 10px;
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: space-between;
     border: var(--border-monochrome-10);

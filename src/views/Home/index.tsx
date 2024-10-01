@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Marquee from 'react-fast-marquee';
 
 import styles from './index.module.css';
 
@@ -193,32 +194,56 @@ function HomePage() {
             </section>
 
             <section className="bg-purple-4">
-                <div className={`container ${styles.s2ContainerW}`}>
-                    <div className={`${styles.rowSliderContainer} overflow-hidden`}>
-                        <div className={`${styles.rowSlideW}`}>
-                            <h3>Title</h3>
-                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
-                        </div>
-                        <div className={`${styles.rowSlideW}`}>
-                            <h3>Title</h3>
-                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
-                        </div>
-                        <div className={`${styles.rowSlideW}`}>
-                            <h3>Title</h3>
-                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
-                        </div>
-                        <div className={`${styles.rowSlideW}`}>
-                            <h3>Title</h3>
-                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
-                        </div>
-                        <div className={`${styles.rowSlideW}`}>
-                            <h3>Title</h3>
-                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
-                        </div>
-                        <div className={`${styles.rowSlideW}`}>
-                            <h3>Title</h3>
-                            <p className="body-s-1">FOMO Fights - The Legendary Blockchain Meme Battle</p>
-                        </div>
+                <div className="container">
+                    <div className={styles.s2ContainerW}>
+                        <Marquee
+                            className={`${styles.rowSliderContainer}`}
+                            pauseOnHover={true}
+                        >
+                            <div className={`${styles.rowSlideW}`}>
+                                <h3>Title</h3>
+                                <p className="body-s-1">
+                                    FOMO Fights - The Legendary Blockchain Meme
+                                    Battle
+                                </p>
+                            </div>
+                            <div className={`${styles.rowSlideW}`}>
+                                <h3>Title</h3>
+                                <p className="body-s-1">
+                                    FOMO Fights - The Legendary Blockchain Meme
+                                    Battle
+                                </p>
+                            </div>
+                            <div className={`${styles.rowSlideW}`}>
+                                <h3>Title</h3>
+                                <p className="body-s-1">
+                                    FOMO Fights - The Legendary Blockchain Meme
+                                    Battle
+                                </p>
+                            </div>
+                            <div className={`${styles.rowSlideW}`}>
+                                <h3>Title</h3>
+                                <p className="body-s-1">
+                                    FOMO Fights - The Legendary Blockchain Meme
+                                    Battle
+                                </p>
+                            </div>
+                            <div className={`${styles.rowSlideW}`}>
+                                <h3>Title</h3>
+                                <p className="body-s-1">
+                                    FOMO Fights - The Legendary Blockchain Meme
+                                    Battle
+                                </p>
+                            </div>
+                            <div className={`${styles.rowSlideW}`}>
+                                <h3>Title</h3>
+                                <p className="body-s-1">
+                                    FOMO Fights - The Legendary Blockchain Meme
+                                    Battle
+                                </p>
+                            </div>
+
+                        </Marquee>
                     </div>
                 </div>
             </section>
@@ -384,128 +409,108 @@ function HomePage() {
 
             <section className={`${styles.s6Section}`}>
                 <div className={`container relative ${styles.s6ContainerW}`}>
-                    <SliderCustom classNameContainer="">
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headLightPink}`}
-                            >
-                                <div className={`${styles.s6SliderTitleW}`}>
-                                    <h2 className="h2-2">Step 1</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Connect</h2>
-                                </div>
+                    <div className="max-w-full">
+                        <SliderCustom classNameContainer="">
+                            <div className={styles.s6SliderSlide}>
+                                <div
+                                    className={`${stylesHead.head} ${stylesHead.headLightPink}`}
+                                >
+                                    <div className={`${styles.s6SliderTitleW}`}>
+                                        <h2 className="h2-2">Step 1</h2>
+                                        <div className={`${styles.s6SliderTitleDivider}`}>
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </div>
+                                        <h2 className="h2-2">Connect</h2>
+                                    </div>
 
-                            </div>
-                            <div className={`${styles.s6SliderContentW}`}>
-                                <h3>Connect your wallet</h3>
-                                <p className="body-m-1">
-                                    Connect your wallet to the presale widget at the top of this page. When you click
-                                    Connect Wallet, you will see the list of the wallets we support.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headGreen}`}
-                            >
-                                <div className={`${styles.s6SliderTitleW}`}>
-                                    <h2 className="h2-2">Step 2</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Checking</h2>
                                 </div>
-
-                            </div>
-                            <div className={`${styles.s6SliderContentW}`}>
-                                <h3>Сheck your wallet</h3>
-                                <p className="body-m-1">
-                                    Make sure you have a sufficient amount of crypto (ETH, BNB, SOL, USDT) in your
-                                    wallet to cover the transaction cost and gas fees.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headDarkBeige}`}
-                            >
-                                <div className={`${styles.s6SliderTitleW}`}>
-                                    <h2 className="h2-2">Step 3</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Purchase</h2>
+                                <div className={`${styles.s6SliderContentW}`}>
+                                    <h3>Connect your wallet</h3>
+                                    <p className="body-m-1">
+                                        Connect your wallet to the presale widget at the top of this page. When you
+                                        click
+                                        Connect Wallet, you will see the list of the wallets we support.
+                                    </p>
                                 </div>
+                            </div>
+                            <div className={styles.s6SliderSlide}>
+                                <div
+                                    className={`${stylesHead.head} ${stylesHead.headGreen}`}
+                                >
+                                    <div className={`${styles.s6SliderTitleW}`}>
+                                        <h2 className="h2-2">Step 2</h2>
+                                        <div className={`${styles.s6SliderTitleDivider}`}>
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </div>
+                                        <h2 className="h2-2">Checking</h2>
+                                    </div>
 
-                            </div>
-                            <div className={`${styles.s6SliderContentW}`}>
-                                <h3>Purchase $FOFI</h3>
-                                <p className="body-m-1">
-                                    Select the network of your choice, input the amount, and proceed to purchase your
-                                    $FOFI.
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                className={`${stylesHead.head} ${stylesHead.headPurple}`}
-                            >
-                                <div className={`${styles.s6SliderTitleW}`}>
-                                    <h2 className="h2-2">Step 31</h2>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="112"
-                                        height="14"
-                                        viewBox="0 0 112 14"
-                                        fill="none"
-                                    >
-                                        <path d="M0 14H112V12H0V14Z" fill="currentColor" />
-                                        <path d="M112 0H0V2H112V0Z" fill="currentColor" />
-                                        <path d="M112 10H0V8H112V10Z" fill="currentColor" />
-                                        <path d="M112 6H0V4H112V6Z" fill="currentColor" />
-                                    </svg>
-                                    <h2>Purchase</h2>
                                 </div>
+                                <div className={`${styles.s6SliderContentW}`}>
+                                    <h3>Сheck your wallet</h3>
+                                    <p className="body-m-1">
+                                        Make sure you have a sufficient amount of crypto (ETH, BNB, SOL, USDT) in your
+                                        wallet to cover the transaction cost and gas fees.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles.s6SliderSlide}>
+                                <div
+                                    className={`${stylesHead.head} ${stylesHead.headDarkBeige}`}
+                                >
+                                    <div className={`${styles.s6SliderTitleW}`}>
+                                        <h2 className="h2-2">Step 3</h2>
+                                        <div className={`${styles.s6SliderTitleDivider}`}>
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </div>
+                                        <h2 className="h2-2">Purchase</h2>
+                                    </div>
 
+                                </div>
+                                <div className={`${styles.s6SliderContentW}`}>
+                                    <h3>Purchase $FOFI</h3>
+                                    <p className="body-m-1">
+                                        Select the network of your choice, input the amount, and proceed to purchase
+                                        your
+                                        $FOFI.
+                                    </p>
+                                </div>
                             </div>
-                            <div className={`${styles.s6SliderContentW}`}>
-                                <h3>Purchase $FOFI</h3>
-                                <p className="body-m-1">
-                                    In the widget, select the network of your choice,
-                                    input the amount, and proceed to purchase your $FOFI.
-                                </p>
+                            <div className={styles.s6SliderSlide}>
+                                <div
+                                    className={`${stylesHead.head} ${stylesHead.headPurple}`}
+                                >
+                                    <div className={`${styles.s6SliderTitleW}`}>
+                                        <h2 className="h2-2">Step 31</h2>
+                                        <div className={`${styles.s6SliderTitleDivider}`}>
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </div>
+                                        <h2 className="h2-2">Purchase</h2>
+                                    </div>
+
+                                </div>
+                                <div className={`${styles.s6SliderContentW}`}>
+                                    <h3>Purchase $FOFI</h3>
+                                    <p className="body-m-1">
+                                        In the widget, select the network of your choice,
+                                        input the amount, and proceed to purchase your $FOFI.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </SliderCustom>
+                        </SliderCustom>
+                    </div>
 
                     <div className={`absolute ${styles.s6AnimationW}`}>
                         {isAboveMobile && animations[2]
