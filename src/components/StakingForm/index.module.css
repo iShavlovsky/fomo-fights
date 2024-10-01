@@ -58,4 +58,5 @@
     padding: 8px 40px 8px 12px;
     background: var(--beige-7);
     border: var(--border-beige-5);
+    color: var(--monochrome-10);
 }

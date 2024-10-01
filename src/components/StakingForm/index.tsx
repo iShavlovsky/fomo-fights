@@ -92,7 +92,7 @@ function StakingForm() {
                         <p className="h1">radio btn</p>
                     </div>
                     <div className="flex flex-row gap-8px">
-                        <div className="flex flex-col gap-6px grow">
+                        <div className="flex flex-col gap-6px grow overflow-hidden">
                             <div className="flex flex-row justify-between">
                                 <p className="body-s-2">You Pay</p>
                                 <button className="body-xs-1 text-color-pink-2" type="button">MAX</button>
@@ -103,7 +103,7 @@ function StakingForm() {
                                 className={`${styles.stakingFormInput} body-s-2`}
                             />
                         </div>
-                        <div className="flex flex-col gap-6px grow">
+                        <div className="flex flex-col gap-6px grow overflow-hidden">
                             <div>
                                 <p className="body-s-2">You receivey</p>
 

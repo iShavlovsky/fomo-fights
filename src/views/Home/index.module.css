@@ -89,11 +89,7 @@
 }
 
 .s4-section {
-    background: #020010;
-    background-image: url("src/assets/animation/roadmap/roadmap-bg.webp");
-    background-size: auto 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #020010 url("src/assets/animation/roadmap/roadmap-bg.webp") no-repeat center;
 }
 
 .s4-container-w {
@@ -115,7 +111,7 @@
     right: 0;
     z-index: 20;
 
-    h2:after {
+    h2::after {
         content: 'RoadMAP RoadMAP RoadMAP RoadMAP RoadMAP';
         position: absolute;
         left: calc(100% + 10px);
@@ -123,7 +119,7 @@
         color: var(--pink-2);
     }
 
-    h2:before {
+    h2::before {
         content: 'RoadMAP RoadMAP RoadMAP RoadMAP RoadMAP';
         position: absolute;
         right: calc(100% + 10px);
