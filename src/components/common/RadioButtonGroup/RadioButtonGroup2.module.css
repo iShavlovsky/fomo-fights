@@ -1,17 +1,11 @@
-:root {
-    --gap: 12px;
-}
-
 .radio-button-group {
     display: flex;
-    gap: var(--gap, 12px);
-    padding: 10px;
 }
 
 .radio-button {
     align-items: center;
     background-color: var(--beige-9, #FFF6E8);
-    border-radius: 8px;
+    flex: 1;
     cursor: pointer;
     display: flex;
     gap: 6px;
@@ -38,12 +32,11 @@
 .custom-radio {
     position: absolute;
     display: inline-block;
-    height: 100%;
-    width: 100%;
+    inset: 0;
 }
 
 
-.custom-radio.checked{
+.custom-radio.checked {
     background-color: var(--beige-1, #6D5B3E);
     border-color: var(--beige-9, #FFF6E8);
 }

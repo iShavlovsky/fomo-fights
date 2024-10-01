@@ -18,7 +18,9 @@ const AutorizeWindow = () => {
                 <div
                     className={`${styles.stakingFormAutorizeProgressItem} ${stylesHead.head} ${stylesHead.headGreen}`}
                 />
-                <div className={`${styles.stakingFormAutorizeProgressItem}`} />
+                <div
+                    className={`${styles.stakingFormAutorizeProgressItem} ${stylesHead.head} ${stylesHead.headGreen}`}
+                />
                 <div className={`${styles.stakingFormAutorizeProgressItem}`} />
                 <div className={`${styles.stakingFormAutorizeProgressItem}`} />
                 <div className={`${styles.stakingFormAutorizeProgressItem}`} />

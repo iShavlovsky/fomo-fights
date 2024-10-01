@@ -2,7 +2,7 @@ import React, { type ReactNode, useCallback, useEffect, useState } from 'react';
 
 import useLifeLogger from '@/hooks/useLifeLogger.ts';
 
-import styles from './RadioButtonGroup.module.css';
+import styles from './RadioButtonGroup2.module.css';
 
 interface RadioButtonOption<T extends string | number> {
     label: string;
@@ -15,13 +15,15 @@ interface RadioButtonGroupProp<T extends string | number> {
     name: string;
     onChange: (value: T) => void;
     defaultValue?: T;
+    className?: string;
 }
 
-const RadioButtonGroup = <T extends string | number >({
+const RadioButtonGroup = <T extends string | number>({
     options,
     name,
     onChange,
-    defaultValue
+    defaultValue,
+    className
 }: RadioButtonGroupProp<T>) => {
     const [selectedValue, setSelectedValue] = useState<T>(defaultValue || options[0].value);
 
@@ -49,7 +51,7 @@ const RadioButtonGroup = <T extends string | number >({
     });
 
     return (
-        <div className={styles.radioButtonGroup}>
+        <div className={`${styles.radioButtonGroup} ${className}`}>
             {options.map((option) => (
                 <label
                     key={String(option.value)}

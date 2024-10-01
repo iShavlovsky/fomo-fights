@@ -98,3 +98,20 @@
     background: var(--pink-6);
     border-radius: 4px;
 }
+
+.staking-form-radio-btn-w {
+    border: var(--border-beige-1);
+
+
+    label {
+        border-right: var(--border-beige-1);
+    }
+
+    label:last-child {
+        border-right: none;
+    }
+}
+
+.staking-form-second-radio-btn-w {
+    border-top: var(--border-beige-1);
+}
