@@ -177,7 +177,36 @@ function HomePage() {
                 <div className="container relative">
                     <div className={`${styles.s1ContainerW}`}>
                         <div className={`${styles.s1H1ContentW}`}>
-                            <h1>FOMO Fights</h1>
+
+                            <div className={`title-w ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
+                                <h1 className="h2-1 text-center w-full">FOMO Fights</h1>
+                            </div>
+                            <div className="p-16 flex flex-col gap-12px bg-beige-9">
+                                <h2 className="h2-3">
+                                    The Legendary Blockchain Meme Battle
+                                </h2>
+                                <p className="body-m-1">
+                                    FOMO Fights is a Web3 Play-to-Earn multiplayer game where
+                                    memecoin characters clash for the ultimate meme supremacy.
+                                    {' '}
+                                </p>
+                                <div className={`${styles.s1DdInfoW}`}>
+                                    <div>
+                                        <div>
+                                            <div>ico</div>
+                                            <h3 className="body-m-1">$FOFI tokens</h3>
+                                        </div>
+                                        <div>
+                                            <p className="body-s-1 text-color-monochrome-7">
+                                                Don’t miss your chance to get ahead by securing $FOFI tokens during this
+                                                exclusive Presale offer. Join us in bringing the game to life and start
+                                                earning rewards today.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <StakingForm />
                     </div>
@@ -462,7 +491,7 @@ function HomePage() {
                             </div>
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headDarkBeige}`}
+                                    className={`${stylesHead.head} ${stylesHead.headDarkBeige4}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 3</h2>

@@ -30,10 +30,16 @@
     pointer-events: none;
 }
 
-.head-dark-beige {
+.head-dark-beige-4 {
     --border-color-right-left: var(--beige-2, #967E5A);
     --background-color: var(--beige-4, #CFB388);
     --shadow-color: var(--beige-6, #EAD1AA);
+}
+
+.head-dark-beige-6 {
+    --border-color-right-left: var(--beige-3, #AE8C56);
+    --background-color: var(--beige-6, #EAD1AA);
+    --shadow-color: #FFF6E8;
 }
 
 .head-purple {

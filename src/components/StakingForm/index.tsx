@@ -19,9 +19,11 @@ function StakingForm() {
     return (
         <div className={`${styles.stakingFormW}`}>
             <div className={`${stylesHead.head} ${stylesHead.headPurple} title-w`}>
-                <div className="w-full">
-                    <h2 className="text-center text-uppercase text-color-monochrome-1">The Presale is open!</h2>
-                </div>
+
+                <h2 className="w-full h2-1 text-center text-uppercase text-color-monochrome-1">
+                    The Presale is open!
+                </h2>
+
             </div>
             <div className="p-16 flex flex-col gap-20px">
                 <div className="flex flex-col gap-16px">

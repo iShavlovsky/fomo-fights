@@ -75,7 +75,15 @@
     text-transform: uppercase;
 }
 
-.h2-1, h2 {
+h2 {
+    font-family: var(--font-family-secondary), sans-serif;
+    font-size: var(--font-size-h2);
+    font-weight: bold;
+    letter-spacing: var(--letter-spacing-0);
+    line-height: 100%;
+}
+
+.h2-1 {
     font-family: var(--font-family-secondary), sans-serif;
     font-size: var(--font-size-h2);
     font-weight: bold;
@@ -95,7 +103,7 @@
 
 .h2-3 {
     font-family: var(--font-family-primary), sans-serif;
-    font-size: var(--font-size-h2);
+    font-size: var(--font-size-h2-3);
     font-weight: bold;
     letter-spacing: var(--letter-spacing-0);
     line-height: 130%;

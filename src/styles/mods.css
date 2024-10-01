@@ -90,6 +90,11 @@
 
 
 /* ----------------------- bg colors ----------------------- */
+.bg-beige-9 {
+    background: var(--beige-9);
+}
+
+
 .bg-purple-4 {
     background: var(--purple-4);
 }
@@ -122,6 +127,10 @@
 
 .text-color-monochrome-6 {
     color: var(--monochrome-6);
+}
+
+.text-color-monochrome-7 {
+    color: var(--monochrome-7);
 }
 
 .text-color-monochrome-9 {
