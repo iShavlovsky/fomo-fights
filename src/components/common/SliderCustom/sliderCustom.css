@@ -1,10 +1,19 @@
-.slick-slide {
-    margin-right: 10px;
-    max-width: 326px;
-    overflow: hidden;
-    border: 2px solid black;
+.container-slider {
+    max-width: 1018px;
+    padding: 0 42px;
+    position: relative;
 }
 
-.slick-slide:last-child {
-    margin-right: 0;
+.custom-btn-slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    display: flex;
+    place-content: center center;
+    align-items: center;
+}
+
+.slick-slide {
+    padding-right: 20px;
 }
