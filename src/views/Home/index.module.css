@@ -346,7 +346,7 @@
     z-index: -1;
 }
 
-.s6-slider-slide{
+.s6-slider-slide {
     border: 2px solid black;
 }
 
@@ -356,7 +356,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    white-space:nowrap;
+    white-space: nowrap;
     width: 100%;
 }
 
@@ -369,7 +369,7 @@
     width: 100%;
 }
 
-.s6-slider-title-divider span  {
+.s6-slider-title-divider span {
     background-color: var(--border-color-right-left, #000);
     width: 100%;
     padding: 1px;
@@ -382,6 +382,8 @@
     gap: 8px;
     flex-direction: column;
     background-color: var(--monochrome-1);
+    border-top: var(--border-monochrome-10);
+    min-height: 200px;
 }
 
 .s7-section {

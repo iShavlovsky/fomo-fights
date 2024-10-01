@@ -1,6 +1,6 @@
 .container-slider {
-    max-width: 1018px;
-    padding: 0 42px;
+    width: 100%;
+    max-width: 1038px;
     position: relative;
 }
 
@@ -12,8 +12,9 @@
     display: flex;
     place-content: center center;
     align-items: center;
+    padding: 16px;
 }
 
 .slick-slide {
-    padding-right: 20px;
+    padding: 0 10px;
 }

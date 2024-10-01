@@ -409,7 +409,7 @@ function HomePage() {
 
             <section className={`${styles.s6Section}`}>
                 <div className={`container relative ${styles.s6ContainerW}`}>
-                    <div>
+                    <div className="max-w-full">
                         <SliderCustom classNameContainer="">
                             <div className={styles.s6SliderSlide}>
                                 <div
@@ -423,19 +423,20 @@ function HomePage() {
                                             <span />
                                             <span />
                                         </div>
-                                        <h2>Connect</h2>
+                                        <h2 className="h2-2">Connect</h2>
                                     </div>
 
                                 </div>
                                 <div className={`${styles.s6SliderContentW}`}>
                                     <h3>Connect your wallet</h3>
                                     <p className="body-m-1">
-                                        Connect your wallet to the presale widget at the top of this page. When you click
+                                        Connect your wallet to the presale widget at the top of this page. When you
+                                        click
                                         Connect Wallet, you will see the list of the wallets we support.
                                     </p>
                                 </div>
                             </div>
-                            <div>
+                            <div className={styles.s6SliderSlide}>
                                 <div
                                     className={`${stylesHead.head} ${stylesHead.headGreen}`}
                                 >
@@ -447,7 +448,7 @@ function HomePage() {
                                             <span />
                                             <span />
                                         </div>
-                                        <h2>Checking</h2>
+                                        <h2 className="h2-2">Checking</h2>
                                     </div>
 
                                 </div>
@@ -459,7 +460,7 @@ function HomePage() {
                                     </p>
                                 </div>
                             </div>
-                            <div>
+                            <div className={styles.s6SliderSlide}>
                                 <div
                                     className={`${stylesHead.head} ${stylesHead.headDarkBeige}`}
                                 >
@@ -471,19 +472,20 @@ function HomePage() {
                                             <span />
                                             <span />
                                         </div>
-                                        <h2>Purchase</h2>
+                                        <h2 className="h2-2">Purchase</h2>
                                     </div>
 
                                 </div>
                                 <div className={`${styles.s6SliderContentW}`}>
                                     <h3>Purchase $FOFI</h3>
                                     <p className="body-m-1">
-                                        Select the network of your choice, input the amount, and proceed to purchase your
+                                        Select the network of your choice, input the amount, and proceed to purchase
+                                        your
                                         $FOFI.
                                     </p>
                                 </div>
                             </div>
-                            <div>
+                            <div className={styles.s6SliderSlide}>
                                 <div
                                     className={`${stylesHead.head} ${stylesHead.headPurple}`}
                                 >
@@ -495,7 +497,7 @@ function HomePage() {
                                             <span />
                                             <span />
                                         </div>
-                                        <h2>Purchase</h2>
+                                        <h2 className="h2-2">Purchase</h2>
                                     </div>
 
                                 </div>

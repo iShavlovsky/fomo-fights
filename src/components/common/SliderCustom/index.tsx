@@ -11,37 +11,37 @@ const settingsSliderDefault = {
     lazyLoad: 'progressive',
     arrows: false,
     slidesToShow: 3,
-    slidesToScroll: 1
-    // responsive: [
-    //     {
-    //         breakpoint: 1024,
-    //         settings: {
-    //             slidesToShow: 3,
-    //             slidesToScroll: 3
-    //         }
-    //     },
-    //     {
-    //         breakpoint: 600,
-    //         settings: {
-    //             slidesToShow: 2,
-    //             slidesToScroll: 2,
-    //             initialSlide: 2
-    //         }
-    //     },
-    //     {
-    //         breakpoint: 480,
-    //         settings: {
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1
-    //         }
-    //     }
-    // ]
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1025,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 } satisfies SettingsSlider;
 
 type SliderBarPropsCustom = Omit<SliderBarProps, 'activeIndex' | 'slideTotal'>;
 
 const settingsBarDefault = {
-    numberOfItems: 20
+    numberOfItems: 9
 } satisfies SliderBarPropsCustom;
 
 interface SliderCustomProps {
@@ -90,7 +90,7 @@ const SliderCustom = ({
             <div className={`${classNameContainer} container-slider`}>
 
                 <div
-                    style={{ left: '-16px' }}
+                    style={{ right: '100%' }}
                     className="custom-btn-slider"
                     onClick={previous}
                 >
@@ -136,7 +136,7 @@ const SliderCustom = ({
                 <div
                     className="custom-btn-slider"
                     style={{
-                        right: '-16px',
+                        left: '100%',
                         transformOrigin: 'center',
                         transform: 'rotate(180deg)'
                     }}
