@@ -3,7 +3,7 @@
     border: var(--border-monochrome-10);
     background: var(--beige-9, #FFF6E8);
     overflow: hidden;
-    width: min-content;
+    width: auto;
     height: min-content;
 }
 
@@ -11,6 +11,8 @@
 .customScrollContentWrapper {;
     display: flex;
     flex-direction: row-reverse;
+    max-width: 440px;
+    width: 100%;
 }
 
 .customScrollContent {
@@ -119,4 +121,5 @@
 .customScrollButton:last-child {
     border-top: 1px solid var(--beige-4, #CFB388);
 }
+
 

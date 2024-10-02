@@ -386,7 +386,7 @@ function HomePage() {
                 <div className={`container ${styles.s5ContainerW}`}>
                     <div className={`${styles.s5ContentW}`}>
                         <div className={`${styles.s5TitleW} ${stylesHead.head} ${stylesHead.headYellow}`}>
-                            <h2>$FOFI Token Features</h2>
+                            <h2 className="h2-1">$FOFI Token Features</h2>
                         </div>
                         <ul className={`${styles.s5List} grow`}>
 
@@ -398,7 +398,7 @@ function HomePage() {
                                             <p className="body-s-1">{option.label}</p>
                                         </div>
                                         <div className={`${styles.s5FeatureCardContent}`}>
-                                            <p className="body-s-1">
+                                            <p className="body-s-2 text-color-monochrome-8">
                                                 {option.text}
                                             </p>
                                         </div>
@@ -411,7 +411,7 @@ function HomePage() {
 
                     <div className={`${styles.s5ContentW}`}>
                         <div className={`${styles.s5TitleW} ${stylesHead.head} ${stylesHead.headLightPink}`}>
-                            <h2>Tokenomics</h2>
+                            <h2 className="h2-1">Tokenomics</h2>
                         </div>
                         <div className={`${styles.s5TokenomiksW} grow`}>
                             <ScheduleIcon />
@@ -563,7 +563,6 @@ function HomePage() {
                             (<h2>FAQ</h2>)
                         }
                         height={400}
-                        width={440}
                     >
                         <div>
                             <h3>What is FOMO Fights?</h3>

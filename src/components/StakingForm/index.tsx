@@ -27,7 +27,7 @@ function StakingForm() {
             </div>
             <div className="p-16 flex flex-col gap-20px">
                 <div className="flex flex-col gap-16px">
-                    <div className={`${styles.stakingFormTimerCollectionsW} flex flex-row justify-content-center`}>
+                    <div className={`flex flex-row justify-content-center ${styles.stakingFormTimerCollectionsW}`}>
                         {timeData.map((time, index) => (
                             <div
                                 key={index}

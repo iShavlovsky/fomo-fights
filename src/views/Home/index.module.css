@@ -531,4 +531,98 @@
 /* Mobile styles */
 @media (width <= 767px) {
 
+    .s1-container-w {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 16px;
+
+        padding-bottom: 60vw;
+    }
+
+    .s1-h1-content-w {
+        max-width: 400px;
+        place-self: center;
+    }
+
+    .s1-animation-w {
+        background-color: #798BD4;
+        background-image: url("src/assets/animation/screen1/tablet/moon.webp"),
+        url("src/assets/animation/screen1/mobile/characters.webp"),
+        url("src/assets/animation/screen1/mobile/sky.webp");
+        background-size: 112px 112px, 100% auto, 100% auto;
+        background-position: -20px 10px, bottom, bottom;
+        background-repeat: no-repeat;
+    }
+
+    .s3-container-w {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .s4-section {
+        background: url("src/assets/animation/roadmap/mobile/roadmap-mobile.webp");
+        background-size: cover;
+        background-position: top;
+    }
+
+    .s4-container-w {
+        gap: 24px;
+
+    }
+
+    .s4-row {
+        grid-template-columns: 1fr;
+        padding: 0 38px;
+    }
+
+    .s5-section {
+        background-image: url("src/assets/bg/screen-5-bg-mobile.webp");
+    }
+
+    .s5-title-w {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .s5-feature-card-w {
+        flex-direction: column;
+    }
+
+    .s5-feature-title {
+        padding: 20px 20px 6px 20px;
+        min-width: auto;
+        border-right: none;
+    }
+
+    .s5-feature-card-content {
+        padding: 6px 20px 16px 20px;
+        text-align: center;
+    }
+
+    .s5-tokenomiks-w {
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    .s6-section {
+        background-image: url("src/assets/animation/screen3/mobile/BgSteps-mobile.webp");
+    }
+
+    .s6-container-w {
+        padding-bottom: 120vw;
+    }
+
+    .s7-animation-w {
+        background-image: url("src/assets/animation/screen4/mobile/FAQ-mobile.webp");
+    }
+
+    .s7-container-w {
+        padding-top: 48px;
+        padding-bottom: 94vw;
+    }
 }

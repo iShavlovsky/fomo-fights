@@ -41,5 +41,9 @@
 }
 
 @media (width <= 767px) {
-
+    .footer-container-w {
+        padding-top: 30vw;
+        padding-bottom: 140vw;
+        background-image: url("src/assets/animation/screen5/BgFooterMobile.webp");
+    }
 }

@@ -9,7 +9,6 @@ interface ScrollContainerProps {
     header: ReactNode;
     headerColor?: 'head-dark-beige' | 'head-purple' | 'head-dark-pink' | 'head-light-pink' | 'head-green' | 'head-yellow';
     children: ReactNode;
-    width: number;
     height: number;
 }
 
@@ -18,7 +17,6 @@ const ScrollContainer = ({
     header,
     headerColor = 'head-dark-pink',
     children,
-    width,
     height
 }: ScrollContainerProps) => {
     const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -127,7 +125,7 @@ const ScrollContainer = ({
             >
                 {header}
             </header>
-            <div className={styles.customScrollContentWrapper} style={{ width: `${width}px`, height: `${height}px` }}>
+            <div className={styles.customScrollContentWrapper} style={{ height: `${height}px` }}>
                 <div
                     className={`${styles.customScrollBar} ${!isScrollable ? styles.disabled : ''}`}
                     ref={scrollBarRef}

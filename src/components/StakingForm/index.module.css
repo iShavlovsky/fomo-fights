@@ -5,31 +5,21 @@
     background: var(--beige-9);
 }
 
-.staking-form-timer-collections-w {
-    .staking-form-timer-w:last-child {
-        margin-right: 0;
-
-        .staking-form-timer-count {
-            &::after {
-                display: none;
-            }
-        }
-    }
-
-}
 
 .staking-form-timer-w {
     margin-right: 16px;
+    flex: 1;
+    max-width: 64px;
 }
 
 .staking-form-timer-count {
-    width: 64px;
+    width: 100%;
     background-color: var(--monochrome-1);
     border: 2px solid var(--beige-3);
     padding: 6px;
     border-radius: 6px;
 
-    ::after {
+    &::after {
         content: '';
         position: absolute;
         top: 9px;
@@ -38,6 +28,19 @@
         display: block;
         height: 16px;
         aspect-ratio: 1/1;
+    }
+}
+
+.staking-form-timer-collections-w {
+
+    .staking-form-timer-w:last-child {
+        margin-right: 0;
+
+        .staking-form-timer-count {
+            &::after {
+                display: none;
+            }
+        }
     }
 }
 
@@ -114,4 +117,10 @@
 
 .staking-form-second-radio-btn-w {
     border-top: var(--border-beige-1);
+}
+
+@media (width <= 767px) {
+    .staking-form-timer-w {
+        max-width: 53px;
+    }
 }

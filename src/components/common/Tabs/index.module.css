@@ -48,3 +48,18 @@
     visibility: visible;
     z-index: 1;
 }
+
+@media (width <= 767px) {
+    .tab {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .tab-content {
+        border-radius: 0;
+        visibility: hidden;
+        padding: 24px 16px;
+    }
+}
