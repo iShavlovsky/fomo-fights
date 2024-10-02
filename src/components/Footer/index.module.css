@@ -1,6 +1,6 @@
 .footer {
     background-image: url("src/assets/animation/screen5/footer-bg.webp");
-    background-size: auto 100%;
+    background-size: auto 102%;
     background-position: bottom;
 }
 
@@ -9,7 +9,7 @@
     padding-bottom: 325px;
     background-image: url("src/assets/animation/screen5/footer-bg.webp");
     z-index: 1;
-    background-size: 129%;
+    background-size: 127% auto;
     background-repeat: no-repeat;
     background-position: bottom;
 }
@@ -25,6 +25,13 @@
     height: 102px;
     background-image: url("src/assets/icon/logo.svg");
     background-size: contain;
+}
+
+@media (width <= 1440px) {
+    .footer-container-w {
+        padding-top: 15vw;
+        padding-bottom: 20vw;
+    }
 }
 
 @media (width <= 1024px) {
