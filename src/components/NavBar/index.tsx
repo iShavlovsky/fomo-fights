@@ -121,8 +121,8 @@ function NavBar() {
     };
 
     return (
-        <header className={styles.header} role="banner" aria-label="Main navigation">
-            <div className="container flex flex-row justify-between">
+        <header className={`relative ${styles.header}`} role="banner" aria-label="Main navigation">
+            <div className={`container flex flex-row justify-between relative ${styles.navbarContainerW}`}>
                 <div className="flex flex-row gap-24px">
                     <nav className={styles.nav} aria-label="Primary">
                         <ul className={styles.nav_ul} role="list">
@@ -227,7 +227,7 @@ function NavBar() {
 
                     </div>
                 </div>
-
+                <div className={`${styles.navBarBottomLine}`} />
             </div>
 
         </header>

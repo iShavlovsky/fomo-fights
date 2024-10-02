@@ -1,5 +1,5 @@
 .container-slider {
-    width: 100%;
+    width: auto;
     max-width: 1038px;
     position: relative;
 }
@@ -12,9 +12,15 @@
     display: flex;
     place-content: center center;
     align-items: center;
-    padding: 16px;
+    padding: 6px;
 }
 
 .slick-slide {
     padding: 0 10px;
+}
+
+@media (width <= 1024px) {
+    .container-slider {
+        margin: 0 40px;
+    }
 }

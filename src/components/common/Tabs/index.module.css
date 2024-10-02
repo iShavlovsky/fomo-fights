@@ -44,7 +44,6 @@
 }
 
 .tab-content.active {
-    position: relative;
     opacity: 1;
     visibility: visible;
     z-index: 1;

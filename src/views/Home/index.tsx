@@ -39,10 +39,10 @@ import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
 const Lottie = React.lazy(() => import('lottie-react'));
 
 const animationsLottie = [
-    () => import('@assets/animation/screen1/screen1_with_background.json'),
-    () => import('@assets/animation/screen2/screen2_without_background.json'),
-    () => import('@assets/animation/screen3/screen3_steps_without_background.json'),
-    () => import('@assets/animation/screen4/screen4_without_background.json')
+    () => import('@assets/animation/screen1/screen1.json'),
+    () => import('@assets/animation/screen2/screen2.json'),
+    () => import('@assets/animation/screen3/screen3.json'),
+    () => import('@assets/animation/screen4/screen4.json')
 ];
 
 function HomePage() {
@@ -58,7 +58,7 @@ function HomePage() {
     };
 
     const { animations, isAboveMobile } = useAnimationsLoader(
-        '(min-width: 769px)',
+        '(min-width: 1025px)',
         animationsLottie);
 
     const options = [
@@ -176,6 +176,7 @@ function HomePage() {
             <section className="bg-purple-4">
                 <div className="container relative">
                     <div className={`${styles.s1ContainerW}`}>
+
                         <div className={`${styles.s1H1ContentW}`}>
 
                             <div className={`title-w ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
@@ -210,13 +211,13 @@ function HomePage() {
                         </div>
                         <StakingForm />
                     </div>
-                    <div className="animation-w absolute">
+                    <div className={`absolute ${styles.s1AnimationW}`}>
                         {isAboveMobile && animations[0]
                             ? (
                                     <Lottie animationData={animations[0]} loop={true} autoplay={true} />
                                 )
                             : (
-                                    <div> Bakground </div>
+                                    <div />
                                 )}
                     </div>
                 </div>
@@ -298,7 +299,7 @@ function HomePage() {
                                     <Lottie animationData={animations[1]} loop={true} autoplay={true} />
                                 )
                             : (
-                                    <div> Bakground </div>
+                                    <div />
                                 )}
                     </div>
                 </div>
@@ -547,7 +548,7 @@ function HomePage() {
                                     <Lottie animationData={animations[2]} loop={true} autoplay={true} />
                                 )
                             : (
-                                    <div> Bakground </div>
+                                    <div />
                                 )}
                     </div>
                 </div>
@@ -615,7 +616,7 @@ function HomePage() {
                                     <Lottie animationData={animations[3]} loop={true} autoplay={true} />
                                 )
                             : (
-                                    <div> Bakground </div>
+                                    <div />
                                 )}
                     </div>
                 </div>

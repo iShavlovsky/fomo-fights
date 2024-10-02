@@ -216,7 +216,7 @@ section {
 }
 
 /* Mobile styles */
-@media (width <= 480px) {
+@media (width <= 767px) {
     .container {
         padding: 0 20px;
     }

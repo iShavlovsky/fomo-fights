@@ -12,7 +12,7 @@ import TwitterXIcon from '@icon/twitterX-20.svg';
 import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
 
 const animationsLottie = [
-    () => import('@assets/animation/screen5/footer_without_background.json')
+    () => import('@assets/animation/screen5/screen6.json')
 ];
 
 const Lottie = React.lazy(() => import('lottie-react'));

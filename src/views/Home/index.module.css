@@ -2,7 +2,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    padding: 135px 0;
+    padding-top: 105px;
+    padding-bottom: 137px;
+}
+
+.s1-animation-w {
+    inset: 0;
+    background-image: url("src/assets/animation/screen1/bg-hero.webp");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 .s1-h1-content-w {
@@ -70,6 +83,7 @@
 .s3-tab-w {
     display: flex;
     flex-direction: column;
+    min-height: 460px;
     width: 100%;
     max-width: 504px;
 }
@@ -90,9 +104,10 @@
 
 .s3-animation-w {
     min-width: 50%;
-    background-image: url("src/assets/animation/screen2/background.png");
+    background-image: url("src/assets/animation/screen2/phone.webp");
     background-size: contain;
     background-repeat: no-repeat;
+
 }
 
 .s4-section {
@@ -225,6 +240,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+    flex: 1;
 
     &.round-1 {
         background-color: var(--purple-1);
@@ -330,10 +346,10 @@
 }
 
 .s6-section {
-    background-image: url("src/assets/bg/s6-bg.webp");
+    background-image: url("src/assets/animation/screen3/s6-bg.webp");
     background-color: var(--blue-10);
-    background-size: auto 92.5%;
-    background-repeat: no-repeat;
+    background-size: auto;
+    background-repeat: repeat-x;
     background-position: bottom;
 }
 
@@ -398,14 +414,121 @@
 }
 
 .s7-container-w {
-    padding-top: 127px;
+    padding-top: 170px;
     padding-bottom: 217px;
     display: flex;
     justify-content: center;
 }
 
 .s7-animation-w {
-    background-image: url("src/assets/animation/screen4/background.png");
+    background-image: url("src/assets/animation/screen4/s4-bg-head.webp"),
+    url("src/assets/animation/screen4/s4-bg.webp");
+    background-size: 100% auto, 100% auto;
+    background-position: top, bottom;
+    background-repeat: no-repeat, no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     inset: 0;
     z-index: -1;
+}
+
+
+@media (width <= 1440px) {
+    .s6-section {
+        background-size: 165%;
+    }
+
+    .s6-container-w {
+        padding-bottom: 35vw;
+    }
+}
+
+/* Tablet styles */
+
+@media (width <= 1024px) {
+    .s1-container-w {
+        padding-bottom: 50vw;
+    }
+
+    .s1-animation-w {
+        background-color: #798BD4;
+        background-image: url("src/assets/animation/screen1/tablet/moon.webp"),
+        url("src/assets/animation/screen1/tablet/characters.webp"),
+        url("src/assets/animation/screen1/tablet/sky.webp");
+        background-size: 112px 112px, 100% auto, 100% auto;
+        background-position: 60px -60px, bottom, bottom;
+        background-repeat: no-repeat;
+    }
+
+    .s3-tab-w {
+        min-height: 490px;
+    }
+
+    .s3-animation-w {
+        height: 480px;
+        min-width: 276px;
+        background-image: url("src/assets/animation/screen2/tablet/phone.webp");
+        margin: auto;
+    }
+
+    .s4-section {
+        background: url("src/assets/animation/roadmap/tablet/roadmap-tablet.webp");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .s4-container-w {
+        gap: 32px;
+        padding: 25vw 0;
+    }
+
+    .s4-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding: 0 26px;
+    }
+
+    .s4-card-line-and-planet-w {
+        display: none;
+    }
+
+    .s5-section {
+        background-image: url("src/assets/bg/screen-5-bg-tablet.webp");
+    }
+
+    .s5-container-w {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: 16px;
+        padding-bottom: 20vw;
+        padding-top: 20vw;
+    }
+
+    .s6-section {
+        background-image: url("src/assets/animation/screen3/tablet/BgSteps.webp");
+        background-size: cover;
+    }
+
+    .s6-container-w {
+        padding-top: 126px;
+        padding-bottom: 60vw;
+    }
+
+    .s7-animation-w {
+        background-image: url("src/assets/animation/screen4/tablet/FAQ.webp");
+        background-size: cover;
+        background-position: bottom;
+    }
+
+    .s7-container-w {
+        padding-top: 146px;
+        padding-bottom: 60vw;
+    }
+
+}
+
+/* Mobile styles */
+@media (width <= 767px) {
+
 }
