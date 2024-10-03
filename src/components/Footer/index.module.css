@@ -1,5 +1,5 @@
 .footer {
-    background-image: url("src/assets/animation/screen5/footer-bg.webp");
+    background-image: url("@assets/animation/screen5/footer-bg.webp");
     background-size: auto 102%;
     background-position: bottom;
 }
@@ -7,7 +7,7 @@
 .footer-container-w {
     padding-top: 233px;
     padding-bottom: 325px;
-    background-image: url("src/assets/animation/screen5/footer-bg.webp");
+    background-image: url("@assets/animation/screen5/footer-bg.webp");
     z-index: 1;
     background-size: 127% auto;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 .footer-logo {
     width: 236px;
     height: 102px;
-    background-image: url("src/assets/icon/logo.svg");
+    background-image: url("@assets/icon/logo.svg");
     background-size: contain;
 }
 
@@ -42,7 +42,7 @@
     .footer-container-w {
         padding-top: 193px;
         padding-bottom: 380px;
-        background-image: url("src/assets/animation/screen5/BgFooterTablet.webp");
+        background-image: url("@assets/animation/screen5/BgFooterTablet.webp");
         background-size: cover;
     }
 }
@@ -51,6 +51,6 @@
     .footer-container-w {
         padding-top: 30vw;
         padding-bottom: 140vw;
-        background-image: url("src/assets/animation/screen5/BgFooterMobile.webp");
+        background-image: url("@assets/animation/screen5/BgFooterMobile.webp");
     }
 }

@@ -24,7 +24,7 @@
         position: absolute;
         top: 9px;
         left: calc(100% + 2px);
-        background-image: url("src/assets/icon/timer-divider.svg");
+        background-image: url("@assets/icon/timer-divider.svg");
         display: block;
         height: 16px;
         aspect-ratio: 1/1;

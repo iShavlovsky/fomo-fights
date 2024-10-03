@@ -9,6 +9,9 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
     build: {
         minify: 'esbuild',
+        commonjsOptions: {
+            transformMixedEsModules: true
+        },
         rollupOptions: {
             output: {
                 manualChunks(id) {
@@ -40,10 +43,12 @@ export default defineConfig({
             }
         }
     },
+    assetsInclude: ['**/*.webp', '**/*.png', '**/*.woff2', '**/*.jpeg'],
     plugins: [
         react(),
         svgr({
             include: '**/*.svg',
+            exclude: '**/*.svg?bg',
             svgrOptions: {
                 plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
                 svgoConfig: {

@@ -8,7 +8,7 @@
 
 .s1-animation-w {
     inset: 0;
-    background-image: url("src/assets/animation/screen1/bg-hero.webp");
+    background-image: url("@assets/animation/screen1/bg-hero.webp");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -33,7 +33,7 @@
 .s2-container-w {
     padding-top: 188px;
     padding-bottom: 202px;
-    background-image: url("src/assets/bg/s2-bg.webp");
+    background-image: url("@assets/bg/s2-bg.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -68,7 +68,7 @@
 }
 
 .yellow-title-bg {
-    background-image: url("src/assets/bg/yellow-bg.svg");
+    background-image: url("@assets/bg/yellow-bg.svg");
 }
 
 .s3-container-w {
@@ -104,14 +104,14 @@
 
 .s3-animation-w {
     min-width: 50%;
-    background-image: url("src/assets/animation/screen2/phone.webp");
+    background-image: url("@assets/animation/screen2/phone.webp");
     background-size: contain;
     background-repeat: no-repeat;
 
 }
 
 .s4-section {
-    background: #020010 url("src/assets/animation/roadmap/roadmap-bg.webp") no-repeat center;
+    background: #020010 url("@assets/animation/roadmap/roadmap-bg.webp") no-repeat center;
 }
 
 .s4-container-w {
@@ -173,7 +173,7 @@
         .s4-card-planet-1 {
             width: 231px;
             height: 165px;
-            background-image: url("src/assets/animation/roadmap/planet-round-1.webp");
+            background-image: url("@assets/animation/roadmap/planet-round-1.webp");
             top: 80%;
             right: 10%;
         }
@@ -186,7 +186,7 @@
         .s4-card-planet-2 {
             width: 160px;
             height: 160px;
-            background-image: url("src/assets/animation/roadmap/planet-round-2.webp");
+            background-image: url("@assets/animation/roadmap/planet-round-2.webp");
             left: 35%;
             bottom: 100%;
         }
@@ -199,7 +199,7 @@
         .s4-card-planet-3 {
             width: 256px;
             height: 256px;
-            background-image: url("src/assets/animation/roadmap/planet-round-3.webp");
+            background-image: url("@assets/animation/roadmap/planet-round-3.webp");
             top: 100%;
             left: -95%;
         }
@@ -212,7 +212,7 @@
         .s4-card-planet-4 {
             width: 440px;
             height: 440px;
-            background-image: url("src/assets/animation/roadmap/planet-round-4.webp");
+            background-image: url("@assets/animation/roadmap/planet-round-4.webp");
             left: 45%;
             bottom: 70%;
         }
@@ -264,7 +264,7 @@
 }
 
 .s5-section {
-    background-image: url("src/assets/bg/Screen-5-bg.webp");
+    background-image: url("@assets/bg/Screen-5-bg.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -346,7 +346,7 @@
 }
 
 .s6-section {
-    background-image: url("src/assets/animation/screen3/s6-bg.webp");
+    background-image: url("@assets/animation/screen3/s6-bg.webp");
     background-color: var(--blue-10);
     background-size: auto;
     background-repeat: repeat-x;
@@ -421,8 +421,8 @@
 }
 
 .s7-animation-w {
-    background-image: url("src/assets/animation/screen4/s4-bg-head.webp"),
-    url("src/assets/animation/screen4/s4-bg.webp");
+    background-image: url("@assets/animation/screen4/s4-bg-head.webp"),
+    url("@assets/animation/screen4/s4-bg.webp");
     background-size: 100% auto, 100% auto;
     background-position: top, bottom;
     background-repeat: no-repeat, no-repeat;
@@ -453,9 +453,9 @@
 
     .s1-animation-w {
         background-color: #798BD4;
-        background-image: url("src/assets/animation/screen1/tablet/moon.webp"),
-        url("src/assets/animation/screen1/tablet/characters.webp"),
-        url("src/assets/animation/screen1/tablet/sky.webp");
+        background-image: url("@assets/animation/screen1/tablet/moon.webp"),
+        url("@assets/animation/screen1/tablet/characters.webp"),
+        url("@assets/animation/screen1/tablet/sky.webp");
         background-size: 112px 112px, 100% auto, 100% auto;
         background-position: 60px -60px, bottom, bottom;
         background-repeat: no-repeat;
@@ -468,14 +468,13 @@
     .s3-animation-w {
         height: 480px;
         min-width: 276px;
-        background-image: url("src/assets/animation/screen2/tablet/phone.webp");
+        background-image: url("@assets/animation/screen2/tablet/phone.webp");
         margin: auto;
     }
 
     .s4-section {
-        background: url("src/assets/animation/roadmap/tablet/roadmap-tablet.webp");
         background-size: cover;
-        background-position: center;
+        background: url("@assets/animation/roadmap/tablet/roadmap-tablet.webp") center;
     }
 
     .s4-container-w {
@@ -494,7 +493,7 @@
     }
 
     .s5-section {
-        background-image: url("src/assets/bg/screen-5-bg-tablet.webp");
+        background-image: url("@assets/bg/screen-5-bg-tablet.webp");
     }
 
     .s5-container-w {
@@ -506,7 +505,7 @@
     }
 
     .s6-section {
-        background-image: url("src/assets/animation/screen3/tablet/BgSteps.webp");
+        background-image: url("@assets/animation/screen3/tablet/BgSteps.webp");
         background-size: cover;
     }
 
@@ -516,7 +515,7 @@
     }
 
     .s7-animation-w {
-        background-image: url("src/assets/animation/screen4/tablet/FAQ.webp");
+        background-image: url("@assets/animation/screen4/tablet/FAQ.webp");
         background-size: cover;
         background-position: bottom;
     }
@@ -530,13 +529,11 @@
 
 /* Mobile styles */
 @media (width <= 767px) {
-
     .s1-container-w {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         gap: 16px;
-
         padding-bottom: 60vw;
     }
 
@@ -547,9 +544,9 @@
 
     .s1-animation-w {
         background-color: #798BD4;
-        background-image: url("src/assets/animation/screen1/tablet/moon.webp"),
-        url("src/assets/animation/screen1/mobile/characters.webp"),
-        url("src/assets/animation/screen1/mobile/sky.webp");
+        background-image: url("@assets/animation/screen1/tablet/moon.webp"),
+        url("@assets/animation/screen1/mobile/characters.webp"),
+        url("@assets/animation/screen1/mobile/sky.webp");
         background-size: 112px 112px, 100% auto, 100% auto;
         background-position: -20px 10px, bottom, bottom;
         background-repeat: no-repeat;
@@ -563,7 +560,7 @@
     }
 
     .s4-section {
-        background: url("src/assets/animation/roadmap/mobile/roadmap-mobile.webp");
+        background: url("@assets/animation/roadmap/mobile/roadmap-mobile.webp");
         background-size: cover;
         background-position: top;
     }
@@ -579,7 +576,7 @@
     }
 
     .s5-section {
-        background-image: url("src/assets/bg/screen-5-bg-mobile.webp");
+        background-image: url("@assets/bg/screen-5-bg-mobile.webp");
     }
 
     .s5-title-w {
@@ -594,13 +591,13 @@
     }
 
     .s5-feature-title {
-        padding: 20px 20px 6px 20px;
+        padding: 20px 20px 6px;
         min-width: auto;
         border-right: none;
     }
 
     .s5-feature-card-content {
-        padding: 6px 20px 16px 20px;
+        padding: 6px 20px 16px;
         text-align: center;
     }
 
@@ -610,7 +607,7 @@
     }
 
     .s6-section {
-        background-image: url("src/assets/animation/screen3/mobile/BgSteps-mobile.webp");
+        background-image: url("@assets/animation/screen3/mobile/BgSteps-mobile.webp");
     }
 
     .s6-container-w {
@@ -618,7 +615,7 @@
     }
 
     .s7-animation-w {
-        background-image: url("src/assets/animation/screen4/mobile/FAQ-mobile.webp");
+        background-image: url("@assets/animation/screen4/mobile/FAQ-mobile.webp");
     }
 
     .s7-container-w {

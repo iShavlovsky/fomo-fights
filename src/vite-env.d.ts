@@ -13,3 +13,20 @@ declare module '*.svg' {
     const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     export default ReactComponent;
 }
+
+declare module '*.jpg' {
+    const path: string;
+    export default path;
+}
+declare module '*.jpeg' {
+    const path: string;
+    export default path;
+}
+declare module '*.svg?bg' {
+    const path: string;
+    export default path;
+}
+declare module '*.png' {
+    const path: string;
+    export default path;
+}
