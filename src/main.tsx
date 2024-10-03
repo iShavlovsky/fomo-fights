@@ -1,7 +1,7 @@
 import './styles/index.css';
 
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import App from './App.tsx';
 
@@ -17,7 +17,7 @@ const root = createRoot(container);
 // );
 
 root.render(
-    <BrowserRouter>
+    <HashRouter>
         <App />
-    </BrowserRouter>
+    </HashRouter>
 );

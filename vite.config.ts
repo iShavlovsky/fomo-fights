@@ -7,7 +7,10 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    publicDir: 'public',
+    base: '/fomo-fights/',
     build: {
+        outDir: 'dist',
         minify: 'esbuild',
         commonjsOptions: {
             transformMixedEsModules: true
