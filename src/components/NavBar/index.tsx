@@ -17,7 +17,7 @@ import GithubIcon from '@icon/github-16.svg';
 import InstagramIcon from '@icon/instagram-16.svg';
 import LanguageIcon from '@icon/language-20.svg';
 import LinkTreeIcon from '@icon/linktree-16.svg';
-import MenuIcon from '@icon/menu-16.svg';
+import MenuIcon from '@icon/menu-20.svg';
 import TelegramIcon from '@icon/telegram-16.svg';
 import TrustWalletIcon from '@icon/trustWallet-20.svg';
 import TwitterXIcon from '@icon/twitterX-16.svg';
