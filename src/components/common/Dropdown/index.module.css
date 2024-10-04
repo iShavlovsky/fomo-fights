@@ -16,10 +16,6 @@
     background: var(--purple-4, #552CB8);
 }
 
-.dropdownToggle:hover {
-    border-radius: 6px;
-    background: var(--purple-2, #25017D);
-}
 
 .dropdownToggle span {
     display: flex;
@@ -95,7 +91,42 @@
     white-space: nowrap
 }
 
-.dropdownLi:hover {
-    border-radius: 4px;
-    background: var(--purple-4, #552CB8);
+@media (hover: hover) {
+    .dropdownToggle:hover {
+        border-radius: 6px;
+        background: var(--purple-2, #25017D);
+    }
+
+    .dropdownLi:hover {
+        border-radius: 4px;
+        background: var(--purple-4, #552CB8);
+    }
+}
+
+@media (hover: none) {
+    .dropdownToggle:active {
+        border-radius: 6px;
+        background: var(--purple-2, #25017D);
+    }
+
+    .dropdownLi:active {
+        border-radius: 4px;
+        background: var(--purple-4, #552CB8);
+    }
+}
+
+
+@media (width <= 767px) {
+    .dropdownToggle {
+        background: var(--purple-3, #3C159C);
+        padding: 8px;
+    }
+
+    .dropdownToggleIcon {
+        margin-left: auto;
+    }
+
+    .dropdownMenuWrapper {
+        width: 100%;
+    }
 }
