@@ -59,10 +59,10 @@ function HomePage() {
         setModalActive(false);
     };
 
-    const [openIndex, setOpenIndex] = useState(0); // Первый элемент открыт по умолчанию
+    const [openIndex, setOpenIndex] = useState(0);
 
     const handleToggle = (index: number) => {
-        setOpenIndex(index === openIndex ? -1 : index); // Закрыть элемент, если он был открыт, или открыть новый
+        setOpenIndex(index === openIndex ? -1 : index);
     };
 
     const { animations, isAboveMobile } = useAnimationsLoader(
