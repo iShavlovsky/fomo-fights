@@ -5,6 +5,8 @@ import styles from './index.module.css';
 
 import stylesHead from '@styles/baseBlock.module.css';
 import BaseButton from '@components/common/Button/baseButton.tsx';
+import DropDownMain from '@components/common/DropdownMain';
+import DropDownSecond from '@components/common/DropdownSecond';
 import Modal from '@components/common/Modal';
 import RadioButtonGroup from '@components/common/RadioButtonGroup';
 import ScrollContainer from '@components/common/ScrollContainer';
@@ -57,6 +59,12 @@ function HomePage() {
         setModalActive(false);
     };
 
+    const [openIndex, setOpenIndex] = useState(0);
+
+    const handleToggle = (index: number) => {
+        setOpenIndex(index === openIndex ? -1 : index);
+    };
+
     const { animations, isAboveMobile } = useAnimationsLoader(
         '(min-width: 1025px)',
         animationsLottie);
@@ -83,6 +91,68 @@ function HomePage() {
             label: 'Functionality',
             icon: <FunctionalityIcon />,
             text: 'Use $FOFI within the game to purchase items, skins, and unlock special features. Customize your character with hundreds of unique combinations.'
+        }
+    ];
+
+    const dataHeroDD = [
+        {
+            title: '$FOFI tokens',
+            content: 'Don’t miss your chance to get ahead by securing $FOFI tokens during this exclusive Presale offer. Join us in bringing the game to life and start earning rewards today.'
+        },
+        {
+            title: 'About game',
+            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+        }
+    ];
+
+    const dataFAQDD = [
+        {
+            title: 'What is FOMO Fights?',
+            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+        },
+        {
+            title: 'How can I play the game?',
+            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+        },
+        {
+            title: 'What meme characters can I play for?',
+            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+        },
+        {
+            title: 'What is the $FOFI token and where can I buy it?',
+            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+        },
+        {
+            title: 'What is FOMO Fights?',
+            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+        },
+        {
+            title: 'How can I play the game?',
+            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+        },
+        {
+            title: 'What is FOMO Fights?',
+            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+        },
+        {
+            title: 'How can I play the game?',
+            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+        },
+        {
+            title: 'What is FOMO Fights?',
+            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+        },
+        {
+            title: 'How can I play the game?',
+            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+        },
+        {
+            title: 'What is FOMO Fights?',
+            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+        },
+        {
+            title: 'How can I play the game?',
+            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
         }
     ];
 
@@ -191,21 +261,17 @@ function HomePage() {
                                     memecoin characters clash for the ultimate meme supremacy.
                                     {' '}
                                 </p>
-                                <div className={`${styles.s1DdInfoW}`}>
-                                    <div>
-                                        <div>
-                                            <div>ico</div>
-                                            <h3 className="body-m-1">$FOFI tokens</h3>
-                                        </div>
-                                        <div>
-                                            <p className="body-s-1 text-color-monochrome-7">
-                                                Don’t miss your chance to get ahead by securing $FOFI tokens during this
-                                                exclusive Presale offer. Join us in bringing the game to life and start
-                                                earning rewards today.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ul className={`flex flex-col gap-12px ${styles.s1DdInfoW}`}>
+                                    {dataHeroDD.map((item, index) => (
+                                        <DropDownMain
+                                            key={index}
+                                            title={item.title}
+                                            content={item.content}
+                                            isOpen={openIndex === index}
+                                            onClick={() => handleToggle(index)}
+                                        />
+                                    ))}
+                                </ul>
                             </div>
 
                         </div>
@@ -564,50 +630,17 @@ function HomePage() {
                         }
                         height={400}
                     >
-                        <div>
-                            <h3>What is FOMO Fights?</h3>
-                            <p className="body-m-1">
-                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
-                                where you can pick your favorite character, battle other memes,
-                                and
-                                earn rewards.
-                            </p>
-                        </div>
-                        <div>
-                            <h3>What is FOMO Fights?</h3>
-                            <p className="body-m-1">
-                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
-                                where you can pick your favorite character, battle other memes,
-                                and
-                                earn rewards.
-                            </p>
-                        </div>
-                        <div>
-                            <h3>What is FOMO Fights?</h3>
-                            <p className="body-m-1">
-                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
-                                where you can pick your favorite character, battle other memes,
-                                and
-                                earn rewards.
-                            </p>
-                        </div>
-                        <div>
-                            <h3>What is FOMO Fights?</h3>
-                            <p className="body-m-1">
-                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
-                                where you can pick your favorite character, battle other memes,
-                                and
-                                earn rewards.
-                            </p>
-                        </div>
-                        <div>
-                            <h3>What is FOMO Fights?</h3>
-                            <p className="body-m-1">
-                                FOMO Fights is a blockchain-based Play-to-Earn multiplayer game,
-                                where you can pick your favorite character, battle other memes,
-                                and earn rewards.
-                            </p>
-                        </div>
+                        <ul className="flex flex-col gap-12px">
+                            {dataFAQDD.map((item, index) => (
+                                <DropDownSecond
+                                    key={index}
+                                    title={item.title}
+                                    content={item.content}
+                                    isOpen={openIndex === index}
+                                    onClick={() => handleToggle(index)}
+                                />
+                            ))}
+                        </ul>
                     </ScrollContainer>
                     <div className={`absolute ${styles.s7AnimationW}`}>
                         {isAboveMobile && animations[3]

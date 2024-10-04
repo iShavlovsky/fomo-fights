@@ -7,6 +7,7 @@
     /* border */
     --border-monochrome-10: 2px solid var(--monochrome-10, #000);
     --border-beige-5: 2px solid var(--beige-5, #DABF97);
+    --border-beige-4: 2px solid var(--beige-4, #CFB388);
     --border-beige-1: 2px solid var(--beige-1, #6D5B3E);
     --border-red-1: 2px solid var(--red-1, #FF3C3C);
 
@@ -115,7 +116,7 @@
 
     /* Minimum height for main */
     --main-min-height: calc(100vh - 60px);
-    --transition-time: 0.3s ease;
+    --transition-time: 0.3s ease-out;
 
     color-scheme: light dark;
     font-family: "Bai Jamjuree", system-ui, sans-serif;
