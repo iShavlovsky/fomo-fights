@@ -17,6 +17,8 @@ export type DropdownOptionSelected = DropdownOption & {
 interface DropdownPropsMain {
     ddTitle: string;
     ddIcon?: ReactNode;
+    ddPortalTop?: ReactNode;
+    ddPortalBottom?: ReactNode;
     ddToggleIcon?: ReactNode;
     autoClose?: boolean;
     position?: 'right' | 'left';
@@ -41,6 +43,8 @@ function Dropdown({
     ddIcon,
     ddTitle,
     ddToggleIcon,
+    ddPortalTop,
+    ddPortalBottom,
     autoClose = true,
     position = 'right',
     onSelect
@@ -98,6 +102,12 @@ function Dropdown({
                         role="listbox"
                         aria-labelledby="dropdown-button"
                     >
+
+                        {ddPortalTop
+                            ? (
+                                    <li>{ddPortalTop}</li>
+                                )
+                            : null}
                         {options.map((option, index) => (
                             <li
                                 onClick={() => handleOptionClick(option)}
@@ -123,6 +133,12 @@ function Dropdown({
                                         )}
                             </li>
                         ))}
+
+                        {ddPortalBottom
+                            ? (
+                                    <li>{ddPortalBottom}</li>
+                                )
+                            : null}
                     </ul>
 
                 )}
