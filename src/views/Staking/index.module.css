@@ -1,0 +1,4 @@
+.vertical-text {
+     transform-origin: bottom left; /* Поворот вокруг левого нижнего угла */
+    transform: rotate(-90deg); /* Поворачиваем текст на 90 градусов */
+}
