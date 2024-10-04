@@ -1,0 +1,60 @@
+.dd-main-title-w {
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.dd-icon-w {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: var(--border-beige-1);
+    padding: 2px;
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.dd-icon-line {
+    background: var(--beige-1);
+    padding: 1px;
+    width: 8px;
+    transition: transform var(--transition-time);
+
+    &.horizontal-line {
+        transform: rotate(0deg);
+    }
+
+    &.vertical-line {
+        position: absolute;
+        transform: rotate(90deg);
+    }
+}
+
+.ddContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-time), opacity var(--transition-time);
+    opacity: 0;
+}
+
+.ddContentOpen {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.ddMainTitleWOpen {
+    .dd-icon-w {
+        .dd-icon-line {
+            &.horizontal-line {
+                &.horizontal-line {
+                    transform: rotate(-180deg);
+                }
+            }
+
+            &.vertical-line {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+

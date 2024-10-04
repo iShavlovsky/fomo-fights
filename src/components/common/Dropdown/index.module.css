@@ -26,11 +26,11 @@
     place-self: center center;
 }
 
-.dropdownToggleIcon svg{
-    transition: transform 0.3s ease;
+.dropdownToggleIcon svg {
+    transition: transform var(--transition-time);
 }
 
-.dropdownToggleIcon.active svg{
+.dropdownToggleIcon.active svg {
     transform: rotateX(180deg);
 }
 
@@ -38,23 +38,23 @@
     margin-top: 12px;
     position: absolute;
     background-color: transparent;
-    border:none;
+    border: none;
     max-height: 0;
     overflow-y: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height var(--transition-time);
     user-select: none;
     z-index: 100;
 }
 
 .dropdownMenuWrapper.open {
-    max-height: min-content;
+    max-height: 500px;
 }
 
-.dropdownMenuWrapper.right{
+.dropdownMenuWrapper.right {
     right: 0;
 }
 
-.dropdownMenuWrapper.left{
+.dropdownMenuWrapper.left {
     left: 0;
 }
 
