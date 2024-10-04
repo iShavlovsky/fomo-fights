@@ -32,6 +32,24 @@ const socialLinks = [
     { label: 'Github', href: 'https://github.com', icon: <GithubIcon /> }
 ] as const;
 
+interface NavData {
+    navLinkTo: string;
+    navLinkTitle: string;
+}
+
+const navLinks: NavData[] = [
+    {
+        navLinkTitle: 'Home',
+        navLinkTo: '/'
+
+    },
+    {
+        navLinkTitle: 'Staking',
+        navLinkTo: '/staking'
+
+    }
+] as const;
+
 function NavBar() {
     const [isOpenConnectWallet, setOpenConnectWallet] = useState(false);
 
@@ -52,24 +70,6 @@ function NavBar() {
         { name: 'Metamask', fc: () => console.log('Metamask'), icon: <LinkTreeIcon /> },
         { name: 'Trust wallet', fc: () => console.log('Trust wallet'), icon: <TrustWalletIcon /> },
         { name: 'Coinbase Wallet', fc: () => console.log('Coinbase Wallet'), icon: <CoinbaseWallet /> }
-    ];
-
-    interface NavData {
-        navLinkTo: string;
-        navLinkTitle: string;
-    }
-
-    const navLinks: NavData[] = [
-        {
-            navLinkTitle: 'Home',
-            navLinkTo: '/'
-
-        },
-        {
-            navLinkTitle: 'Staking',
-            navLinkTo: '/about'
-
-        }
     ];
 
     const optionalsMenu = [
@@ -314,48 +314,47 @@ function NavBar() {
                         </button>
                         <div className={`${styles.mobileMenuW}`}>
                             <ul className={`flex flex-col gap-12px text-center w-full ${styles.mobileMenuList}`}>
-                                <li>
-                                    {navLinks.map((data, index) => (
-                                        index === 1 && ( // Проверяем, является ли индекс 0
-                                            <li key={index}>
-                                                <NavLink
-                                                    to={data.navLinkTo}
-                                                    className={({ isActive }) => `${styles.mainNavLink} h2-2 ${isActive ? 'active-link' : ''}`}
-                                                >
-                                                    {data.navLinkTitle}
-                                                </NavLink>
-                                            </li>
-                                        )
-                                    ))}
 
-                                    <li className="flex justify-content-center mt-32">
-                                        <ul className={styles.nav_ul} role="list">
-                                            {socialLinks.map((link) => (
-                                                <li key={link.href}>
-                                                    <a
-                                                        className={styles.nav_link}
-                                                        href={link.href}
-                                                        aria-label={`Visit our ${link.label}`}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                    >
-                                                        {link.icon}
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </li>
-                                    <li className="mt-24">
-                                        <Dropdown
-                                            options={optionalsLocale}
-                                            autoClose={false}
-                                            ddTitle="En"
-                                            ddIcon={<LanguageIcon />}
-                                            ddToggleIcon={<ArrowIcon />}
-                                            onSelect={handleSelect}
-                                            selectedLabel={true}
-                                        />
-                                    </li>
+                                {navLinks.map((data, index) => (
+                                    index === 1 && ( // Проверяем, является ли индекс 0
+                                        <li key={index}>
+                                            <NavLink
+                                                to={data.navLinkTo}
+                                                className={({ isActive }) => `${styles.mainNavLink} h2-2 ${isActive ? 'active-link' : ''}`}
+                                            >
+                                                {data.navLinkTitle}
+                                            </NavLink>
+                                        </li>
+                                    )
+                                ))}
+
+                                <li className="flex justify-content-center mt-32">
+                                    <ul className={styles.nav_ul} role="list">
+                                        {socialLinks.map((link) => (
+                                            <li key={link.href}>
+                                                <a
+                                                    className={styles.nav_link}
+                                                    href={link.href}
+                                                    aria-label={`Visit our ${link.label}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    {link.icon}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                                <li className="mt-24">
+                                    <Dropdown
+                                        options={optionalsLocale}
+                                        autoClose={false}
+                                        ddTitle="En"
+                                        ddIcon={<LanguageIcon />}
+                                        ddToggleIcon={<ArrowIcon />}
+                                        onSelect={handleSelect}
+                                        selectedLabel={true}
+                                    />
                                 </li>
                             </ul>
                         </div>

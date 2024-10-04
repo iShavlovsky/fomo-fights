@@ -2,8 +2,8 @@ import type { RouteObject } from 'react-router/dist/lib/context';
 
 import LayoutDefault from '@/layouts/default.tsx';
 
-import About from '@views/About';
 import Home from '@views/Home';
+import Staking from '@views/Staking';
 
 const routes = [
     {
@@ -15,8 +15,8 @@ const routes = [
                 element: <Home />
             },
             {
-                path: 'about',
-                element: <About />
+                path: 'staking',
+                element: <Staking />
             }
         ]
     }

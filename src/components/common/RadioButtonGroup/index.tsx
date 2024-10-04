@@ -78,4 +78,3 @@ const RadioButtonGroup = <T extends string | number>({
 };
 
 export default React.memo(RadioButtonGroup);
-RadioButtonGroup.whyDidYouRender = true;
