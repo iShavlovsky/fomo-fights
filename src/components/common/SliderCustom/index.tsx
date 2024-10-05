@@ -75,7 +75,6 @@ const SliderCustom = ({
     return (
         <>
             <SliderBar
-                numberOfItems={settingsBar?.numberOfItems}
                 activeIndex={activeSlide}
                 slideTotal={totalSlide}
             />
