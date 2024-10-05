@@ -473,8 +473,8 @@
     }
 
     .s4-section {
-        background-size: cover;
         background: url("@assets/animation/roadmap/tablet/roadmap-tablet.webp") center;
+        background-size: cover;
     }
 
     .s4-container-w {
