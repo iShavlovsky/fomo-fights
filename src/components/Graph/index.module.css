@@ -1,0 +1,111 @@
+:root {
+    --padding-top-elements: 19px;
+    --padding-bottom-elements: 100px;
+}
+
+.graph-section {
+    width: max-content;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--beige-9);
+    padding: 37px 32px;
+}
+
+.graph-container {
+    display: flex;
+}
+
+.graph-first-col {
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    padding-bottom: var(--padding-bottom-elements);
+
+    p {
+        writing-mode: vertical-rl;
+        transform: rotateZ(180deg);
+    }
+}
+
+.graph-left-col {
+    padding-right: 6px;
+    padding-top: var(--padding-top-elements);
+    padding-bottom: var(--padding-bottom-elements);
+}
+
+.graph-right-col {
+    display: flex;
+    overflow: auto;
+    padding-bottom: var(--padding-bottom-elements);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.graph-indicators-container {
+    display: flex;
+    position: relative;
+    gap: 4px;
+    height: 218px;
+    border-bottom: 1px solid var(--monochrome-4);
+
+}
+
+.graph-indicator-w {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 3px;
+    z-index: 2;
+
+    p {
+        top: calc(100% + 8px);
+        position: absolute;
+        text-wrap: nowrap;
+        writing-mode: vertical-rl;
+        transform: rotateZ(180deg);
+
+    }
+}
+
+.graph-indicator-bar {
+    width: 7px;
+}
+
+.graph-indicator-line {
+    width: 1px;
+    flex-grow: 1;
+    background-color: var(--monochrome-4);
+}
+
+.graph-line-horizontal {
+    height: 1px;
+    width: 100%;
+    background-color: var(--monochrome-4);
+}
+
+.graph-lines-w {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: calc(var(--padding-top-elements) + 7px);
+    padding-left: 6px;
+    padding-bottom: 6px;
+
+    .graph-line-horizontal:last-child {
+        background-color: transparent;
+    }
+}
+
+.graph-bottom-title-w {
+    padding-left: 40px;
+    display: flex;
+    justify-content: center;
+}
