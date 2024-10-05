@@ -2,7 +2,7 @@ import React, { type ReactNode, useCallback, useEffect, useState } from 'react';
 
 import useLifeLogger from '@/hooks/useLifeLogger.ts';
 
-import styles from './RadioButtonGroup2.module.css';
+import styles from './RadioButtonGroup.module.css';
 
 interface RadioButtonOption<T extends string | number> {
     label: string;
@@ -16,6 +16,7 @@ interface RadioButtonGroupProp<T extends string | number> {
     onChange: (value: T) => void;
     defaultValue?: T;
     className?: string;
+    typeStyle: 'style1' | 'style2';
 }
 
 const RadioButtonGroup = <T extends string | number>({
@@ -23,7 +24,8 @@ const RadioButtonGroup = <T extends string | number>({
     name,
     onChange,
     defaultValue,
-    className
+    className,
+    typeStyle
 }: RadioButtonGroupProp<T>) => {
     const [selectedValue, setSelectedValue] = useState<T>(defaultValue || options[0].value);
 
@@ -55,7 +57,7 @@ const RadioButtonGroup = <T extends string | number>({
             {options.map((option) => (
                 <label
                     key={String(option.value)}
-                    className={`${styles.radioButton} ${selectedValue === option.value ? styles.selected : ''}`}
+                    className={`${typeStyle === 'style1' ? styles.radioButton1 : styles.radioButton2} ${selectedValue === option.value ? styles.selected : ''}`}
                 >
                     <input
                         type="radio"
@@ -64,10 +66,12 @@ const RadioButtonGroup = <T extends string | number>({
                         checked={selectedValue === option.value}
                         onChange={() => handleChange(option.value)}
                     />
-                    <figure className={styles.radioIcon}>
-                        {option.icon}
-                    </figure>
-                    <span className={`${styles.radioLabel}, body-s`}>{option.label}</span>
+                    <span className={styles.customRadioLabel}>
+                        <figure className={styles.radioIcon}>
+                            {option.icon}
+                        </figure>
+                        <span className="body-s-1">{option.label}</span>
+                    </span>
                     <span
                         className={`${styles.customRadio} ${selectedValue === option.value ? styles.checked : ''}`}
                     />
