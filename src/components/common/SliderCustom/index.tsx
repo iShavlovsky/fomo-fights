@@ -5,7 +5,7 @@ import './sliderCustom.css';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import Slider, { type Settings as SettingsSlider } from 'react-slick';
 
-import SliderBar, { SliderBarProps } from './bar';
+import SliderBar from './bar';
 
 const settingsSliderDefault = {
     lazyLoad: 'progressive',
@@ -30,15 +30,8 @@ const settingsSliderDefault = {
     ]
 } satisfies SettingsSlider;
 
-type SliderBarPropsCustom = Omit<SliderBarProps, 'activeIndex' | 'slideTotal'>;
-
-const settingsBarDefault = {
-    numberOfItems: 9
-} satisfies SliderBarPropsCustom;
-
 interface SliderCustomProps {
     settingsSlider?: SettingsSlider;
-    settingsBar?: SliderBarPropsCustom;
     numberOfItems?: number;
     children: ReactNode;
     classNameContainer?: string;
@@ -46,7 +39,6 @@ interface SliderCustomProps {
 
 const SliderCustom = ({
     settingsSlider = settingsSliderDefault,
-    settingsBar = settingsBarDefault,
     children,
     classNameContainer
 }: SliderCustomProps) => {
