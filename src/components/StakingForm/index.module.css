@@ -84,6 +84,13 @@
     border-radius: 4px;
 }
 
+.staking-form-autorize-progress-item {
+    height: 12px;
+    width: 100%;
+    border-right: var(--border-monochrome-10);
+    transition: all var(--transition-time, 0.3s ease);
+}
+
 .staking-form-autorize-progress-bar {
     display: flex;
     width: 100%;
@@ -95,13 +102,6 @@
     .staking-form-autorize-progress-item:last-child {
         border-right: none;
     }
-}
-
-.staking-form-autorize-progress-item {
-    height: 12px;
-    width: 100%;
-    border-right: var(--border-monochrome-10);
-    transition: all var(--transition-time, 0.3s ease);
 }
 
 .staking-form-error-window {
