@@ -1,0 +1,60 @@
+.graph-container {
+    display: flex;
+    background: var(--beige-9);
+    padding-bottom: 100px;
+}
+
+.graph-first-col {
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+
+    p {
+        writing-mode: vertical-rl;
+        transform: rotateZ(180deg);
+    }
+}
+
+.graph-left-col {
+    padding-right: 6px;
+}
+
+.graph-right-col {
+    display: flex;
+    flex-grow: 1;
+}
+
+.graph-indicators-container {
+    display: flex;
+    justify-content: space-between;
+    height: 218px;
+
+}
+
+.graph-indicator-w {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 3px;
+
+    p {
+        top: calc(100% + 8px);
+        position: absolute;
+        text-wrap: nowrap;
+        writing-mode: vertical-rl;
+        transform: rotateZ(180deg);
+
+    }
+}
+
+.graph-indicator-bar {
+    height: 40%;
+    width: 7px;
+}
+
+.graph-indicator-line {
+    width: 1px;
+    flex-grow: 1;
+    background-color: #000;
+}
