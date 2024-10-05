@@ -1,17 +1,35 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import styles from './sliderBar.module.css';
 
 import stylesHead from '@styles/baseBlock.module.css';
+import useMediaQuery from '@hooks/useMediaQuery.ts';
 
 export interface SliderBarProps {
-    numberOfItems?: number;
     activeIndex: number;
     slideTotal: number;
 }
 
-const SliderBar = ({ numberOfItems = 9, activeIndex, slideTotal }: SliderBarProps) => {
+const SliderBar = ({ activeIndex, slideTotal }: SliderBarProps) => {
     const activeItem = `${stylesHead.head} ${stylesHead.headPurple}`;
+
+    const isDesktopView = useMediaQuery('(min-width: 1241px)');// 9
+    const isTabletView = useMediaQuery('(min-width: 768px) and (max-width: 1240px)'); // 7
+    // isMobileView // 5
+
+    const [numberOfItems, setNumberOfItems] = useState(9);
+
+    useEffect(() => {
+        if (isDesktopView) {
+            setNumberOfItems(9);
+        }
+        else if (isTabletView) {
+            setNumberOfItems(7);
+        }
+        else {
+            setNumberOfItems(5);
+        }
+    }, [isDesktopView, isTabletView]);
 
     const barItemMultiply = Math.ceil(numberOfItems * slideTotal);
 

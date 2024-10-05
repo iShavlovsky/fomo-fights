@@ -4,17 +4,13 @@ import Marquee from 'react-fast-marquee';
 import styles from './index.module.css';
 
 import stylesHead from '@styles/baseBlock.module.css';
-import BaseButton from '@components/common/Button/baseButton.tsx';
 import DropDownMain from '@components/common/DropdownMain';
 import DropDownSecond from '@components/common/DropdownSecond';
-import Modal from '@components/common/Modal';
-import RadioButtonGroup from '@components/common/RadioButtonGroup';
 import ScrollContainer from '@components/common/ScrollContainer';
 import SliderCustom from '@components/common/SliderCustom';
 import { Tabs } from '@components/common/Tabs';
 import StakingForm from '@components/StakingForm';
 import SoldProofFolderIcon from '@icon/About-FOMO-Fights.svg';
-import ClosedIcon from '@icon/closed-16.svg';
 import DotFoundsIcon from '@icon/dot-Funds.svg';
 import DotLiquidIcon from '@icon/dot-Liquidity.svg';
 import DotMarketingIcon from '@icon/dot-Marketing.svg';
@@ -22,7 +18,6 @@ import DotPresaleIcon from '@icon/dot-Presale.svg';
 import DotRewardsIcon from '@icon/dot-Rewards.svg';
 import DotStakingIcon from '@icon/dot-Staking.svg';
 import EarnIcon from '@icon/Earn-while-playing.svg';
-import ETHIcon from '@icon/eth-16.svg';
 import FloppyDiskBlueIcon from '@icon/floppyDisk-blue-34.svg';
 import FloppyDiskGreenIcon from '@icon/floppyDisk-green-34.svg';
 import FloppyDiskYellowIcon from '@icon/floppyDisk-yellow-34.svg';
@@ -33,9 +28,6 @@ import RoadMapLine2Icon from '@icon/rodamap-line-2.svg';
 import RoadMapLine3Icon from '@icon/rodamap-line-3.svg';
 import RoadMapLine4Icon from '@icon/rodamap-line-4.svg';
 import ScheduleIcon from '@icon/Schedule.svg';
-import TwitterXIcon from '@icon/twitterX-20.svg';
-import USDCIcon from '@icon/usdc-16.svg';
-import USDTIcon from '@icon/usdt-16.svg';
 import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
 
 const Lottie = React.lazy(() => import('lottie-react'));
@@ -46,34 +38,29 @@ const animationsLottie = [
     () => import('@assets/animation/screen3/screen3.json'),
     () => import('@assets/animation/screen4/screen4.json')
 ];
+interface OpenStates {
+    [key: number]: boolean;
+}
 
 function HomePage() {
     const [activeTab, setActiveTab] = useState(0);
 
-    const [isModalActive, setModalActive] = useState(false);
-
-    const handleModalOpen = () => {
-        setModalActive(true);
-    };
-    const handleModalClose = () => {
-        setModalActive(false);
+    const [openIndexDD1, setOpenIndexDD1] = useState(0);
+    const handleClickDropDown1 = (index: number) => {
+        setOpenIndexDD1(index === openIndexDD1 ? -1 : index);
     };
 
-    const [openIndex, setOpenIndex] = useState(0);
-
-    const handleToggle = (index: number) => {
-        setOpenIndex(index === openIndex ? -1 : index);
+    const [openStates, setOpenStates] = useState<OpenStates>({});
+    const handleClickDropDown2 = (index: number) => {
+        setOpenStates((prevStates) => ({
+            ...prevStates,
+            [index]: !prevStates[index] // Переключение состояния для элемента по индексу
+        }));
     };
 
     const { animations, isAboveMobile } = useAnimationsLoader(
         '(min-width: 1025px)',
         animationsLottie);
-
-    const options = [
-        { label: 'ETH', value: 'eth', icon: <ETHIcon /> },
-        { label: 'BTC', value: 'btc', icon: <USDTIcon /> },
-        { label: 'SOL', value: 'sol', icon: <USDCIcon /> }
-    ];
 
     const optionsTokenFeatures = [
         {
@@ -225,24 +212,8 @@ function HomePage() {
         }
     ];
 
-    const handleRadioChange = (value: string | number) => {
-        console.log('Selected:', value);
-    };
-
     return (
         <>
-            <div>
-                {isModalActive && (
-                    <Modal onClose={handleModalClose} title={<h2>CONNECT WALLET</h2>}>
-                        <div>
-                            <h2>Hello world</h2>
-                            <BaseButton type="secondary">
-                                <p className="button-text">I don’t have a Wallet</p>
-                            </BaseButton>
-                        </div>
-                    </Modal>
-                )}
-            </div>
             <section className="bg-purple-4">
                 <div className="container relative">
                     <div className={`${styles.s1ContainerW}`}>
@@ -267,8 +238,8 @@ function HomePage() {
                                             key={index}
                                             title={item.title}
                                             content={item.content}
-                                            isOpen={openIndex === index}
-                                            onClick={() => handleToggle(index)}
+                                            isOpen={openIndexDD1 === index}
+                                            onClick={() => handleClickDropDown1(index)}
                                         />
                                     ))}
                                 </ul>
@@ -636,8 +607,8 @@ function HomePage() {
                                     key={index}
                                     title={item.title}
                                     content={item.content}
-                                    isOpen={openIndex === index}
-                                    onClick={() => handleToggle(index)}
+                                    isOpen={openStates[index] || false}
+                                    onClick={() => handleClickDropDown2(index)}
                                 />
                             ))}
                         </ul>
@@ -654,48 +625,6 @@ function HomePage() {
                 </div>
 
             </section>
-            <section>
-                <div className="container">
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(2, 1fr)',
-                        gap: '20px'
-                    }}
-                    >
-                        <BaseButton onClick={handleModalOpen} type="primary">OPEN MODAL</BaseButton>
-                        <BaseButton type="primary">HOW+PRESS</BaseButton>
-                        <BaseButton type="secondary">Secondary</BaseButton>
-                        <BaseButton type="secondary">HOW+PRESS</BaseButton>
-                        <BaseButton type="secondary2">Secondary 2</BaseButton>
-                        <BaseButton type="secondary2">Secondary 2</BaseButton>
-                        <BaseButton type="default">
-                            <ClosedIcon />
-                        </BaseButton>
-                        {
-                            options.map((option) => (
-                                <BaseButton type="secondary" key={option.value}>
-                                    <>
-                                        {option.icon}
-                                        <span>{option.label}</span>
-                                    </>
-                                </BaseButton>
-                            ))
-                        }
-
-                    </div>
-                    <BaseButton type="secondary" href="https://x.com">
-                        <TwitterXIcon />
-                    </BaseButton>
-                    <div>
-                        <RadioButtonGroup
-                            options={options}
-                            name="currency"
-                            onChange={handleRadioChange}
-                        />
-                    </div>
-                </div>
-            </section>
-
         </>
     );
 }

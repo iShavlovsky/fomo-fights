@@ -184,3 +184,9 @@
 .overflow-auto {
     overflow: auto;
 }
+
+/* ----------------------- Cursor ------------------------------ */
+.cursor-pointer {
+    cursor: pointer;
+}
+

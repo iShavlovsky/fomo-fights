@@ -1,15 +1,15 @@
 import Graph from '@components/Graph';
 
-function AboutPage() {
+function StakingPage() {
     return (
-        <section>
-            <div className="container">
-                <h1>AboutPage</h1>
-            </div>
-            <Graph />
 
+        <section className="bg-purple-4">
+            <div className="container relative">
+                <Graph />
+            </div>
         </section>
-    );
+    )
+    ;
 }
 
-export default AboutPage;
+export default StakingPage;

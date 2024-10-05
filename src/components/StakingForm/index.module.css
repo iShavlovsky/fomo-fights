@@ -32,7 +32,6 @@
 }
 
 .staking-form-timer-collections-w {
-
     .staking-form-timer-w:last-child {
         margin-right: 0;
 
@@ -56,11 +55,21 @@
     background-color: var(--purple-4);
 }
 
-.staking-form-input {
-    border-radius: 2px;
-    padding: 8px 40px 8px 12px;
+.staking-form-input-wrapper {
+    display: flex;
+    border-radius: 4px;
+    padding: 8px 12px;
     background: var(--beige-7);
     border: var(--border-beige-5);
+    align-items: center;
+    color: var(--beige-2, #967E5A);
+}
+
+.staking-form-input {
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 100%;
     color: var(--monochrome-10);
 }
 

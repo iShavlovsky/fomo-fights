@@ -1,5 +1,5 @@
 import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './sliderCustom.css';
 
 import { ReactNode, useEffect, useRef, useState } from 'react';
@@ -83,7 +83,7 @@ const SliderCustom = ({
 
                 <div
                     style={{ right: '100%' }}
-                    className="custom-btn-slider"
+                    className="custom-btn-slider cursor-pointer"
                     onClick={previous}
                 >
                     <svg
@@ -100,7 +100,7 @@ const SliderCustom = ({
                             />
                             <path
                                 d="M20 2V14V24V36H18V34H16V32H14V30H12V28H10V26H8V24H6V22H4V20H2V18H4V16H6V14H8V12H10V10H12V8H14V6H16V4H18V2H20Z"
-                                fill="#BCBCBC"
+                                fill="currentColor"
                             />
                             <path
                                 fillRule="evenodd"
@@ -126,7 +126,7 @@ const SliderCustom = ({
                     {children}
                 </Slider>
                 <div
-                    className="custom-btn-slider"
+                    className="custom-btn-slider cursor-pointer"
                     style={{
                         left: '100%',
                         transformOrigin: 'center',
@@ -148,7 +148,7 @@ const SliderCustom = ({
                             />
                             <path
                                 d="M20 2V14V24V36H18V34H16V32H14V30H12V28H10V26H8V24H6V22H4V20H2V18H4V16H6V14H8V12H10V10H12V8H14V6H16V4H18V2H20Z"
-                                fill="#BCBCBC"
+                                fill="currentColor"
                             />
                             <path
                                 fillRule="evenodd"

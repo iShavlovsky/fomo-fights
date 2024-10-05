@@ -13,6 +13,7 @@
     position: relative;
     color: var(--beige-1, #6D5B3E);
     justify-content: space-between;
+    transition: all var(--transition-time, 0.3s ease);
 }
 
 .radio-button1 input[type="radio"], .radio-button2 input[type="radio"] {
@@ -31,7 +32,8 @@
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
-    vertical-align: middle
+    vertical-align: middle;
+    transition: all var(--transition-time, 0.3s ease)
 }
 
 .radio-button1 .custom-radio {
@@ -42,6 +44,7 @@
     margin-left: 6px;
     position: relative;
     width: 16px;
+    transition: all var(--transition-time, 0.3s ease);
 }
 
 .radio-button1 .custom-radio::after {
@@ -74,7 +77,8 @@
     gap: 6px;
     position: relative;
     color: var(--beige-1, #6D5B3E);
-    justify-content: flex-start
+    justify-content: flex-start;
+    transition: all var(--transition-time, 0.3s ease)
 }
 
 .radio-button2 .custom-radio-label {
@@ -85,7 +89,8 @@
     align-items: center;
     z-index: 2;
     padding: 8px;
-    vertical-align: middle
+    vertical-align: middle;
+    transition: all var(--transition-time, 0.3s ease)
 }
 
 .radio-button2 .radio-icon {
@@ -103,6 +108,7 @@
     position: absolute;
     background: var(--beige-6, #EAD1AA);
     box-shadow: 2px 2px 0 0 var(--beige-9, #FFF6E8) inset;
+    transition: all var(--transition-time, 0.3s ease);
 }
 
 .radio-button2 .custom-radio::after {

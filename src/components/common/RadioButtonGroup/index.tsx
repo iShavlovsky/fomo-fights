@@ -52,17 +52,28 @@ const RadioButtonGroup = <T extends string | number>({
         }
     });
 
+    const ID = Math.random().toString(36).substring(7);
+
     return (
-        <div className={`${styles.radioButtonGroup} ${className}`}>
+        <div
+            role="radiogroup"
+            aria-labelledby="some-id-for-label"
+            className={`${styles.radioButtonGroup} ${className}`}
+        >
             {options.map((option) => (
                 <label
+                    htmlFor={String(option.value) + ID}
                     key={String(option.value)}
                     className={`${typeStyle === 'style1' ? styles.radioButton1 : styles.radioButton2} ${selectedValue === option.value ? styles.selected : ''}`}
                 >
+                    {' '}
                     <input
+                        id={String(option.value) + ID}
                         type="radio"
                         name={name}
                         value={String(option.value)}
+                        role="radio"
+                        aria-checked={selectedValue === option.value}
                         checked={selectedValue === option.value}
                         onChange={() => handleChange(option.value)}
                     />

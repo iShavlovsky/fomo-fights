@@ -13,6 +13,11 @@
     place-content: center center;
     align-items: center;
     padding: 6px;
+    color: var(--monochrome-4, #BCBCBC);
+}
+
+.custom-btn-slider  svg:hover {
+    color: var(--yellow-5, #FFD979);
 }
 
 .slick-slide {
