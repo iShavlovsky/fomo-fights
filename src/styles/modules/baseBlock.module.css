@@ -63,7 +63,7 @@
 .head-green-light {
     --border-color-right-left: var(--green-5, #90D470);
     --background-color: var(--green-7, #D9F7C7);
-    --shadow-color: var(--monochrome-1, #FFFFFF);
+    --shadow-color: var(--monochrome-1, #FFF);
 }
 
 

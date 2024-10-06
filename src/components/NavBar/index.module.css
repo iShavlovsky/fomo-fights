@@ -129,19 +129,21 @@
     background-position: top;
 }
 
-@keyframes slideIn {
+@keyframes slide-in {
     from {
         transform: translateX(100%);
     }
+
     to {
         transform: translateX(0);
     }
 }
 
-@keyframes slideOut {
+@keyframes slide-out {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(100%);
     }
@@ -196,11 +198,11 @@
 
 .mobile-menu-open {
     visibility: visible;
-    animation: slideIn 0.3s forwards;
+    animation: slide-in 0.3s forwards;
 }
 
 .mobile-menu-close {
-    animation: slideOut 0.3s forwards;
+    animation: slide-out 0.3s forwards;
 }
 
 .mobile-menu-list {
