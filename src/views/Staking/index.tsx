@@ -25,47 +25,47 @@ function StakingPage() {
     return (
 
         <section className={`${styles.stakingSection}`}>
-            <div className="container">
-                <div className={`${styles.stakingContainer}`}>
-                    <div className={styles.stakingH1Container}>
-                        <div className={`${styles.stakingH1W} ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
-                            <h1>$FOFI Staking</h1>
-                        </div>
-                        <div className="p-16">
-                            <h2 className="h2-3">FOMO Fights ($FOFI) Staking</h2>
-                            <p className="body-m-1 mt-12">
-                                Stake $FOFI on Ethereum to earn rewards over time. The APR is
-                                dynamic and adjusts based on market conditions to ensure optimal returns.
-                            </p>
-                            <p className="body-m-1 mt-12">
-                                Staking rewards can be claimed 7 days after the Presale has ended.
-                            </p>
-                            <BaseButton
-                                onClick={handleModalOpen}
-                                type="primary"
-                                aria-controls="stake-with-bnb-modal"
-                                className="w-full mt-20"
-                            >
-                                stake with bnb
-                            </BaseButton>
-                        </div>
-                    </div>
+            <div className={`container ${styles.stakingContainer}`}>
 
-                    <div className={styles.stakingRightFormsW}>
-                        <StakedBalance />
-                        <StakedWithdraw />
-                        <StakedRewards />
-                        <StakedClaim />
+                <div className={styles.stakingH1Container}>
+                    <div className={`${styles.stakingH1W} ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
+                        <h1>$FOFI Staking</h1>
                     </div>
-
-                    <div className={styles.stakingH1Container}>
-                        <div className={`${styles.stakingH1W} ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
-                            <h2 className="h1">Total Supply</h2>
-                        </div>
-                        <Graph />
+                    <div className="p-16">
+                        <h2 className="h2-3">FOMO Fights ($FOFI) Staking</h2>
+                        <p className="body-m-1 mt-12">
+                            Stake $FOFI on Ethereum to earn rewards over time. The APR is
+                            dynamic and adjusts based on market conditions to ensure optimal returns.
+                        </p>
+                        <p className="body-m-1 mt-12">
+                            Staking rewards can be claimed 7 days after the Presale has ended.
+                        </p>
+                        <BaseButton
+                            onClick={handleModalOpen}
+                            type="primary"
+                            aria-controls="stake-with-bnb-modal"
+                            className="w-full mt-20"
+                        >
+                            stake with bnb
+                        </BaseButton>
                     </div>
                 </div>
+
+                <div className={styles.stakingRightFormsW}>
+                    <StakedBalance />
+                    <StakedWithdraw />
+                    <StakedRewards />
+                    <StakedClaim />
+                </div>
+
+                <div className={styles.stakingH1Container}>
+                    <div className={`${styles.stakingH1W} ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
+                        <h2 className="h1">Total Supply</h2>
+                    </div>
+                    <Graph />
+                </div>
             </div>
+
             {isOpenStakeBNB && (
                 <Modal
                     onClose={handleModalClose}

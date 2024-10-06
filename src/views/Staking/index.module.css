@@ -4,7 +4,7 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: var(--main-min-height);
+    min-height: var(--main-min-height);
 }
 
 
@@ -57,9 +57,6 @@
 
     .staking-right-forms-w {
         gap: 12px;
-    }
-
-    .staking-right-forms-w {
         align-self: auto;
     }
 }
@@ -71,13 +68,11 @@
     }
 
     .staking-container {
-
         padding-bottom: 60vw;
     }
 }
 
 @media (width <= 530px) {
-
     .staking-right-forms-w {
         display: flex;
         flex-direction: column;
