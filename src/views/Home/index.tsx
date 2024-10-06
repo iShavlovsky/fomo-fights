@@ -23,6 +23,7 @@ import FloppyDiskGreenIcon from '@icon/floppyDisk-green-34.svg';
 import FloppyDiskYellowIcon from '@icon/floppyDisk-yellow-34.svg';
 import FunctionalityIcon from '@icon/Functionality.svg';
 import FundraisingIcon from '@icon/Fundraising.svg';
+import LogoExampleIcon from '@icon/logoExample.svg';
 import RoadMapLine1Icon from '@icon/rodamap-line-1.svg';
 import RoadMapLine2Icon from '@icon/rodamap-line-2.svg';
 import RoadMapLine3Icon from '@icon/rodamap-line-3.svg';
@@ -90,6 +91,45 @@ function HomePage() {
         {
             title: 'About game',
             content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+        }
+    ];
+
+    const dataMarquee = [
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+        },
+        {
+            logo: <LogoExampleIcon />,
+            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         }
     ];
 
@@ -260,55 +300,23 @@ function HomePage() {
                             className={`${styles.rowSliderContainer}`}
                             pauseOnHover={true}
                         >
-                            <div className={`${styles.rowSlideW}`}>
-                                <h3>Title</h3>
-                                <p className="body-s-1">
-                                    FOMO Fights - The Legendary Blockchain Meme
-                                    Battle
-                                </p>
-                            </div>
-                            <div className={`${styles.rowSlideW}`}>
-                                <h3>Title</h3>
-                                <p className="body-s-1">
-                                    FOMO Fights - The Legendary Blockchain Meme
-                                    Battle
-                                </p>
-                            </div>
-                            <div className={`${styles.rowSlideW}`}>
-                                <h3>Title</h3>
-                                <p className="body-s-1">
-                                    FOMO Fights - The Legendary Blockchain Meme
-                                    Battle
-                                </p>
-                            </div>
-                            <div className={`${styles.rowSlideW}`}>
-                                <h3>Title</h3>
-                                <p className="body-s-1">
-                                    FOMO Fights - The Legendary Blockchain Meme
-                                    Battle
-                                </p>
-                            </div>
-                            <div className={`${styles.rowSlideW}`}>
-                                <h3>Title</h3>
-                                <p className="body-s-1">
-                                    FOMO Fights - The Legendary Blockchain Meme
-                                    Battle
-                                </p>
-                            </div>
-                            <div className={`${styles.rowSlideW}`}>
-                                <h3>Title</h3>
-                                <p className="body-s-1">
-                                    FOMO Fights - The Legendary Blockchain Meme
-                                    Battle
-                                </p>
-                            </div>
 
+                            {
+                                dataMarquee.map((option, index) => (
+                                    <div className={`${styles.rowSlideW}`} key={index}>
+                                        {option.logo}
+                                        <p className="body-s-1">
+                                            {option.content}
+                                        </p>
+                                    </div>
+                                ))
+                            }
                         </Marquee>
                     </div>
                 </div>
             </section>
 
-            <section className={`${styles.yellowTitleBg}`}>
+            <section className={`${styles.yellowTitleBg}`} id="about">
                 <div className={`container ${styles.s3ContainerW}`}>
                     <div className={`${styles.s3TabW}`}>
                         <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
@@ -335,7 +343,7 @@ function HomePage() {
                 </div>
             </section>
 
-            <section className={`relative ${styles.s4Section}`}>
+            <section className={`relative ${styles.s4Section}`} id="roadmap">
                 <div className={`container ${styles.s4ContainerW}`}>
                     <div className={`flex flex-row justify-content-center ${styles.s4TitleW}`}>
                         <h2 className="h2-1 relative">RoadMAP</h2>
@@ -412,7 +420,7 @@ function HomePage() {
                 </div>
             </section>
 
-            <section className={`${styles.s5Section}`}>
+            <section className={`${styles.s5Section}`} id="how-to-buy">
                 <div className={`container ${styles.s5ContainerW}`}>
                     <div className={`${styles.s5ContentW}`}>
                         <div className={`${styles.s5TitleW} ${stylesHead.head} ${stylesHead.headYellow}`}>
@@ -584,7 +592,7 @@ function HomePage() {
                 </div>
             </section>
 
-            <section className={styles.s7Section}>
+            <section className={styles.s7Section} id="faq">
 
                 <div className={`container relative ${styles.s7ContainerW}`}>
                     <ScrollContainer

@@ -149,6 +149,10 @@ section {
     overflow: hidden;
 }
 
+.active-link {
+    background-color: var(--purple-3) !important;
+}
+
 .container {
     margin: 0 auto;
     max-width: var(--container-max-width);
