@@ -1,4 +1,21 @@
-.vertical-text {
-     transform-origin: bottom left; /* Поворот вокруг левого нижнего угла */
-    transform: rotate(-90deg); /* Поворачиваем текст на 90 градусов */
+.staking-section {
+}
+
+
+.staking-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    padding-top: 108px;
+    padding-bottom: 126px;
+}
+
+.staking-h1-container {
+    border: var(--border-monochrome-10);
+    background-color: var(--beige-9);
+}
+
+.staking-h1-w {
+    padding: 6px 16px;
+    border-bottom: var(--border-monochrome-10);
 }

@@ -38,6 +38,7 @@ const animationsLottie = [
     () => import('@assets/animation/screen3/screen3.json'),
     () => import('@assets/animation/screen4/screen4.json')
 ];
+
 interface OpenStates {
     [key: number]: boolean;
 }
@@ -99,47 +100,39 @@ function HomePage() {
         },
         {
             title: 'How can I play the game?',
-            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+            content: 'Once the game is released, you’ll be able to download FOMO Fights from the Google Play Store or Apple App Store and play on your Android or iOS device. For a closer look at the development process and upcoming milestones, be sure to check our Roadmap.'
         },
         {
             title: 'What meme characters can I play for?',
-            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+            content: 'You can choose from 5 characters: Pepe, Doge, Shiba, Floki, and Brett. As FOMO Fights evolves, more iconic meme characters will be added to the game through future updates. Feel free to suggest characters you\'d like to see via our social media channels.'
         },
         {
             title: 'What is the $FOFI token and where can I buy it?',
-            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+            content: '$FOFI is the official token of FOMO Fights. You can purchase $FOFI at a special rate during the Presale via the widget at the top of the page. Once the token is listed on exchanges, you will also be able to buy and sell it there.'
         },
         {
-            title: 'What is FOMO Fights?',
-            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+            title: 'Which blockchains support $FOFI?',
+            content: '$FOFI exists on the Ethereum blockchain. However, you can use your assets on BNB Smart Chain and Solana to purchase $FOFI during the Presale. Please note that you will be able to claim $FOFI only on Ethereum.'
         },
         {
-            title: 'How can I play the game?',
-            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+            title: 'Can $FOFI be staked? What APR can I receive?',
+            content: 'Yes, you can stake $FOFI through our website to grow your holdings over time. Staking is available on the Ethereum blockchain, with a dynamic APR that adjusts to market conditions. You will be able to receive staking rewards 7 days after the Presale ends.'
         },
         {
-            title: 'What is FOMO Fights?',
-            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
-        },
-        {
-            title: 'How can I play the game?',
-            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
-        },
-        {
-            title: 'What is FOMO Fights?',
-            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+            title: 'When will I be able to claim the $FOFI I purchased?',
+            content: 'You will be able to claim the $FOFI you bought once the Presale is over. We will have a dedicated claiming page on our website to guide you through the process.'
         },
         {
             title: 'How can I play the game?',
             content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
         },
         {
-            title: 'What is FOMO Fights?',
-            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+            title: 'How do I claim my $FOFI tokens?',
+            content: 'The Ethereum, BNB, or Solana wallet you used for the purchase will be whitelisted, and on the claiming page, connect the same wallet and provide an Ethereum wallet address to receive your $FOFI tokens. Claiming is only available on Ethereum. If you used an Ethereum wallet to buy $FOFI, you can use the same or provide a different Ethereum address to claim your tokens.'
         },
         {
-            title: 'How can I play the game?',
-            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+            title: 'How can I claim the tokens if I pay with a card?',
+            content: 'When you pay with a card, you\'ll be asked to provide an Ethereum wallet address during the purchase. Use the same wallet to claim your $FOFI.'
         }
     ];
 
