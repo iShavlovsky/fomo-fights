@@ -20,6 +20,7 @@ import LinkTreeIcon from '@icon/linktree-16.svg';
 import MenuIcon from '@icon/menu-20.svg';
 import MetamaskWalletIcon from '@icon/metamask-20.svg';
 import TelegramIcon from '@icon/telegram-16.svg';
+import TrustWalletIcon from '@icon/trustWallet-20.svg';
 import TwitterXIcon from '@icon/twitterX-16.svg';
 import WalletConnectIcon from '@icon/walletConnect-20.svg';
 import useMediaQuery from '@hooks/useMediaQuery.ts';
@@ -67,8 +68,8 @@ function NavBar() {
 
     const wallets = [
         { name: 'Wallet Connect', fc: () => console.log('Wallet Connect'), icon: <WalletConnectIcon /> },
-        { name: 'Metamask', fc: () => console.log('Metamask'), icon: <LinkTreeIcon /> },
-        { name: 'Trust wallet', fc: () => console.log('Trust wallet'), icon: <MetamaskWalletIcon /> },
+        { name: 'Metamask', fc: () => console.log('Metamask'), icon: <MetamaskWalletIcon /> },
+        { name: 'Trust wallet', fc: () => console.log('Trust wallet'), icon: <TrustWalletIcon /> },
         { name: 'Coinbase Wallet', fc: () => console.log('Coinbase Wallet'), icon: <CoinbaseWallet /> }
     ];
 

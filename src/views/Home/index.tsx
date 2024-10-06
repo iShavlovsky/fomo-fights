@@ -52,12 +52,13 @@ function HomePage() {
         setOpenIndexDD1(index === openIndexDD1 ? -1 : index);
     };
 
-    const [openStates, setOpenStates] = useState<OpenStates>({});
+    const [openStates, setOpenStates] = useState<OpenStates>({ 0: true });
     const handleClickDropDown2 = (index: number) => {
         setOpenStates((prevStates) => ({
             ...prevStates,
-            [index]: !prevStates[index] // Переключение состояния для элемента по индексу
+            [index]: !prevStates[index]
         }));
+        console.log(openStates);
     };
 
     const { animations, isAboveMobile } = useAnimationsLoader(
@@ -506,7 +507,7 @@ function HomePage() {
                             </div>
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headGreen}`}
+                                    className={`${stylesHead.head} ${stylesHead.headDarkBeige4}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 2</h2>
@@ -530,7 +531,7 @@ function HomePage() {
                             </div>
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headDarkBeige4}`}
+                                    className={`${stylesHead.head} ${stylesHead.headGreen}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 3</h2>
@@ -550,30 +551,6 @@ function HomePage() {
                                         Select the network of your choice, input the amount, and proceed to purchase
                                         your
                                         $FOFI.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className={styles.s6SliderSlide}>
-                                <div
-                                    className={`${stylesHead.head} ${stylesHead.headPurple}`}
-                                >
-                                    <div className={`${styles.s6SliderTitleW}`}>
-                                        <h2 className="h2-2">Step 31</h2>
-                                        <div className={`${styles.s6SliderTitleDivider}`}>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <span />
-                                        </div>
-                                        <h2 className="h2-2">Purchase</h2>
-                                    </div>
-
-                                </div>
-                                <div className={`${styles.s6SliderContentW}`}>
-                                    <h3>Purchase $FOFI</h3>
-                                    <p className="body-m-1">
-                                        In the widget, select the network of your choice,
-                                        input the amount, and proceed to purchase your $FOFI.
                                     </p>
                                 </div>
                             </div>
