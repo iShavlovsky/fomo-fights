@@ -261,7 +261,7 @@ function HomePage() {
                                 <h2 className="h2-3">
                                     The Legendary Blockchain Meme Battle
                                 </h2>
-                                <p className="body-m-1">
+                                <p className="body-m-1 text-color-monochrome-9">
                                     FOMO Fights is a Web3 Play-to-Earn multiplayer game where
                                     memecoin characters clash for the ultimate meme supremacy.
                                     {' '}
@@ -482,7 +482,7 @@ function HomePage() {
                         <SliderCustom classNameContainer="">
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headLightPink}`}
+                                    className={`${stylesHead.head} ${stylesHead.headYellow}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 1</h2>
@@ -507,7 +507,7 @@ function HomePage() {
                             </div>
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headDarkBeige4}`}
+                                    className={`${stylesHead.head} ${stylesHead.headGreenLight}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 2</h2>
@@ -531,7 +531,7 @@ function HomePage() {
                             </div>
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headGreen}`}
+                                    className={`${stylesHead.head} ${stylesHead.headLightPink}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 3</h2>
@@ -551,6 +551,56 @@ function HomePage() {
                                         Select the network of your choice, input the amount, and proceed to purchase
                                         your
                                         $FOFI.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className={styles.s6SliderSlide}>
+                                <div
+                                    className={`${stylesHead.head} ${stylesHead.headYellow}`}
+                                >
+                                    <div className={`${styles.s6SliderTitleW}`}>
+                                        <h2 className="h2-2">Step 4</h2>
+                                        <div className={`${styles.s6SliderTitleDivider}`}>
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </div>
+                                        <h2 className="h2-2">Display</h2>
+                                    </div>
+
+                                </div>
+                                <div className={`${styles.s6SliderContentW}`}>
+                                    <h3>PDisplay $FOFI</h3>
+                                    <p className="body-m-1">
+                                        Your $FOFI tokens will be displayed in the widget. You will be able to claim
+                                        them once the presale is over.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className={styles.s6SliderSlide}>
+                                <div
+                                    className={`${stylesHead.head} ${stylesHead.headGreenLight}`}
+                                >
+                                    <div className={`${styles.s6SliderTitleW}`}>
+                                        <h2 className="h2-2">Step 5</h2>
+                                        <div className={`${styles.s6SliderTitleDivider}`}>
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </div>
+                                        <h2 className="h2-2">Choose</h2>
+                                    </div>
+
+                                </div>
+                                <div className={`${styles.s6SliderContentW}`}>
+                                    <h3>Choose $FOFI</h3>
+                                    <p className="body-m-1">
+                                        You can also choose to stake $FOFI through the widget to grow your holdings over
+                                        time.
                                     </p>
                                 </div>
                             </div>
