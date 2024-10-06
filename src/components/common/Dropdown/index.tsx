@@ -21,6 +21,7 @@ interface DropdownPropsMain {
     ddPortalBottom?: ReactNode;
     ddToggleIcon?: ReactNode;
     autoClose?: boolean;
+    ulClassName?: string;
     position?: 'right' | 'left';
     onSelect?: (option: DropdownOption | DropdownOptionSelected) => void;
 }
@@ -44,6 +45,7 @@ function Dropdown({
     ddTitle,
     ddToggleIcon,
     ddPortalTop,
+    ulClassName,
     ddPortalBottom,
     autoClose = true,
     position = 'right',
@@ -98,7 +100,7 @@ function Dropdown({
                 {isOpen && (
                     <ul
                         id="dropdown-list"
-                        className={styles.dropdownMenu}
+                        className={`${styles.dropdownMenu} ${ulClassName}`}
                         role="listbox"
                         aria-labelledby="dropdown-button"
                     >
@@ -119,9 +121,8 @@ function Dropdown({
                                 {option.href
                                     ? (
                                             <a
+                                                className=""
                                                 href={option.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
                                             >
                                                 {option.label}
                                             </a>

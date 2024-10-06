@@ -33,6 +33,7 @@
     --indents-48: 48px;
     --indents-40: 40px;
     --indents-32: 32px;
+    --indents-20: 20px;;
     --indents-24: 24px;;
     --indents-16: 16px;
     --indents-12: 12px;
@@ -115,7 +116,7 @@
     --bg-color: var(--monochrome-1);
 
     /* Minimum height for main */
-    --main-min-height: calc(100vh - 60px);
+    --main-min-height: calc(100vh - 79px);
     --transition-time: 0.3s ease-out;
 
     color-scheme: light dark;
@@ -180,6 +181,10 @@ section {
 
 .mt-16 {
     margin-top: var(--indents-16, 16px);
+}
+
+.mt-20 {
+    margin-top: var(--indents-20, 20px);
 }
 
 .mt-24 {

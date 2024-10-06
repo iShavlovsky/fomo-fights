@@ -7,6 +7,26 @@
     --btn-color-bg: var(--monochrome-10, #000);
 }
 
+@media (hover: hover) {
+    .button-wrapper:hover {
+        transform: scale(98%);
+    }
+
+    .button-span:hover {
+        background: var(--btn-hover-bg-color);
+    }
+}
+
+@media (hover: none) {
+    .button-wrapper:active {
+        transform: scale(98%);
+    }
+
+    .button-span:active {
+        background: var(--btn-hover-bg-color);
+    }
+}
+
 /* Common styles for all buttons */
 .button-wrapper {
     background: var(--btn-color-bg, #000);
@@ -21,9 +41,6 @@
     user-select: none;
 }
 
-.button-wrapper:hover {
-    transform: scale(98%);
-}
 
 .button-span {
     align-items: center;
@@ -59,13 +76,6 @@
     height: var(--btn-border-hover-width);
 }
 
-.button-span:hover {
-    background: var(--btn-hover-bg-color);
-}
-
-.button-span:active {
-    background: var(--btn-hover-bg-color);
-}
 
 .link {
     --btn-border-radius: 0;

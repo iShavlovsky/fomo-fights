@@ -1,10 +1,16 @@
 .staking-section {
+    background-color: var(--blue-12);
+    background-image: url("@assets/bg/Staking-bg-desktop.webp");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: var(--main-min-height);
 }
 
 
 .staking-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 55% 1fr;
     gap: 12px 16px;
     padding-top: 108px;
     padding-bottom: 126px;
@@ -18,4 +24,62 @@
 .staking-h1-w {
     padding: 6px 16px;
     border-bottom: var(--border-monochrome-10);
+}
+
+.staking-right-forms-w {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    grid-row-start: span 2;
+    grid-row-end: span 2;
+    grid-column-start: span 1;
+    grid-column-end: span 1;
+    align-self: start;
+}
+
+
+/* Tablet styles */
+
+@media (width <= 1024px) {
+    .staking-section {
+        background-image: url("@assets/bg/Staking-bg-tablet.webp");
+        background-size: 100% auto;
+        background-position: bottom;
+    }
+
+
+    .staking-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-bottom: 40vw;
+    }
+
+    .staking-right-forms-w {
+        gap: 12px;
+    }
+
+    .staking-right-forms-w {
+        align-self: auto;
+    }
+}
+
+/* Mobile styles */
+@media (width <= 767px) {
+    .staking-section {
+        background-image: url("@assets/bg/Staking-bg-mobile.webp");
+    }
+
+    .staking-container {
+
+        padding-bottom: 60vw;
+    }
+}
+
+@media (width <= 530px) {
+
+    .staking-right-forms-w {
+        display: flex;
+        flex-direction: column;
+    }
 }

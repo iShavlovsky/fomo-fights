@@ -125,6 +125,10 @@
     color: var(--monochrome-2);
 }
 
+.text-color-monochrome-5 {
+    color: var(--monochrome-5);
+}
+
 .text-color-monochrome-6 {
     color: var(--monochrome-6);
 }

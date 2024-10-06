@@ -50,7 +50,6 @@
     gap: 4px;
     height: 218px;
     border-bottom: 1px solid var(--monochrome-4);
-
 }
 
 .graph-indicator-w {
@@ -106,4 +105,28 @@
     padding-left: 40px;
     display: flex;
     justify-content: center;
+}
+
+/* Tablet styles */
+
+@media (width <= 1024px) {
+    .graph-section {
+        padding: 23px 32px;
+    }
+
+    .graph-right-col {
+        flex-grow: 1;
+    }
+
+    .graph-indicators-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Mobile styles */
+@media (width <= 767px) {
+    .graph-section {
+        padding: 24px 16px;
+    }
 }

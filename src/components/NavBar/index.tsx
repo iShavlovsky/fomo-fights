@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import styles from './index.module.css';
@@ -74,20 +74,21 @@ function NavBar() {
 
     const optionalsMenu = [
         {
-            label: (<p className="body-m-1">About</p>),
-            onClick: () => console.log('About clicked')
+            label: 'About',
+            href: '/#about'
         },
         {
-            label: (<p className="body-m-1">Roadmap</p>),
-            onClick: () => console.log('Roadmap clicked')
+            label: 'Roadmap',
+            href: '/#roadmap'
         },
         {
-            label: (<p className="body-m-1">How to Buy</p>),
-            onClick: () => console.log('Buy clicked')
+            label: 'How to Buy',
+            href: '/#how-to-buy'
+
         },
         {
-            label: (<p className="body-m-1">FAQ</p>),
-            onClick: () => console.log('FAQ clicked')
+            label: 'FAQ',
+            href: '/#faq'
         }
     ] satisfies DropdownOption[];
 
@@ -142,6 +143,26 @@ function NavBar() {
     const handleSelect = (selectedOption: DropdownOption) => {
         console.log('Selected item:', selectedOption);
     };
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('overflow-hidden');
+        }
+        else {
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Очистка при размонтировании компонента
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, [isOpen]);
 
     return (
         <header className={`relative ${styles.header}`} role="banner" aria-label="Main navigation">
@@ -207,6 +228,7 @@ function NavBar() {
                                     ddIcon={<MenuIcon />}
                                     ddToggleIcon={<ArrowIcon />}
                                     selectedLabel={false}
+                                    ulClassName="body-m-1"
                                 />
 
                             </div>
@@ -252,6 +274,7 @@ function NavBar() {
                                     ddIcon={<MenuIcon />}
                                     ddToggleIcon={<ArrowIcon />}
                                     selectedLabel={false}
+                                    ulClassName="body-m-1"
 
                                     ddPortalBottom={(
                                         <>
@@ -307,16 +330,25 @@ function NavBar() {
 
                             </ul>
                         </nav>
-                        <button className={`${styles.menuBurger}`}>
-                            <span className={`${styles.burgerLine}`} />
-                            <span className={`${styles.burgerLine}`} />
-                            <span className={`${styles.burgerLine}`} />
+
+                        <button
+                            className={`${styles.menuBurger} ${isOpen ? styles.menuOpen : ''}`}
+                            onClick={toggleMenu}
+                        >
+                            <span className={styles.burgerLine} />
+                            <span className={styles.burgerLine} />
+                            <span className={styles.burgerLine} />
                         </button>
-                        <div className={`${styles.mobileMenuW}`}>
+
+                        <div
+                            className={`${styles.mobileMenuW} ${
+                                isOpen ? styles.mobileMenuOpen : styles.mobileMenuClose
+                            }`}
+                        >
                             <ul className={`flex flex-col gap-12px text-center w-full ${styles.mobileMenuList}`}>
 
                                 {navLinks.map((data, index) => (
-                                    index === 1 && ( // Проверяем, является ли индекс 0
+                                    index === 1 && (
                                         <li key={index}>
                                             <NavLink
                                                 to={data.navLinkTo}
@@ -327,7 +359,13 @@ function NavBar() {
                                         </li>
                                     )
                                 ))}
+                                {optionalsMenu.map((data, index) => (
 
+                                    <li key={index} className="h2-2 text-color-monochrome-1">
+                                        {data.label}
+                                    </li>
+
+                                ))}
                                 <li className="flex justify-content-center mt-32">
                                     <ul className={styles.nav_ul} role="list">
                                         {socialLinks.map((link) => (
@@ -355,6 +393,16 @@ function NavBar() {
                                         onSelect={handleSelect}
                                         selectedLabel={true}
                                     />
+                                </li>
+                                <li>
+                                    <BaseButton
+                                        onClick={handleModalOpen}
+                                        type="primary"
+                                        aria-controls="connect-wallet-modal"
+                                        className="mt-16 w-full"
+                                    >
+                                        Connect Wallet
+                                    </BaseButton>
                                 </li>
                             </ul>
                         </div>
