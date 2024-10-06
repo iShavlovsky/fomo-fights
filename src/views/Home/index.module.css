@@ -529,7 +529,6 @@
 
 /* Mobile styles */
 @media (width <= 767px) {
-
     .s3-tab-w {
         min-height: 460px;
     }
