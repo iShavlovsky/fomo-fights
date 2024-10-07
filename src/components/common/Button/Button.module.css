@@ -108,6 +108,8 @@
     --btn-bg-color: var(--beige-6, #EAD1AA);
     --btn-box-shadow-color: var(--beige-9, #FFF6E8);
     --btn-hover-bg-color: var(--beige-5, #DABF97);
+
+    color: var(--monochrome-8, #4F403B);
 }
 
 .secondary2 {

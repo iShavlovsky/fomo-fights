@@ -131,6 +131,7 @@ html, body {
     scrollbar-gutter: stable;
 }
 
+
 body {
     background-color: var(--monochrome-1);
     color: var(--text-color);
