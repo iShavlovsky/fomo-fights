@@ -134,7 +134,7 @@
     z-index: 20;
 
     h2::after {
-        content: 'RoadMAP RoadMAP RoadMAP RoadMAP RoadMAP';
+        content: 'RoadMAP\00A0RoadMAP\00A0RoadMAP\00A0RoadMAP\00A0RoadMAP';
         position: absolute;
         left: calc(100% + 10px);
         text-wrap: nowrap;
@@ -142,7 +142,7 @@
     }
 
     h2::before {
-        content: 'RoadMAP RoadMAP RoadMAP RoadMAP RoadMAP';
+        content: 'RoadMAP\00A0RoadMAP\00A0RoadMAP\00A0RoadMAP\00A0RoadMAP';
         position: absolute;
         right: calc(100% + 10px);
         text-wrap: nowrap;

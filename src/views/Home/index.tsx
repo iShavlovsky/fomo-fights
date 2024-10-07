@@ -572,7 +572,7 @@ function HomePage() {
 
                                 </div>
                                 <div className={`${styles.s6SliderContentW}`}>
-                                    <h3>PDisplay $FOFI</h3>
+                                    <h3>Display $FOFI</h3>
                                     <p className="body-m-1">
                                         Your $FOFI tokens will be displayed in the widget. You will be able to claim
                                         them once the presale is over.

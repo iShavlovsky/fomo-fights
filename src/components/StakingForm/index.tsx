@@ -77,7 +77,13 @@ function StakingForm() {
                         <div className="flex flex-col gap-6px grow overflow-hidden">
                             <div className="flex flex-row justify-between">
                                 <p className="body-s-2">You Pay</p>
-                                <button onClick={() => console.log('MAX')} className="cursor-pointer body-xs-1 text-color-pink-2" type="button">MAX</button>
+                                <button
+                                    onClick={() => console.log('MAX')}
+                                    className="cursor-pointer body-xs-1 text-color-pink-2"
+                                    type="button"
+                                >
+                                    MAX
+                                </button>
                             </div>
                             <div className={`${styles.stakingFormInputWrapper}`}>
                                 <input
@@ -94,7 +100,7 @@ function StakingForm() {
                         </div>
                         <div className="flex flex-col gap-6px grow overflow-hidden">
                             <div>
-                                <p className="body-s-2">You receivey</p>
+                                <p className="body-s-2">You receive</p>
 
                             </div>
                             <div className={`${styles.stakingFormInputWrapper}`}>
@@ -113,7 +119,7 @@ function StakingForm() {
                     <div
                         className={`flex flex-col gap-8px text-center ${styles.stakingFormTextInfo}`}
                     >
-                        <p className="body-s-1">
+                        <p className="body-s-1 text-color-monochrome-8">
                             0.005 ETH is reserved for gas. The actual amount used will depend on the
                             network.
                         </p>
