@@ -135,6 +135,10 @@ body {
     background-color: var(--monochrome-1);
     color: var(--text-color);
     font-family: var(--font-family-primary), sans-serif;
+
+    /* todo safari render fonts */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 main {
