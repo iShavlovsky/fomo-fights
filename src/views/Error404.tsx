@@ -24,7 +24,13 @@ export default function Error404({ title = '404 Page not found' }: Props404) {
                                 className={`title-w flex justify-between ${stylesHead.head} ${stylesHead.headDarkPink}`}
                             >
                                 <h1 className="h2-2 text-color-monochrome-1">{title}</h1>
-                                <CloseIco />
+                                <Link
+                                    to="/"
+
+                                >
+                                    <CloseIco />
+                                </Link>
+
                             </div>
                             <div className={`${styles.subtitle404W}`}>
                                 <div className={`${styles.img404}`} title="404 Page not found image" />
