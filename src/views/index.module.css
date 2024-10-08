@@ -9,8 +9,7 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: top;
-    padding-top: 210px;
-    padding-bottom: 65px;
+    padding: 210px 0 65px;
     overflow: hidden;
 }
 
