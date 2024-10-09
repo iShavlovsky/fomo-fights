@@ -6,10 +6,10 @@
 .container-404 {
     flex: 1;
     background-image: url("@assets/bg/bg-404-desk.webp");
-    background-size: auto 100%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: top;
-    padding: 210px 0 65px;
+    background-position: bottom;
+    padding: 210px 55px 55px;
     overflow: hidden;
 }
 
@@ -54,11 +54,19 @@
     background-repeat: no-repeat;
 }
 
+/* Media Queries */
+@media (width <= 1440px) {
+    .container-404 {
+        padding: 210px 4.7vw 3.8vw;
+    }
+}
+
 /* Tablet styles */
 @media (width <= 1024px) {
     .section-404 {
         background-image: url("@assets/bg/bg-404-tablet.webp");
         background-size: cover;
+        background-position: center;
     }
 
     .container-404 {

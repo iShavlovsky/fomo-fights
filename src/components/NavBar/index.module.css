@@ -119,7 +119,7 @@
 
 .nav-bar-bottom-line {
     position: absolute;
-    top: 90%;
+    top: 92%;
     left: 0;
     right: 0;
     height: 60px;
@@ -249,7 +249,7 @@
     .nav-bar-logo {
         top: 25px;
         width: 100%;
-        max-width: 172px;
+        max-width: 196px;
     }
 
     .nav-bar-bottom-line {

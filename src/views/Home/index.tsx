@@ -259,7 +259,7 @@ function HomePage() {
                             </div>
                             <div className="p-16 flex flex-col gap-12px bg-beige-9">
                                 <h2 className="h2-3">
-                                    The Legendary Blockchain Meme Battle
+                                    The Legendary Blockchain Meme&nbsp;Battle
                                 </h2>
                                 <p className="body-m-1 text-color-monochrome-9">
                                     FOMO Fights is a Web3 Play-to-Earn multiplayer game where
