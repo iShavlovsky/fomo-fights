@@ -574,6 +574,37 @@
 
     }
 
+    .s4-title-w {
+        &::after {
+            content: '';
+            flex: 1;
+            background-image: url("@assets/icon/pink-lines.svg");
+            background-position: center;
+            background-repeat: repeat-x;
+        }
+
+        &::before {
+            content: '';
+            flex: 1;
+            background-image: url("@assets/icon/pink-lines.svg");
+            background-position: center;
+            background-repeat: repeat-x;
+        }
+
+        h2 {
+            margin: 0 12px;
+        }
+
+        h2::after {
+            content: none;
+
+        }
+
+        h2::before {
+            content: none;
+        }
+    }
+
     .s4-row {
         grid-template-columns: 1fr;
         padding: 0 38px;
