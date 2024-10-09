@@ -120,7 +120,6 @@
     --transition-time: 0.3s ease-out;
 
     color-scheme: light dark;
-    font-family: "Bai Jamjuree", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-synthesis: none;
@@ -135,7 +134,7 @@ html, body {
 body {
     background-color: var(--monochrome-1);
     color: var(--text-color);
-    font-family: var(--font-family-primary), sans-serif;
+
 
     /* todo safari render fonts */
     -webkit-font-smoothing: antialiased;
