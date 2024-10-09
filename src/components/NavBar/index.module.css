@@ -119,7 +119,7 @@
 
 .nav-bar-bottom-line {
     position: absolute;
-    top: 92%;
+    top: 90%;
     left: 0;
     right: 0;
     height: 60px;
@@ -212,7 +212,12 @@
     padding-bottom: 190px;
 }
 
-/* Desktop > 1440 */
+/* Desktop > */
+@media (width <= 1240px) {
+    .nav-bar-bottom-line {
+        top: 92%;
+    }
+}
 
 @media (width <= 1240px) {
     .navbar-container-w {
