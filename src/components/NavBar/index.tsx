@@ -362,8 +362,13 @@ function NavBar() {
                                 ))}
                                 {optionalsMenu.map((data, index) => (
 
-                                    <li key={index} className="h2-2 text-color-monochrome-1">
-                                        {data.label}
+                                    <li key={index} className="">
+                                        <a
+                                            href={data.href}
+                                            className={`h2-2 text-color-monochrome-1 no-decorate ${styles.mainNavLink}`}
+                                        >
+                                            {data.label}
+                                        </a>
                                     </li>
 
                                 ))}

@@ -86,7 +86,6 @@ const Graph = () => {
                         </div>
                     </div>
                 </div>
-                <div />
             </div>
             <div className={`${styles.graphBottomTitleW}`}>
                 <p className="body-xs-1">Months</p>

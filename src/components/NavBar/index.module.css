@@ -210,6 +210,8 @@
     max-width: 400px;
     overflow: auto;
     padding-bottom: 190px;
+    padding-top: 8px;
+
 }
 
 /* Desktop > */
@@ -259,5 +261,9 @@
 
     .nav-bar-bottom-line {
         background-size: 950px auto;
+    }
+
+    .main-nav-link {
+        padding: 4px;
     }
 }
