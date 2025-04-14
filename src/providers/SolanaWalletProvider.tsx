@@ -1,4 +1,5 @@
 import {
+    MathWalletAdapter,
     PhantomWalletAdapter,
     SolflareWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
@@ -23,6 +24,7 @@ export const SolanaWalletProvider = ({ children }:SolanaWalletProviderProps) => 
         () => [
             new PhantomWalletAdapter(),
             new SolflareWalletAdapter({ network }),
+            new MathWalletAdapter(),
         ],
         [network]
     );
