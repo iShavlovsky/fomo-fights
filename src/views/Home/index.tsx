@@ -30,6 +30,7 @@ import RoadMapLine3Icon from '@icon/rodamap-line-3.svg';
 import RoadMapLine4Icon from '@icon/rodamap-line-4.svg';
 import ScheduleIcon from '@icon/Schedule.svg';
 import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
+import {SolanaConnect} from "@components/Connect/SolanaConnect.tsx";
 
 const Lottie = React.lazy(() => import('lottie-react'));
 
@@ -86,8 +87,8 @@ function HomePage() {
 
     const dataHeroDD = [
         {
-            title: '$FOFI tokens',
-            content: 'Don’t miss your chance to get ahead by securing $FOFI tokens during this exclusive Presale offer. Join us in bringing the game to life and start earning rewards today.'
+            title: '$DEFIG tokens',
+            content: 'Don’t miss your chance to get ahead by securing $DEFIG tokens during this exclusive Presale offer. Join us in bringing the game to life and start earning rewards today.'
         },
         {
             title: 'About game',
@@ -250,21 +251,21 @@ function HomePage() {
         <>
             <section className="bg-purple-4">
                 <div className="container relative">
+                    <SolanaConnect />
                     <div className={`${styles.s1ContainerW}`}>
 
                         <div className={`${styles.s1H1ContentW}`}>
 
                             <div className={`title-w ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
-                                <h1 className="h2-1 text-center w-full">FOMO Fights</h1>
+                                <h1 className="h2-1 text-center w-full">322% STAKING REWARDS</h1>
                             </div>
                             <div className="p-16 flex flex-col gap-12px bg-beige-9">
                                 <h2 className="h2-3">
-                                    The Legendary Blockchain Meme&nbsp;Battle
+                                    Degen Fighters.
+                                    Legendary Blockchain Meme Battle
                                 </h2>
                                 <p className="body-m-1 text-color-monochrome-9">
-                                    FOMO Fights is a Web3 Play-to-Earn multiplayer game where
-                                    memecoin characters clash for the ultimate meme supremacy.
-                                    {' '}
+                                    Degen Fighters is a Web3 Play-to-Earn multiplayer game where memecoin characters clash for the ultimate meme supremacy
                                 </p>
                                 <ul className={`flex flex-col gap-12px ${styles.s1DdInfoW}`}>
                                     {dataHeroDD.map((item, index) => (

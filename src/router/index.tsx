@@ -1,9 +1,8 @@
-import type { RouteObject } from 'react-router/dist/lib/context';
-
 import LayoutDefault from '@/layouts/default.tsx';
 
 import Home from '@views/Home';
 import Staking from '@views/Staking';
+import {RouteObject} from "react-router-dom";
 
 const routes = [
     {
@@ -20,6 +19,6 @@ const routes = [
             }
         ]
     }
-] as const satisfies RouteObject[];
+] satisfies RouteObject[];
 
 export default routes;
