@@ -162,6 +162,10 @@
     color: var(--beige-3);
 }
 
+.text-color-beige-1 {
+    color: var(--beige-1);
+}
+
 .text-color-monochrome-7-6 {
     color: var(--monochrome-7-6);
 }
@@ -181,6 +185,11 @@
     max-width: 100%;
 }
 
+.max-w-386 {
+    max-width: 386px;
+}
+
+
 /* ----------------------- Overflow ------------------------------ */
 .overflow-hidden {
     overflow: hidden;
@@ -197,4 +206,8 @@
 
 .no-decorate {
     text-decoration: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }

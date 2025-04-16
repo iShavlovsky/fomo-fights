@@ -1,0 +1,8 @@
+.YellowWarningBox {
+    padding: 12px 16px;
+    outline: 2px var(--yellow-2, #DBB759) solid;
+    background: var(--yellow-6, #FFEDC0);
+    border-radius: 4px;
+    color: var(--monochrome-8, #4F403B);
+
+}

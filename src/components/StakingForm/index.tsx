@@ -8,13 +8,15 @@ import ErrorWindow from '@components/StakingForm/errorWindow.tsx';
 import PresaleLimit from '@components/StakingForm/presaleLimit.tsx';
 import DollarIcon20 from '@icon/dollar-20.svg';
 import FistIcon from '@icon/fist-20.svg';
+import InfoTag from "@components/common/InfoTag";
+import HowToBuy from "@components/modalContent/howToBuy";
 
 function StakingForm() {
     const timeData = [
-        { label: 'Days', value: '02' },
-        { label: 'Hrs', value: '22' },
-        { label: 'Min', value: '12' },
-        { label: 'Sec', value: '42' }
+        {label: 'Days', value: '02'},
+        {label: 'Hrs', value: '22'},
+        {label: 'Min', value: '12'},
+        {label: 'Sec', value: '42'}
     ];
 
     return (
@@ -42,7 +44,7 @@ function StakingForm() {
                         ))}
                     </div>
 
-                    <PresaleLimit />
+                    <PresaleLimit/>
 
                     <div className="flex flex-row gap-16px text-color-monochrome-6">
 
@@ -51,7 +53,7 @@ function StakingForm() {
                                 Your purchased $FOFI
                             </p>
                             <div className="flex flex-row items-center gap-4px">
-                                <FistIcon />
+                                <FistIcon/>
 
                                 <p className="body-s-2 text-color-monochrome-7-6">0.00</p>
                             </div>
@@ -62,7 +64,7 @@ function StakingForm() {
                                 Your stakeable $FOFI
                             </p>
                             <div className="flex flex-row items-center gap-4px">
-                                <FistIcon />
+                                <FistIcon/>
 
                                 <p className="body-s-2 text-color-monochrome-7-6">0.00</p>
                             </div>
@@ -71,7 +73,7 @@ function StakingForm() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-12px">
-                    <BalanceRadioBtns />
+                    <BalanceRadioBtns/>
 
                     <div className="flex flex-row gap-8px">
                         <div className="flex flex-col gap-6px grow overflow-hidden">
@@ -94,7 +96,7 @@ function StakingForm() {
                                     className={`${styles.stakingFormInput} body-s-2`}
                                 />
 
-                                <DollarIcon20 />
+                                <DollarIcon20/>
                             </div>
 
                         </div>
@@ -112,7 +114,7 @@ function StakingForm() {
                                     className={`${styles.stakingFormInput} body-s-2`}
                                 />
 
-                                <FistIcon />
+                                <FistIcon/>
                             </div>
                         </div>
                     </div>
@@ -128,11 +130,23 @@ function StakingForm() {
                             Make sure you have 0.005 ETH for gas and ETH for token exchange
                         </p>
                     </div>
-                    <AutorizeWindow />
-                    <ErrorWindow />
+                    <AutorizeWindow/>
+                    <ErrorWindow/>
                     <BaseButton type="primary" className="w-full">connect wallet</BaseButton>
                     <BaseButton type="secondary2" className="w-full">Buy and stake for 84%</BaseButton>
                     <BaseButton type="secondary" className="w-full">Not enough ETH? Top up now</BaseButton>
+
+                    <div className={'flex flex-col items-center gap-8px'}>
+                        <p className={'body-m-2 text-color-monochrome-8'}>How would you like to pay?</p>
+                        <div className="flex gap-8px w-full">
+                            <BaseButton type="secondary" className="w-full">Buy with card</BaseButton>
+                            <BaseButton type="secondary" className="w-full">Buy with crypto</BaseButton>
+
+                        </div>
+                        <InfoTag title={'How to buy?'}
+                                 modalTitle={'How to buy $DEFIG?'}
+                                 modalChildren={<HowToBuy/>}/>
+                    </div>
 
                 </div>
             </div>

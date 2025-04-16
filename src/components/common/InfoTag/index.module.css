@@ -1,0 +1,7 @@
+.info-tag-w {
+    cursor: pointer;
+    gap: 2px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: var(--beige-7);
+}
