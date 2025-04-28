@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import {NavLink} from 'react-router-dom';
 
 import styles from './index.module.css';
 
 import BaseButton from '@components/common/Button/baseButton.tsx';
-import Dropdown, { DropdownOption, DropdownOptionSelected } from '@components/common/Dropdown';
+import Dropdown, {DropdownOption, DropdownOptionSelected} from '@components/common/Dropdown';
 import Modal from '@components/common/Modal';
 import ArrowIcon from '@icon/arrow-16.svg';
 import BulgarianIcon from '@icon/Bulgarian-Flag.svg';
 import ChineseIcon from '@icon/Chinese-Flag.svg';
-import CoinbaseWallet from '@icon/coinbaseWallet-20.svg';
 import CzechIcon from '@icon/Czech-Flag.svg';
 import DutchIcon from '@icon/Dutch-Flag.svg';
 import EnglishIcon from '@icon/English-Flag.svg';
@@ -18,19 +17,18 @@ import InstagramIcon from '@icon/instagram-16.svg';
 import LanguageIcon from '@icon/language-20.svg';
 import LinkTreeIcon from '@icon/linktree-16.svg';
 import MenuIcon from '@icon/menu-20.svg';
-import MetamaskWalletIcon from '@icon/metamask-20.svg';
 import TelegramIcon from '@icon/telegram-16.svg';
-import TrustWalletIcon from '@icon/trustWallet-20.svg';
 import TwitterXIcon from '@icon/twitterX-16.svg';
-import WalletConnectIcon from '@icon/walletConnect-20.svg';
 import useMediaQuery from '@hooks/useMediaQuery.ts';
+import WalletTypeModal from "@components/Connect/WalletType/WalletTypeModal.tsx";
+import SelectWalletModal from "@components/Connect/SelectWallet/SelectWalletModal.tsx";
 
 const socialLinks = [
-    { label: 'TwitterX', href: 'https://x.com', icon: <TwitterXIcon /> },
-    { label: 'Linktree', href: 'https://linktree.com', icon: <LinkTreeIcon /> },
-    { label: 'Telegram', href: 'https://telegram.com', icon: <TelegramIcon /> },
-    { label: 'Instagram', href: 'https://instagram.com', icon: <InstagramIcon /> },
-    { label: 'Github', href: 'https://github.com', icon: <GithubIcon /> }
+    {label: 'TwitterX', href: 'https://x.com', icon: <TwitterXIcon/>},
+    {label: 'Linktree', href: 'https://linktree.com', icon: <LinkTreeIcon/>},
+    {label: 'Telegram', href: 'https://telegram.com', icon: <TelegramIcon/>},
+    {label: 'Instagram', href: 'https://instagram.com', icon: <InstagramIcon/>},
+    {label: 'Github', href: 'https://github.com', icon: <GithubIcon/>}
 ] as const;
 
 interface NavData {
@@ -66,13 +64,6 @@ function NavBar() {
         setOpenConnectWallet(true);
     };
 
-    const wallets = [
-        { name: 'Wallet Connect', fc: () => console.log('Wallet Connect'), icon: <WalletConnectIcon /> },
-        { name: 'Metamask', fc: () => console.log('Metamask'), icon: <MetamaskWalletIcon /> },
-        { name: 'Trust wallet', fc: () => console.log('Trust wallet'), icon: <TrustWalletIcon /> },
-        { name: 'Coinbase Wallet', fc: () => console.log('Coinbase Wallet'), icon: <CoinbaseWallet /> }
-    ];
-
     const optionalsMenu = [
         {
             label: 'About',
@@ -98,7 +89,7 @@ function NavBar() {
             abbreviation: 'Bu',
             label: (
                 <>
-                    <BulgarianIcon />
+                    <BulgarianIcon/>
                     <p className="body-m-1">Bulgarian</p>
                 </>),
             onClick: () => console.log('Selected Bulgarian')
@@ -107,7 +98,7 @@ function NavBar() {
             abbreviation: 'En',
             label: (
                 <>
-                    <EnglishIcon />
+                    <EnglishIcon/>
                     <p className="body-m-1">English</p>
                 </>),
             onClick: () => console.log('Selected English')
@@ -116,7 +107,7 @@ function NavBar() {
             abbreviation: 'Ch',
             label: (
                 <>
-                    <ChineseIcon />
+                    <ChineseIcon/>
                     <p className="body-m-1">Chinese</p>
                 </>),
             onClick: () => console.log('Selected Chinese')
@@ -125,7 +116,7 @@ function NavBar() {
             abbreviation: 'Cz',
             label: (
                 <>
-                    <CzechIcon />
+                    <CzechIcon/>
                     <p className="body-m-1">Czech</p>
                 </>),
             onClick: () => console.log('Selected Czech')
@@ -134,7 +125,7 @@ function NavBar() {
             abbreviation: 'Du',
             label: (
                 <>
-                    <DutchIcon />
+                    <DutchIcon/>
                     <p className="body-m-1">Dutch</p>
                 </>),
             onClick: () => console.log('Selected Dutch')
@@ -154,8 +145,7 @@ function NavBar() {
     useEffect(() => {
         if (isOpen) {
             document.body.classList.add('overflow-hidden');
-        }
-        else {
+        } else {
             document.body.classList.remove('overflow-hidden');
         }
 
@@ -169,16 +159,85 @@ function NavBar() {
         <header className={`relative ${styles.header}`} role="banner" aria-label="Main navigation">
             <div className={`container relative ${styles.navbarContainerW}`}>
                 {isDesktopView
-                && (
-                    <div className="flex flex-row justify-between">
-                        <div className="flex flex-row gap-24px">
+                    && (
+                        <div className="flex flex-row justify-between">
+                            <div className="flex flex-row gap-24px">
+                                <nav className={styles.nav} aria-label="Primary">
+                                    <ul className={styles.nav_ul} role="list">
+                                        {navLinks.map((data, index) => (
+                                            <li key={index}>
+                                                <NavLink
+                                                    to={data.navLinkTo}
+                                                    className={({isActive}) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
+                                                >
+                                                    {data.navLinkTitle}
+                                                </NavLink>
+                                            </li>
+                                        ))}
+
+                                    </ul>
+                                </nav>
+                                <ul className={styles.nav_ul} role="list">
+                                    {socialLinks.map((link) => (
+                                        <li key={link.href}>
+                                            <a
+                                                className={styles.nav_link}
+                                                href={link.href}
+                                                aria-label={`Visit our ${link.label}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {link.icon}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="flex flex-row items-center gap-24px">
+                                <BaseButton
+                                    onClick={handleModalOpen}
+                                    type="primary"
+                                    aria-controls="connect-wallet-modal"
+                                >
+                                    Connect Wallet
+                                </BaseButton>
+                                <div className="flex flex-row gap-4px">
+                                    <Dropdown
+                                        options={optionalsLocale}
+                                        autoClose={false}
+                                        ddTitle="En"
+                                        ddIcon={<LanguageIcon/>}
+                                        ddToggleIcon={<ArrowIcon/>}
+                                        onSelect={handleSelect}
+                                        selectedLabel={true}
+                                    />
+
+                                    <Dropdown
+                                        options={optionalsMenu}
+                                        ddTitle="Menu"
+                                        ddIcon={<MenuIcon/>}
+                                        ddToggleIcon={<ArrowIcon/>}
+                                        selectedLabel={false}
+                                        ulClassName="body-m-1"
+                                    />
+
+                                </div>
+                            </div>
+
+                        </div>
+                    )}
+
+                {isTabletView
+                    && (
+                        <div className="flex flex-row justify-between">
                             <nav className={styles.nav} aria-label="Primary">
                                 <ul className={styles.nav_ul} role="list">
                                     {navLinks.map((data, index) => (
                                         <li key={index}>
                                             <NavLink
-                                                to={data.navLinkTo}
-                                                className={({ isActive }) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
+                                                to={data.navLinkTo} // Теперь это корректно
+                                                className={({isActive}) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
                                             >
                                                 {data.navLinkTitle}
                                             </NavLink>
@@ -187,129 +246,60 @@ function NavBar() {
 
                                 </ul>
                             </nav>
-                            <ul className={styles.nav_ul} role="list">
-                                {socialLinks.map((link) => (
-                                    <li key={link.href}>
-                                        <a
-                                            className={styles.nav_link}
-                                            href={link.href}
-                                            aria-label={`Visit our ${link.label}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            {link.icon}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
 
-                        <div className="flex flex-row items-center gap-24px">
-                            <BaseButton
-                                onClick={handleModalOpen}
-                                type="primary"
-                                aria-controls="connect-wallet-modal"
-                            >
-                                Connect Wallet
-                            </BaseButton>
-                            <div className="flex flex-row gap-4px">
-                                <Dropdown
-                                    options={optionalsLocale}
-                                    autoClose={false}
-                                    ddTitle="En"
-                                    ddIcon={<LanguageIcon />}
-                                    ddToggleIcon={<ArrowIcon />}
-                                    onSelect={handleSelect}
-                                    selectedLabel={true}
-                                />
+                            <div className="flex flex-row items-center gap-24px">
+                                <div className="flex flex-row gap-4px">
+                                    <Dropdown
+                                        options={optionalsLocale}
+                                        autoClose={false}
+                                        ddTitle="En"
+                                        ddIcon={<LanguageIcon/>}
+                                        ddToggleIcon={<ArrowIcon/>}
+                                        onSelect={handleSelect}
+                                        selectedLabel={true}
+                                    />
 
-                                <Dropdown
-                                    options={optionalsMenu}
-                                    ddTitle="Menu"
-                                    ddIcon={<MenuIcon />}
-                                    ddToggleIcon={<ArrowIcon />}
-                                    selectedLabel={false}
-                                    ulClassName="body-m-1"
-                                />
+                                    <Dropdown
+                                        options={optionalsMenu}
+                                        ddTitle="Menu"
+                                        ddIcon={<MenuIcon/>}
+                                        ddToggleIcon={<ArrowIcon/>}
+                                        selectedLabel={false}
+                                        ulClassName="body-m-1"
 
+                                        ddPortalBottom={(
+                                            <>
+                                                <ul className={styles.nav_ul} role="list">
+                                                    {socialLinks.map((link) => (
+                                                        <li key={link.href}>
+                                                            <a
+                                                                className={styles.nav_link}
+                                                                href={link.href}
+                                                                aria-label={`Visit our ${link.label}`}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                            >
+                                                                {link.icon}
+                                                            </a>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                                <BaseButton
+                                                    onClick={handleModalOpen}
+                                                    type="primary"
+                                                    aria-controls="connect-wallet-modal"
+                                                    className="mt-16 w-full"
+                                                >
+                                                    Connect Wallet
+                                                </BaseButton>
+                                            </>
+                                        )}
+                                    />
+
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                )}
-
-                {isTabletView
-                && (
-                    <div className="flex flex-row justify-between">
-                        <nav className={styles.nav} aria-label="Primary">
-                            <ul className={styles.nav_ul} role="list">
-                                {navLinks.map((data, index) => (
-                                    <li key={index}>
-                                        <NavLink
-                                            to={data.navLinkTo} // Теперь это корректно
-                                            className={({ isActive }) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
-                                        >
-                                            {data.navLinkTitle}
-                                        </NavLink>
-                                    </li>
-                                ))}
-
-                            </ul>
-                        </nav>
-
-                        <div className="flex flex-row items-center gap-24px">
-                            <div className="flex flex-row gap-4px">
-                                <Dropdown
-                                    options={optionalsLocale}
-                                    autoClose={false}
-                                    ddTitle="En"
-                                    ddIcon={<LanguageIcon />}
-                                    ddToggleIcon={<ArrowIcon />}
-                                    onSelect={handleSelect}
-                                    selectedLabel={true}
-                                />
-
-                                <Dropdown
-                                    options={optionalsMenu}
-                                    ddTitle="Menu"
-                                    ddIcon={<MenuIcon />}
-                                    ddToggleIcon={<ArrowIcon />}
-                                    selectedLabel={false}
-                                    ulClassName="body-m-1"
-
-                                    ddPortalBottom={(
-                                        <>
-                                            <ul className={styles.nav_ul} role="list">
-                                                {socialLinks.map((link) => (
-                                                    <li key={link.href}>
-                                                        <a
-                                                            className={styles.nav_link}
-                                                            href={link.href}
-                                                            aria-label={`Visit our ${link.label}`}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                        >
-                                                            {link.icon}
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                            <BaseButton
-                                                onClick={handleModalOpen}
-                                                type="primary"
-                                                aria-controls="connect-wallet-modal"
-                                                className="mt-16 w-full"
-                                            >
-                                                Connect Wallet
-                                            </BaseButton>
-                                        </>
-                                    )}
-                                />
-
-                            </div>
-                        </div>
-                    </div>
-                )}
+                    )}
 
                 {(!isTabletView
                     && !isDesktopView) && (
@@ -321,7 +311,7 @@ function NavBar() {
                                         <li key={index}>
                                             <NavLink
                                                 to={data.navLinkTo}
-                                                className={({ isActive }) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
+                                                className={({isActive}) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
                                             >
                                                 {data.navLinkTitle}
                                             </NavLink>
@@ -336,9 +326,9 @@ function NavBar() {
                             className={`${styles.menuBurger} ${isOpen ? styles.menuOpen : ''}`}
                             onClick={toggleMenu}
                         >
-                            <span className={styles.burgerLine} />
-                            <span className={styles.burgerLine} />
-                            <span className={styles.burgerLine} />
+                            <span className={styles.burgerLine}/>
+                            <span className={styles.burgerLine}/>
+                            <span className={styles.burgerLine}/>
                         </button>
 
                         <div
@@ -353,7 +343,7 @@ function NavBar() {
                                         <li key={index}>
                                             <NavLink
                                                 to={data.navLinkTo}
-                                                className={({ isActive }) => `${styles.mainNavLink} h2-2 ${isActive ? 'active-link' : ''}`}
+                                                className={({isActive}) => `${styles.mainNavLink} h2-2 ${isActive ? 'active-link' : ''}`}
                                             >
                                                 {data.navLinkTitle}
                                             </NavLink>
@@ -394,8 +384,8 @@ function NavBar() {
                                         options={optionalsLocale}
                                         autoClose={false}
                                         ddTitle="En"
-                                        ddIcon={<LanguageIcon />}
-                                        ddToggleIcon={<ArrowIcon />}
+                                        ddIcon={<LanguageIcon/>}
+                                        ddToggleIcon={<ArrowIcon/>}
                                         onSelect={handleSelect}
                                         selectedLabel={true}
                                     />
@@ -423,22 +413,8 @@ function NavBar() {
                         role="dialog"
                         aria-labelledby="connect-wallet-title"
                     >
-                        <div>
-                            <ul className={styles.walletsList} role="list">
-                                {wallets.map((wallet) => (
-                                    <li
-                                        className={styles.walletsItem}
-                                        key={wallet.name}
-                                        onClick={wallet.fc}
-                                        role="button"
-                                        tabIndex={0}
-                                        aria-label={`Connect to ${wallet.name}`}
-                                    >
-                                        {wallet.icon}
-                                        <p className="body-m-1">{wallet.name}</p>
-                                    </li>
-                                ))}
-                            </ul>
+
+                        <SelectWalletModal>
                             <BaseButton
                                 className="button-text mt-12"
                                 onClick={handleModalClose}
@@ -446,12 +422,13 @@ function NavBar() {
                             >
                                 <p className="button-text">I don’t have a Wallet</p>
                             </BaseButton>
-                        </div>
+                        </SelectWalletModal>
+                        <WalletTypeModal></WalletTypeModal>
                     </Modal>
                 )}
 
-                <div className={styles.navBarLogo} />
-                <div className={`${styles.navBarBottomLine}`} />
+                <div className={styles.navBarLogo}/>
+                <div className={`${styles.navBarBottomLine}`}/>
             </div>
 
         </header>
