@@ -1,0 +1,38 @@
+.headerLineDecorate {
+    gap: 8px;
+
+    &::after {
+        content: '';
+        flex: 1;
+        background-image: url("@icon/lines-pink.svg");
+        background-position: center;
+        background-repeat: repeat-x;
+    }
+
+    &::before {
+        content: '';
+        flex: 1;
+        background-position: center;
+        background-repeat: repeat-x;
+    }
+}
+
+.lineColorBeige4 {
+    &::after {
+        background-image: url("@icon/lines-beige4.svg");
+    }
+
+    &::before {
+        background-image: url("@icon/lines-beige4.svg");
+    }
+}
+
+.lineColorPink {
+    &::after {
+        background-image: url("@icon/lines-pink.svg");
+    }
+
+    &::before {
+        background-image: url("@icon/lines-pink.svg");
+    }
+}
