@@ -68,7 +68,7 @@
 .staking-form-input {
     background: transparent;
     border: none;
-    outline:none;
+    outline: none;
     width: 100%;
     color: var(--monochrome-10);
 }
@@ -126,6 +126,25 @@
 
 .staking-form-second-radio-btn-w {
     border-top: var(--border-beige-1);
+}
+
+.purchaseTokedSelectMainIcoW {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+}
+
+.purchaseTokedSelectSmallIcoW {
+    position: absolute;
+    overflow: hidden;
+    bottom: -4px;
+    right: -4px;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    border-radius: 50%;
+    border: 2px solid var(--monochrome-1);
 }
 
 @media (width <= 767px) {

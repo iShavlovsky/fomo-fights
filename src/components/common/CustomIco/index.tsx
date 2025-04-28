@@ -58,7 +58,7 @@ const icons = {
 
     ),
     ethWallet: (
-        <svg viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M20.75 40.0039C31.7957 40.0039 40.75 31.0496 40.75 20.0039C40.75 8.95821 31.7957 0.00390625 20.75 0.00390625C9.7043 0.00390625 0.75 8.95821 0.75 20.0039C0.75 31.0496 9.7043 40.0039 20.75 40.0039Z"
                 fill="#627EEA"/>
@@ -71,7 +71,7 @@ const icons = {
         </svg>
     ),
     solanaWallet: (
-        <svg viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1337_3097)">
                 <path
                     d="M20.2173 0.0390625H20.2499C31.2622 0.0390625 40.1928 8.7216 40.1928 19.428V20.5073C40.1928 31.2137 31.2622 39.8962 20.2499 39.8962H20.2173C9.20503 39.8962 0.274414 31.2137 0.274414 20.5073V19.428C0.274414 8.7216 9.20503 0.0390625 20.2173 0.0390625Z"
@@ -91,6 +91,12 @@ const icons = {
                 </clipPath>
             </defs>
         </svg>
+    ),
+    ddArrow: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+            <path d="M12 6L8 10L4 6" stroke="currentColor" stroke-width="2"/>
+        </svg>
+
 
     )
 } as const;

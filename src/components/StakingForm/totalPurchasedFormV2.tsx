@@ -1,8 +1,23 @@
 import HeaderLineDecorate from "@components/common/HeaderLineDecorate";
 import InputFieldPurchase from "@components/common/InputFieldPurchase";
 import CustomIco from "@components/common/CustomIco";
+import styles from './index.module.css';
+import Modal from "@components/common/Modal";
+import {useState} from "react";
+
 
 const totalPurchasedFormV2 = () => {
+    const [isOpenChooseToken, setOpenChooseToken] = useState(false);
+
+
+    const handleModalClose = () => {
+        setOpenChooseToken(false);
+    };
+
+    const handleModalOpen = () => {
+        setOpenChooseToken(true);
+    };
+
     return (
         <div className="flex flex-col gap-8px">
             <HeaderLineDecorate
@@ -18,14 +33,59 @@ const totalPurchasedFormV2 = () => {
             />
 
             <div className={`flex flex-col gap-4px`}>
-                <InputFieldPurchase>
+                <InputFieldPurchase
+                    title="You Pay"
+                    showMaxButton={true}
+                    onMaxClick={() => console.log('MAX clicked')}
+                    transactionToken={
+                        <button onClick={handleModalOpen}
+                                className={'cursor-pointer flex flex-row items-center gap-4px text-color-monochrome-7'}>
+                            <div className={styles.purchaseTokedSelectMainIcoW}>
+                                <CustomIco name={'ethWallet'} size={24}/>
+                                <div className={styles.purchaseTokedSelectSmallIcoW}>
+                                    <CustomIco name={'ethWallet'} size={12}/>
+                                </div>
+                            </div>
+                            <p className={'body-l-2'}>ETH</p>
+                            <CustomIco name={'ddArrow'} size={16}/>
+                        </button>
 
-                </InputFieldPurchase>
-                <InputFieldPurchase>
+                    }
+                    onInputChange={(val) => console.log(val)}
+                    balanceAmount="0.0057"
+                    balanceToken="ETH"
+                    errorMessage={'Error'}
+                />
+                <InputFieldPurchase
+                    title="You Receive"
+                    transactionToken={
+                        <div className={'flex gap-4px text-color-monochrome-7'}>
+                            <div className={styles.purchaseTokedSelectMainIcoW}>
+                                <CustomIco name={'fist'} size={24}/>
+                            </div>
+                            <p className={'body-l-2'}>ETH</p>
+                        </div>
 
-                </InputFieldPurchase>
+
+                    }
+                    onInputChange={(val) => console.log(val)}
+                    errorMessage={'Error'}
+                    disabled={true}
+                />
             </div>
 
+            {isOpenChooseToken && (
+                <Modal
+                    onClose={handleModalClose}
+                    title={<h2 className={'uppercase'}>Choose Payment Method</h2>}
+                    id="connect-wallet-modal"
+                    role="dialog"
+                    aria-labelledby="connect-wallet-title"
+                >
+
+                    <h1>Content</h1>
+                </Modal>
+            )}
         </div>
     );
 };
