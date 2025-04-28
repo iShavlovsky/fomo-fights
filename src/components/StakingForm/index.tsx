@@ -8,8 +8,7 @@ import ErrorWindow from '@components/StakingForm/errorWindow.tsx';
 import PresaleLimit from '@components/StakingForm/presaleLimit.tsx';
 import DollarIcon20 from '@icon/dollar-20.svg';
 import FistIcon from '@icon/fist-20.svg';
-import InfoTag from "@components/common/InfoTag";
-import HowToBuy from "@components/modalContent/howToBuy";
+import HowLikeToPay from "@components/StakingForm/howLikeToPay.tsx";
 
 function StakingForm() {
     const timeData = [
@@ -136,18 +135,7 @@ function StakingForm() {
                     <BaseButton type="secondary2" className="w-full">Buy and stake for 84%</BaseButton>
                     <BaseButton type="secondary" className="w-full">Not enough ETH? Top up now</BaseButton>
 
-                    <div className={'flex flex-col items-center gap-8px'}>
-                        <p className={'body-m-2 text-color-monochrome-8'}>How would you like to pay?</p>
-                        <div className="flex gap-8px w-full">
-                            <BaseButton type="secondary" className="w-full">Buy with card</BaseButton>
-                            <BaseButton type="secondary" className="w-full">Buy with crypto</BaseButton>
-
-                        </div>
-                        <InfoTag title={'How to buy?'}
-                                 modalTitle={'How to buy $DEFIG?'}
-                                 modalChildren={<HowToBuy/>}/>
-                    </div>
-
+                    <HowLikeToPay/>
                 </div>
             </div>
         </div>
