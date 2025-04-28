@@ -578,7 +578,7 @@
         &::after {
             content: '';
             flex: 1;
-            background-image: url("@assets/icon/pink-lines.svg");
+            background-image: url("@icon/lines-pink.svg");
             background-position: center;
             background-repeat: repeat-x;
         }
@@ -586,7 +586,7 @@
         &::before {
             content: '';
             flex: 1;
-            background-image: url("@assets/icon/pink-lines.svg");
+            background-image: url("@icon/lines-pink.svg");
             background-position: center;
             background-repeat: repeat-x;
         }
