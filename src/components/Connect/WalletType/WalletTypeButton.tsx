@@ -1,17 +1,34 @@
 import styles from './index.module.css';
-import SolanaIco from '@icon/solana40.svg';
 
+interface WalletTypeButtonProps {
+    title: string;
+    description: string;
+    icon?: React.ReactNode;
+    onClick?: () => void;
+}
 
-const WalletTypeButton = () => {
+const WalletTypeButton = ({
+                              title,
+                              description,
+                              icon,
+                              onClick
+                          }: WalletTypeButtonProps) => {
+    const handleClick = () => {
+        onClick?.();
+    };
+
     return (
-        <button className={styles.WalletTypeButton}>
-            <SolanaIco/>
+        <button
+            className={styles.WalletTypeButton}
+            onClick={handleClick}
+        >
+            {icon}
             <div className={'flex flex-col gap-8px'}>
                 <p className={'body-m-2 text-color-monochrome-9'}>
-                    EVM Wallets
+                    {title}
                 </p>
                 <p className={'body-s-2 text-color-monochrome-8'}>
-                    MetaMask, Trust Wallet, Coinbase Wallet, WalletConnect
+                    {description}
                 </p>
             </div>
         </button>

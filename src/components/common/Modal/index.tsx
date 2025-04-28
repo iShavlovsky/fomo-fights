@@ -1,7 +1,7 @@
-import type { MouseEventHandler } from 'react';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import type {MouseEventHandler} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 
-import { createContainer } from '@/utils/portal.ts';
+import {createContainer} from '@/utils/portal.ts';
 
 import styles from './index.module.css';
 
@@ -21,7 +21,7 @@ interface ModalProps {
     'children': React.ReactNode;
 }
 
-const Modal = ({ title, onClose, children, ...attrs }: ModalProps) => {
+const Modal = ({title, onClose, children, ...attrs}: ModalProps) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const [isMounted, setMounted] = useState(false);
 
@@ -39,21 +39,20 @@ const Modal = ({ title, onClose, children, ...attrs }: ModalProps) => {
         focusableElements.forEach((el: Element) => {
             if (trap) {
                 el.setAttribute('tabindex', '-1');
-            }
-            else {
+            } else {
                 el.removeAttribute('tabindex');
             }
         });
     };
 
     useEffect(() => {
-        createContainer({ id: MODAL_CONTAINER_ID });
+        createContainer({id: MODAL_CONTAINER_ID});
         setMounted(true);
     }, []);
 
     useEffect(() => {
         const handleWrapperClick = (event: MouseEvent) => {
-            const { target } = event;
+            const {target} = event;
 
             if (target instanceof Node && rootRef.current === target) {
                 onClose?.();
@@ -89,25 +88,25 @@ const Modal = ({ title, onClose, children, ...attrs }: ModalProps) => {
 
     return isMounted
         ? (
-                <Portal id={MODAL_CONTAINER_ID}>
-                    <div className={styles.modal_wrap} ref={rootRef} {...attrs}>
-                        <div>
-                            <header className={`${styles.modal_header} ${HeadModelStyle.head}`}>
-                                {title}
-                                <BaseButton
-                                    type="default"
-                                    onClick={handleClose}
-                                >
-                                    <ClosedIcon />
-                                </BaseButton>
-                            </header>
-                            <div className={styles.modal_content}>
-                                {children}
-                            </div>
+            <Portal id={MODAL_CONTAINER_ID}>
+                <div className={styles.modal_wrap} ref={rootRef} {...attrs}>
+                    <div className={styles.modal_content_wrap}>
+                        <header className={`${styles.modal_header} ${HeadModelStyle.head}`}>
+                            {title}
+                            <BaseButton
+                                type="default"
+                                onClick={handleClose}
+                            >
+                                <ClosedIcon/>
+                            </BaseButton>
+                        </header>
+                        <div className={styles.modal_content}>
+                            {children}
                         </div>
                     </div>
-                </Portal>
-            )
+                </div>
+            </Portal>
+        )
         : null;
 };
 
