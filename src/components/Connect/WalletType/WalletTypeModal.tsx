@@ -1,9 +1,7 @@
 // import styles from './index.module.css';
-import SolanaIco from '@icon/solana40.svg';
-import EvmIco from '@icon/evm40.svg';
-
 
 import WalletTypeButton from "@components/Connect/WalletType/WalletTypeButton.tsx";
+import CustomIco from "@components/common/CustomIco";
 
 const WalletTypeModal = () => {
     return (
@@ -14,13 +12,13 @@ const WalletTypeModal = () => {
                     title="EVM Wallets"
                     description="MetaMask, Trust Wallet, Coinbase Wallet, WalletConnect"
                     onClick={() => console.log('Button clicked!')}
-                    icon={<EvmIco/>}
+                    icon={<CustomIco name={'ethWallet'} size={40}/>}
                 />
                 <WalletTypeButton
                     title="Solana Wallets"
                     description="Phantom, Solflare, Backpack, Sollet"
                     onClick={() => console.log('Button clicked!')}
-                    icon={<SolanaIco/>}
+                    icon={<CustomIco name={'solanaWallet'} size={40}/>}
                 />
 
             </div>
