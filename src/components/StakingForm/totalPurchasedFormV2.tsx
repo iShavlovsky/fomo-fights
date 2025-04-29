@@ -128,6 +128,7 @@ const totalPurchasedFormV2 = () => {
             <div className={`flex flex-col gap-4px`}>
                 <BaseButton type="primary" className="w-full">Buy $DEGIG</BaseButton>
                 <BaseButton type="secondary2" className="w-full">Buy & stake for 322% rewards</BaseButton>
+                <BaseButton type="warning" className="w-full">Wrong network</BaseButton>
             </div>
             <div className={`flex flex-col gap-8px items-center`}>
                 <p className={'body-xs-2 text-color-monochrome-8 text-center'}>Want to pay with card?{' '}

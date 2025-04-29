@@ -1,8 +1,8 @@
-import React, { type ReactNode } from 'react';
+import React, {type ReactNode} from 'react';
 
 import styles from './Button.module.css';
 
-type ButtonType = 'primary' | 'secondary' | 'secondary2' | 'default';
+type ButtonType = 'primary' | 'secondary' | 'secondary2' | 'default' | 'warning';
 
 interface BaseButtonProps {
     type?: ButtonType;
@@ -12,22 +12,22 @@ interface BaseButtonProps {
     className?: string;
 }
 
-const BaseButton = ({ type = 'primary', href, children, onClick, className }: BaseButtonProps) => {
+const BaseButton = ({type = 'primary', href, children, onClick, className}: BaseButtonProps) => {
     const buttonClass = `${styles.buttonSpan}`;
     const wrapperClass = `${styles.buttonWrapper} ${href ? styles.link : ''} ${styles[type]} ${className}`;
 
     return (
         href
             ? (
-                    <a href={href} aria-label={href} target="_blank" className={wrapperClass} rel="noreferrer">
-                        <span className={buttonClass}>{children}</span>
-                    </a>
-                )
+                <a href={href} aria-label={href} target="_blank" className={wrapperClass} rel="noreferrer">
+                    <span className={buttonClass}>{children}</span>
+                </a>
+            )
             : (
-                    <button onClick={onClick} type="button" className={wrapperClass}>
-                        <span className={buttonClass}>{children}</span>
-                    </button>
-                )
+                <button onClick={onClick} type="button" className={wrapperClass}>
+                    <span className={buttonClass}>{children}</span>
+                </button>
+            )
     );
 };
 

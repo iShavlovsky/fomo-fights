@@ -118,3 +118,11 @@
     --btn-box-shadow-color: var(--blue-13, #AEE3FF);
     --btn-hover-bg-color: var(--blue-10, #57C4FF);
 }
+
+.warning {
+    color: var(--monochrome-10, black);
+    --btn-border-color: var(--yellow-1, #FFA030);
+    --btn-bg-color: var(--yellow-3, #EDD400);
+    --btn-box-shadow-color: var(--monochrome-1, white);
+    --btn-hover-bg-color: var(--yellow-1, #FFA030);
+}
