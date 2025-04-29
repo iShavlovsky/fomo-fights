@@ -1,4 +1,4 @@
-import { type ReactNode, useRef, useState } from 'react';
+import {type ReactNode, useRef, useState, RefObject} from 'react';
 
 import styles from './index.module.css';
 
@@ -39,23 +39,23 @@ type DropdownPropsDefault = DropdownPropsMain & {
 export type DropdownProps = DropdownPropsSelected | DropdownPropsDefault;
 
 function Dropdown({
-    selectedLabel,
-    options,
-    ddIcon,
-    ddTitle,
-    ddToggleIcon,
-    ddPortalTop,
-    ulClassName,
-    ddPortalBottom,
-    autoClose = true,
-    position = 'right',
-    onSelect
-}: DropdownProps) {
+                      selectedLabel,
+                      options,
+                      ddIcon,
+                      ddTitle,
+                      ddToggleIcon,
+                      ddPortalTop,
+                      ulClassName,
+                      ddPortalBottom,
+                      autoClose = true,
+                      position = 'right',
+                      onSelect
+                  }: DropdownProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [label, setSelectedLabel] = useState<string>(ddTitle);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    useClickOutside(dropdownRef, () => setIsOpen(false));
+    useClickOutside(dropdownRef as RefObject<HTMLElement>, () => setIsOpen(false));
 
     const handleOptionClick = (option: DropdownOption | DropdownOptionSelected) => {
         if (!option.href && option.onClick) {
@@ -88,12 +88,12 @@ function Dropdown({
                 <span className="body-m-1">{label}</span>
                 {ddToggleIcon
                     ? (
-                            <span
-                                className={`${styles.dropdownToggleIcon} ${isOpen ? styles.active : ''}`}
-                            >
+                        <span
+                            className={`${styles.dropdownToggleIcon} ${isOpen ? styles.active : ''}`}
+                        >
                                 {ddToggleIcon}
                             </span>
-                        )
+                    )
                     : null}
             </button>
             <div className={`${styles.dropdownMenuWrapper} ${isOpen ? styles.open : ''} ${styles[position]}`}>
@@ -107,8 +107,8 @@ function Dropdown({
 
                         {ddPortalTop
                             ? (
-                                    <li>{ddPortalTop}</li>
-                                )
+                                <li>{ddPortalTop}</li>
+                            )
                             : null}
                         {options.map((option, index) => (
                             <li
@@ -120,25 +120,25 @@ function Dropdown({
                             >
                                 {option.href
                                     ? (
-                                            <a
-                                                className=""
-                                                href={option.href}
-                                            >
-                                                {option.label}
-                                            </a>
-                                        )
+                                        <a
+                                            className=""
+                                            href={option.href}
+                                        >
+                                            {option.label}
+                                        </a>
+                                    )
                                     : (
-                                            <>
-                                                {option.label}
-                                            </>
-                                        )}
+                                        <>
+                                            {option.label}
+                                        </>
+                                    )}
                             </li>
                         ))}
 
                         {ddPortalBottom
                             ? (
-                                    <li>{ddPortalBottom}</li>
-                                )
+                                <li>{ddPortalBottom}</li>
+                            )
                             : null}
                     </ul>
 
