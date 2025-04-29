@@ -12,10 +12,8 @@ import ChineseIcon from '@icon/Chinese-Flag.svg';
 import CzechIcon from '@icon/Czech-Flag.svg';
 import DutchIcon from '@icon/Dutch-Flag.svg';
 import EnglishIcon from '@icon/English-Flag.svg';
-import GithubIcon from '@icon/github-16.svg';
 import InstagramIcon from '@icon/instagram-16.svg';
 import LanguageIcon from '@icon/language-20.svg';
-import LinkTreeIcon from '@icon/linktree-16.svg';
 import MenuIcon from '@icon/menu-20.svg';
 import TelegramIcon from '@icon/telegram-16.svg';
 import TwitterXIcon from '@icon/twitterX-16.svg';
@@ -25,15 +23,14 @@ import SelectWalletModal from "@components/Connect/SelectWallet/SelectWalletModa
 
 const socialLinks = [
     {label: 'TwitterX', href: 'https://x.com', icon: <TwitterXIcon/>},
-    {label: 'Linktree', href: 'https://linktree.com', icon: <LinkTreeIcon/>},
     {label: 'Telegram', href: 'https://telegram.com', icon: <TelegramIcon/>},
-    {label: 'Instagram', href: 'https://instagram.com', icon: <InstagramIcon/>},
-    {label: 'Github', href: 'https://github.com', icon: <GithubIcon/>}
+    {label: 'Instagram', href: 'https://instagram.com', icon: <InstagramIcon/>}
 ] as const;
 
 interface NavData {
     navLinkTo: string;
     navLinkTitle: string;
+    isExternal?: boolean;
 }
 
 const navLinks: NavData[] = [
@@ -46,7 +43,14 @@ const navLinks: NavData[] = [
         navLinkTitle: 'Staking',
         navLinkTo: '/staking'
 
+    },
+    {
+        navLinkTitle: 'White paper',
+        navLinkTo: 'https://degenfighters.gitbook.io/whitepaper',
+        isExternal: true
+
     }
+
 ] as const;
 
 function NavBar() {
@@ -166,12 +170,23 @@ function NavBar() {
                                     <ul className={styles.nav_ul} role="list">
                                         {navLinks.map((data, index) => (
                                             <li key={index}>
-                                                <NavLink
-                                                    to={data.navLinkTo}
-                                                    className={({isActive}) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
-                                                >
-                                                    {data.navLinkTitle}
-                                                </NavLink>
+                                                {data.isExternal ? (
+                                                    <a
+                                                        href={data.navLinkTo}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={`${styles.mainNavLink} body-m-2`}
+                                                    >
+                                                        {data.navLinkTitle}
+                                                    </a>
+                                                ) : (
+                                                    <NavLink
+                                                        to={data.navLinkTo}
+                                                        className={({isActive}) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
+                                                    >
+                                                        {data.navLinkTitle}
+                                                    </NavLink>
+                                                )}
                                             </li>
                                         ))}
 
@@ -184,6 +199,7 @@ function NavBar() {
                                                 className={styles.nav_link}
                                                 href={link.href}
                                                 aria-label={`Visit our ${link.label}`}
+                                                title={`Visit our ${link.label}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
@@ -276,6 +292,7 @@ function NavBar() {
                                                                 className={styles.nav_link}
                                                                 href={link.href}
                                                                 aria-label={`Visit our ${link.label}`}
+                                                                title={`Visit our ${link.label}`}
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                             >
@@ -309,12 +326,23 @@ function NavBar() {
                                 {navLinks.map((data, index) => (
                                     index === 0 && ( // Проверяем, является ли индекс 0
                                         <li key={index}>
-                                            <NavLink
-                                                to={data.navLinkTo}
-                                                className={({isActive}) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
-                                            >
-                                                {data.navLinkTitle}
-                                            </NavLink>
+                                            {data.isExternal ? (
+                                                <a
+                                                    href={data.navLinkTo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={`${styles.mainNavLink} body-m-2`}
+                                                >
+                                                    {data.navLinkTitle}
+                                                </a>
+                                            ) : (
+                                                <NavLink
+                                                    to={data.navLinkTo}
+                                                    className={({isActive}) => `${styles.mainNavLink} body-m-2 ${isActive ? 'active-link' : ''}`}
+                                                >
+                                                    {data.navLinkTitle}
+                                                </NavLink>
+                                            )}
                                         </li>
                                     )
                                 ))}
@@ -339,14 +367,24 @@ function NavBar() {
                             <ul className={`flex flex-col gap-12px text-center w-full ${styles.mobileMenuList}`}>
 
                                 {navLinks.map((data, index) => (
-                                    index === 1 && (
+                                    index != 0 && (
                                         <li key={index}>
-                                            <NavLink
-                                                to={data.navLinkTo}
-                                                className={({isActive}) => `${styles.mainNavLink} h2-2 ${isActive ? 'active-link' : ''}`}
-                                            >
-                                                {data.navLinkTitle}
-                                            </NavLink>
+                                            {data.isExternal ? (
+                                                <a
+                                                    href={data.navLinkTo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={`${styles.mainNavLink} h2-2`}
+                                                >
+                                                    {data.navLinkTitle}
+                                                </a>
+                                            ) : (
+                                                <NavLink
+                                                    to={data.navLinkTo}
+                                                    className={({isActive}) => `${styles.mainNavLink} h2-2 ${isActive ? 'active-link' : ''}`}>
+                                                    {data.navLinkTitle}
+                                                </NavLink>
+                                            )}
                                         </li>
                                     )
                                 ))}
@@ -370,6 +408,7 @@ function NavBar() {
                                                     className={styles.nav_link}
                                                     href={link.href}
                                                     aria-label={`Visit our ${link.label}`}
+                                                    title={`Visit our ${link.label}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >

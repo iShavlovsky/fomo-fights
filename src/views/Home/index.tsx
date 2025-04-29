@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Marquee from 'react-fast-marquee';
 
 import styles from './index.module.css';
@@ -8,9 +8,10 @@ import DropDownMain from '@components/common/DropdownMain';
 import DropDownSecond from '@components/common/DropdownSecond';
 import ScrollContainer from '@components/common/ScrollContainer';
 import SliderCustom from '@components/common/SliderCustom';
-import { Tabs } from '@components/common/Tabs';
+import {Tabs} from '@components/common/Tabs';
 import StakingForm from '@components/StakingForm';
 import SoldProofFolderIcon from '@icon/About-FOMO-Fights.svg';
+import CoinsultFolderIcon from '@icon/Coinsult.svg';
 import DotFoundsIcon from '@icon/dot-Funds.svg';
 import DotLiquidIcon from '@icon/dot-Liquidity.svg';
 import DotMarketingIcon from '@icon/dot-Marketing.svg';
@@ -53,7 +54,7 @@ function HomePage() {
         setOpenIndexDD1(index === openIndexDD1 ? -1 : index);
     };
 
-    const [openStates, setOpenStates] = useState<OpenStates>({ 0: true });
+    const [openStates, setOpenStates] = useState<OpenStates>({0: true});
     const handleClickDropDown2 = (index: number) => {
         setOpenStates((prevStates) => ({
             ...prevStates,
@@ -62,25 +63,25 @@ function HomePage() {
         console.log(openStates);
     };
 
-    const { animations, isAboveMobile } = useAnimationsLoader(
+    const {animations, isAboveMobile} = useAnimationsLoader(
         '(min-width: 1025px)',
         animationsLottie);
 
     const optionsTokenFeatures = [
         {
             label: 'Fundraising',
-            icon: <FundraisingIcon />,
+            icon: <FundraisingIcon/>,
             text: '$FOFI will help us raise funds to bring FOMO Fights to life. Buying early supports the game and allows you to benefit from potential price increases as the game progresses.'
         },
         {
             label: 'Earn while playing',
-            icon: <EarnIcon />,
+            icon: <EarnIcon/>,
             text: 'Receive $FOFI as rewards as you advance through game levels. Once the token is listed on exchanges, convert it to other cryptocurrencies on DEXs and CEXs.'
         },
 
         {
             label: 'Functionality',
-            icon: <FunctionalityIcon />,
+            icon: <FunctionalityIcon/>,
             text: 'Use $FOFI within the game to purchase items, skins, and unlock special features. Customize your character with hundreds of unique combinations.'
         }
     ];
@@ -98,39 +99,39 @@ function HomePage() {
 
     const dataMarquee = [
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         },
         {
-            logo: <LogoExampleIcon />,
+            logo: <LogoExampleIcon/>,
             content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
         }
     ];
@@ -179,19 +180,19 @@ function HomePage() {
     ];
 
     const optionsTokenomics = [
-        { icon: <DotPresaleIcon />, label: 'Presale', value: '40%' },
-        { icon: <DotMarketingIcon />, label: 'Marketing', value: '16.5%' },
-        { icon: <DotLiquidIcon />, label: 'Liquidity', value: '14.5%' },
-        { icon: <DotStakingIcon />, label: 'Staking', value: '12%' },
-        { icon: <DotRewardsIcon />, label: 'Community rewards', value: '9.5%' },
-        { icon: <DotFoundsIcon />, label: 'Project funds', value: '7.5%' }
+        {icon: <DotPresaleIcon/>, label: 'Presale', value: '40%'},
+        {icon: <DotMarketingIcon/>, label: 'Marketing', value: '16.5%'},
+        {icon: <DotLiquidIcon/>, label: 'Liquidity', value: '14.5%'},
+        {icon: <DotStakingIcon/>, label: 'Staking', value: '12%'},
+        {icon: <DotRewardsIcon/>, label: 'Community rewards', value: '9.5%'},
+        {icon: <DotFoundsIcon/>, label: 'Project funds', value: '7.5%'}
     ];
 
     const tabs = [
         {
             tab: (
                 <>
-                    <FloppyDiskBlueIcon />
+                    <FloppyDiskBlueIcon/>
                     <span className="body-s-1">About</span>
                 </>
             ),
@@ -210,7 +211,7 @@ function HomePage() {
         {
             tab: (
                 <>
-                    <FloppyDiskYellowIcon />
+                    <FloppyDiskYellowIcon/>
                     <span className="body-s-1">$FOFI</span>
                 </>
             ),
@@ -229,7 +230,7 @@ function HomePage() {
         {
             tab: (
                 <>
-                    <FloppyDiskGreenIcon />
+                    <FloppyDiskGreenIcon/>
                     <span className="body-s-1">Community</span>
                 </>
             ),
@@ -251,7 +252,7 @@ function HomePage() {
         <>
             <section className="bg-purple-4">
                 <div className="container relative">
-                    <SolanaConnect />
+                    <SolanaConnect/>
                     <div className={`${styles.s1ContainerW}`}>
 
                         <div className={`${styles.s1H1ContentW}`}>
@@ -265,7 +266,8 @@ function HomePage() {
                                     Legendary Blockchain Meme Battle
                                 </h2>
                                 <p className="body-m-1 text-color-monochrome-9">
-                                    Degen Fighters is a Web3 Play-to-Earn multiplayer game where memecoin characters clash for the ultimate meme supremacy
+                                    Degen Fighters is a Web3 Play-to-Earn multiplayer game where memecoin characters
+                                    clash for the ultimate meme supremacy
                                 </p>
                                 <ul className={`flex flex-col gap-12px ${styles.s1DdInfoW}`}>
                                     {dataHeroDD.map((item, index) => (
@@ -281,16 +283,16 @@ function HomePage() {
                             </div>
 
                         </div>
-                        <StakingForm />
+                        <StakingForm/>
                     </div>
                     <div className={`absolute ${styles.s1AnimationW}`}>
                         {isAboveMobile && animations[0]
                             ? (
-                                    <Lottie animationData={animations[0]} loop={true} autoplay={true} />
-                                )
+                                <Lottie animationData={animations[0]} loop={true} autoplay={true}/>
+                            )
                             : (
-                                    <div />
-                                )}
+                                <div/>
+                            )}
                     </div>
                 </div>
             </section>
@@ -321,26 +323,43 @@ function HomePage() {
             <section className={`${styles.yellowTitleBg}`} id="about">
                 <div className={`container ${styles.s3ContainerW}`}>
                     <div className={`${styles.s3TabW}`}>
-                        <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
+                        <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs}/>
                         <div className={`${styles.s3TabBottomPanel}`}>
                             <div className={`${styles.s3TabBottomPanelTitleW}`}>
                                 <p className="body-m-2 text-color-blue-3">Audit by</p>
                             </div>
-                            <div className="flex flex-row items-center gap-8px p-16 grow">
-                                <SoldProofFolderIcon />
-                                <p className="body-s-2">SoldProof</p>
+                            <div className={'flex'}>
+                                <a className="flex flex-row items-center gap-8px p-16 no-decorate"
+                                   href='https://app.solidproof.io/projects/degenfighters'
+                                   aria-label='Check SoldProof Audit'
+                                   title='Check SoldProof Audit'
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    <SoldProofFolderIcon/>
+                                    <p className="body-s-2">SoldProof</p>
+                                </a>
+                                <a className="flex flex-row items-center gap-8px p-16 no-decorate"
+                                   href='https://coinsult.net/projects/degen-fighters/'
+                                   aria-label='Check Coinsult Audit'
+                                   title='Check Coinsult Audit'
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    <CoinsultFolderIcon/>
+                                    <p className="body-s-2">Coinsult</p>
+                                </a>
                             </div>
+
                         </div>
                     </div>
 
                     <div className={`${styles.s3AnimationW}`}>
                         {isAboveMobile && animations[1]
                             ? (
-                                    <Lottie animationData={animations[1]} loop={true} autoplay={true} />
-                                )
+                                <Lottie animationData={animations[1]} loop={true} autoplay={true}/>
+                            )
                             : (
-                                    <div />
-                                )}
+                                <div/>
+                            )}
                     </div>
                 </div>
             </section>
@@ -363,8 +382,8 @@ function HomePage() {
                                 <li><p className="body-m-1">Initial Marketing Campaign</p></li>
                             </ul>
                             <div className={`${styles.s4CardLineAndPlanetW} ${styles.line1}`}>
-                                <RoadMapLine1Icon />
-                                <div className={`absolute ${styles.s4CardPlanet1}`} />
+                                <RoadMapLine1Icon/>
+                                <div className={`absolute ${styles.s4CardPlanet1}`}/>
                             </div>
                         </div>
                         <div className={`${styles.s4Card}`}>
@@ -379,8 +398,8 @@ function HomePage() {
                                 <li><p className="body-m-1">Beta Version Release</p></li>
                             </ul>
                             <div className={`${styles.s4CardLineAndPlanetW} ${styles.line2}`}>
-                                <RoadMapLine2Icon />
-                                <div className={`absolute ${styles.s4CardPlanet2}`} />
+                                <RoadMapLine2Icon/>
+                                <div className={`absolute ${styles.s4CardPlanet2}`}/>
                             </div>
                         </div>
                     </div>
@@ -397,8 +416,8 @@ function HomePage() {
                                 <li><p className="body-m-1">Beta Version Release</p></li>
                             </ul>
                             <div className={`${styles.s4CardLineAndPlanetW} ${styles.line3}`}>
-                                <RoadMapLine3Icon />
-                                <div className={`absolute ${styles.s4CardPlanet3}`} />
+                                <RoadMapLine3Icon/>
+                                <div className={`absolute ${styles.s4CardPlanet3}`}/>
                             </div>
                         </div>
 
@@ -414,8 +433,8 @@ function HomePage() {
                                 <li><p className="body-m-1">$FOFI Token Listing on CEXs</p></li>
                             </ul>
                             <div className={`${styles.s4CardLineAndPlanetW} ${styles.line4}`}>
-                                <RoadMapLine4Icon />
-                                <div className={`absolute ${styles.s4CardPlanet4}`} />
+                                <RoadMapLine4Icon/>
+                                <div className={`absolute ${styles.s4CardPlanet4}`}/>
                             </div>
                         </div>
                     </div>
@@ -446,7 +465,7 @@ function HomePage() {
                                 ))
                             }
                         </ul>
-                        <div className={`${styles.s5BottomDividerW} ${stylesHead.head} ${stylesHead.headYellow}`} />
+                        <div className={`${styles.s5BottomDividerW} ${stylesHead.head} ${stylesHead.headYellow}`}/>
                     </div>
 
                     <div className={`${styles.s5ContentW}`}>
@@ -454,7 +473,7 @@ function HomePage() {
                             <h2 className="h2-1">Tokenomics</h2>
                         </div>
                         <div className={`${styles.s5TokenomiksW} grow`}>
-                            <ScheduleIcon />
+                            <ScheduleIcon/>
                             <ul className={`${styles.s5TokenomiksList}`}>
                                 {
                                     optionsTokenomics.map((option) => (
@@ -472,7 +491,7 @@ function HomePage() {
                                 }
                             </ul>
                         </div>
-                        <div className={`${styles.s5BottomDividerW} ${stylesHead.head} ${stylesHead.headLightPink}`} />
+                        <div className={`${styles.s5BottomDividerW} ${stylesHead.head} ${stylesHead.headLightPink}`}/>
                     </div>
                 </div>
             </section>
@@ -488,10 +507,10 @@ function HomePage() {
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 1</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <span />
+                                            <span/>
+                                            <span/>
+                                            <span/>
+                                            <span/>
                                         </div>
                                         <h2 className="h2-2">Connect</h2>
                                     </div>
@@ -513,10 +532,10 @@ function HomePage() {
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 2</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <span />
+                                            <span/>
+                                            <span/>
+                                            <span/>
+                                            <span/>
                                         </div>
                                         <h2 className="h2-2">Checking</h2>
                                     </div>
@@ -537,10 +556,10 @@ function HomePage() {
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 3</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <span />
+                                            <span/>
+                                            <span/>
+                                            <span/>
+                                            <span/>
                                         </div>
                                         <h2 className="h2-2">Purchase</h2>
                                     </div>
@@ -563,10 +582,10 @@ function HomePage() {
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 4</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <span />
+                                            <span/>
+                                            <span/>
+                                            <span/>
+                                            <span/>
                                         </div>
                                         <h2 className="h2-2">Display</h2>
                                     </div>
@@ -588,10 +607,10 @@ function HomePage() {
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 5</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
-                                            <span />
-                                            <span />
-                                            <span />
-                                            <span />
+                                            <span/>
+                                            <span/>
+                                            <span/>
+                                            <span/>
                                         </div>
                                         <h2 className="h2-2">Choose</h2>
                                     </div>
@@ -611,11 +630,11 @@ function HomePage() {
                     <div className={`absolute ${styles.s6AnimationW}`}>
                         {isAboveMobile && animations[2]
                             ? (
-                                    <Lottie animationData={animations[2]} loop={true} autoplay={true} />
-                                )
+                                <Lottie animationData={animations[2]} loop={true} autoplay={true}/>
+                            )
                             : (
-                                    <div />
-                                )}
+                                <div/>
+                            )}
                     </div>
                 </div>
             </section>
@@ -645,11 +664,11 @@ function HomePage() {
                     <div className={`absolute ${styles.s7AnimationW}`}>
                         {isAboveMobile && animations[3]
                             ? (
-                                    <Lottie animationData={animations[3]} loop={true} autoplay={true} />
-                                )
+                                <Lottie animationData={animations[3]} loop={true} autoplay={true}/>
+                            )
                             : (
-                                    <div />
-                                )}
+                                <div/>
+                            )}
                     </div>
                 </div>
 
