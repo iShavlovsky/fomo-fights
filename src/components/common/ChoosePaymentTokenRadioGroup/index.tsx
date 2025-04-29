@@ -9,6 +9,7 @@ interface TokenOption {
     subtitle: string;
     balance?: string;
     fiatEquivalent?: string;
+    disabled?: boolean;
 }
 
 interface ChoosePaymentTokenRadioGroupProps {
@@ -27,7 +28,10 @@ const ChoosePaymentTokenRadioGroup = ({
                                           className = '',
                                       }: ChoosePaymentTokenRadioGroupProps) => {
     const handleChange = (value: string) => {
-        onChange(value);
+        const option = options.find(opt => opt.value === value);
+        if (!option?.disabled) {
+            onChange(value);
+        }
     };
 
     return (
@@ -37,7 +41,7 @@ const ChoosePaymentTokenRadioGroup = ({
                     key={option.value}
                     className={`${styles.tokenOption} ${
                         selectedValue === option.value ? styles.selected : ''
-                    }`}
+                    } ${option.disabled ? styles.disabled : ''}`}
                 >
                     <input
                         type="radio"
@@ -46,6 +50,7 @@ const ChoosePaymentTokenRadioGroup = ({
                         checked={selectedValue === option.value}
                         onChange={() => handleChange(option.value)}
                         className={styles.hiddenInput}
+                        disabled={option.disabled}
                     />
 
                     <div className={styles.iconContainer}>
@@ -59,7 +64,6 @@ const ChoosePaymentTokenRadioGroup = ({
                         <div className={'flex gap-8px body-s-2 justify-between'}>
                             <p>{option.title}</p>
                             <p>{option.fiatEquivalent ?? '$0.00'}</p>
-
                         </div>
                         <div className={'flex gap-8px body-xs-1 justify-between'}>
                             <p>{option.subtitle}</p>

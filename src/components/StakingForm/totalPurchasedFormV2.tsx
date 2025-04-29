@@ -43,6 +43,7 @@ const totalPurchasedFormV2 = () => {
             smallIcon: <CustomIco name={'ethWallet'} size={16}/>,
             title: 'USDC',
             subtitle: 'USDC',
+            disabled: true,
         }
     ];
     const [isOpenChooseToken, setOpenChooseToken] = useState(false);
