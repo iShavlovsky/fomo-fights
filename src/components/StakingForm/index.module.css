@@ -154,3 +154,12 @@
         max-width: 53px;
     }
 }
+
+.ico-32px {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+}
