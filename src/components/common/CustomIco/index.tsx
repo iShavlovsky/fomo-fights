@@ -136,6 +136,21 @@ const icons = {
         </svg>
 
 
+    ),
+    success: (
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.2002" y="3.2" width="25.6" height="25.6" fill="#C2FFA5"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M3.19961 1.60001V3.20001H1.59961V28.8H3.19961V3.20001L28.7996 3.20001V1.60001L3.19961 1.60001Z"
+                  fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M30.4002 3.2H28.8002V28.8H3.2002V30.4H28.8002V28.8H30.4002V3.2Z" fill="#73C14E"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M28.8 0H3.2V1.6H1.6V3.2H0V28.8H1.6V30.4H3.2V32H28.8V30.4H30.4V28.8H32V3.2H30.4V1.6H28.8V0ZM28.8 1.6V3.2H30.4V28.8H28.8V30.4H3.2V28.8H1.6V3.2H3.2V1.6H28.8ZM4.8 25.6H6.4V27.2H4.8V25.6ZM6.4 4.8H4.8V6.4H6.4V4.8ZM25.6 25.6H27.2V27.2H25.6V25.6ZM27.2 4.8H25.6V6.4H27.2V4.8Z"
+                  fill="black"/>
+            <path d="M13.5496 22L7.84961 16.3L9.27461 14.875L13.5496 19.15L22.7246 9.97501L24.1496 11.4L13.5496 22Z"
+                  fill="black"/>
+        </svg>
     )
 } as const;
 
