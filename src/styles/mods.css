@@ -218,6 +218,10 @@
     text-decoration: none;
 }
 
+.decorate {
+    text-decoration: underline;
+}
+
 .uppercase {
     text-transform: uppercase;
 }

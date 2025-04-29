@@ -10,6 +10,9 @@ import BNBIcon from "@icon/bnb-16.svg";
 import SOLIcon16 from "@icon/sol-16.svg";
 
 import ChoosePaymentTokenRadioGroup from "@components/common/ChoosePaymentTokenRadioGroup";
+import BaseButton from "@components/common/Button/baseButton.tsx";
+import InfoTag from "@components/common/InfoTag";
+import HowToBuy from "@components/modalContent/howToBuy";
 
 
 const totalPurchasedFormV2 = () => {
@@ -55,6 +58,15 @@ const totalPurchasedFormV2 = () => {
 
     const handleModalOpen = () => {
         setOpenChooseToken(true);
+    };
+    const [isOpenChoosePayCard, setOpenChoosePayCard] = useState(false);
+
+    const handleModalClose2 = () => {
+        setOpenChoosePayCard(false);
+    };
+
+    const handleModalOpen2 = () => {
+        setOpenChoosePayCard(true);
     };
 
     return (
@@ -113,6 +125,21 @@ const totalPurchasedFormV2 = () => {
                 />
             </div>
 
+            <div className={`flex flex-col gap-4px`}>
+                <BaseButton type="primary" className="w-full">Buy $DEGIG</BaseButton>
+                <BaseButton type="secondary2" className="w-full">Buy & stake for 322% rewards</BaseButton>
+            </div>
+            <div className={`flex flex-col gap-8px items-center`}>
+                <p className={'body-xs-2 text-color-monochrome-8 text-center'}>Want to pay with card?{' '}
+                    <span className={'decorate cursor-pointer'}
+                          onClick={handleModalOpen2}>
+                        Click&nbsp;here!
+                    </span>
+                </p>
+                <InfoTag title={'How to buy?'}
+                         modalTitle={'How to buy $DEFIG?'}
+                         modalChildren={<HowToBuy/>}/>
+            </div>
             {isOpenChooseToken && (
                 <Modal
                     onClose={handleModalClose}
@@ -136,6 +163,21 @@ const totalPurchasedFormV2 = () => {
                         onChange={setSelectedToken}
                     />
                 </Modal>
+
+
+            )}
+            {isOpenChoosePayCard && (
+                <Modal
+                    onClose={handleModalClose2}
+                    title={<h2 className={'uppercase'}>Choose Payment Method</h2>}
+                    id="connect-wallet-modal"
+                    role="dialog"
+                    aria-labelledby="connect-wallet-title"
+                >
+                    <p>Want to pay with card? Click here!</p>
+                </Modal>
+
+
             )}
         </div>
     );
