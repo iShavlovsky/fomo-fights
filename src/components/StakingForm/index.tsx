@@ -10,6 +10,7 @@ import FistIcon from '@icon/fist-20.svg';
 import HowLikeToPay from "@components/StakingForm/howLikeToPay.tsx";
 import TotalPurchasedForm from "@components/StakingForm/totalPurchasedForm.tsx";
 import TotalPurchasedFormV2 from "@components/StakingForm/totalPurchasedFormV2.tsx";
+import PurchaseRejected from "@components/StakingForm/purchaseRejected.tsx";
 
 function StakingForm() {
     const timeData = [
@@ -77,6 +78,7 @@ function StakingForm() {
 
                     <TotalPurchasedForm/>
                     <TotalPurchasedFormV2/>
+                    <PurchaseRejected/>
                     <div
                         className={`flex flex-col gap-8px text-center ${styles.stakingFormTextInfo}`}
                     >

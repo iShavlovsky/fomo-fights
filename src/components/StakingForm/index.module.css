@@ -108,7 +108,7 @@
     padding: var(--window-padding);
     border: var(--border-red-1);
     background: var(--pink-6);
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .staking-form-radio-btn-w {
