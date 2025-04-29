@@ -124,6 +124,18 @@ const icons = {
             </g>
         </svg>
 
+    ),
+    warning: (
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="32" height="32" fill="#FF5265"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 2V4H2V36H4V4L36 4V2L4 2Z" fill="#FF7886"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M38 4H36V36H4V38H36V36H38V4Z" fill="#C62B3C"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M36 0H4V2H2V4H0V36H2V38H4V40H36V38H38V36H40V4H38V2H36V0ZM36 2V4H38V36H36V38H4V36H2V4H4V2H36ZM6 32H8V34H6V32ZM8 6H6V8H8V6ZM18 10H22V22H18V10ZM22 24H18V28H22V24ZM32 32H34V34H32V32ZM34 6H32V8H34V6Z"
+                  fill="black"/>
+        </svg>
+
+
     )
 } as const;
 

@@ -72,3 +72,11 @@
     --background-color: var(--yellow-6, #FFEDC0);
     --shadow-color: var(--monochrome-1, #FFF);
 }
+
+.head-error {
+    --border-color-right-left: #DC7272;
+    --background-color: #FFABAB;
+    --shadow-color: #FFF6E8;
+
+    color: #852727;
+}

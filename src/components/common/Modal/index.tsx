@@ -12,6 +12,8 @@ import ClosedIcon from '@icon/closed-16.svg';
 
 const MODAL_CONTAINER_ID = 'modal-container-id';
 
+type ModalType = 'default' | 'error' | 'success';
+
 interface ModalProps {
     'onClose': () => void;
     'title': React.ReactNode;
@@ -19,11 +21,24 @@ interface ModalProps {
     'role'?: string;
     'aria-labelledby'?: string;
     'children': React.ReactNode;
+    modalType?: ModalType;
+
 }
 
-const Modal = ({title, onClose, children, ...attrs}: ModalProps) => {
+const Modal = ({title, onClose, children, modalType = 'default', ...attrs}: ModalProps) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const [isMounted, setMounted] = useState(false);
+
+    const getModalTypeClass = () => {
+        switch (modalType) {
+            case 'error':
+                return HeadModelStyle.headError;
+            case 'success':
+                return HeadModelStyle.headGreenLight;
+            default:
+                return '';
+        }
+    };
 
     const toggleBodyScroll = (disable: boolean) => {
         document.body.style.overflow = disable ? 'hidden' : 'auto';
@@ -91,7 +106,7 @@ const Modal = ({title, onClose, children, ...attrs}: ModalProps) => {
             <Portal id={MODAL_CONTAINER_ID}>
                 <div className={styles.modal_wrap} ref={rootRef} {...attrs}>
                     <div className={styles.modal_content_wrap}>
-                        <header className={`${styles.modal_header} ${HeadModelStyle.head}`}>
+                        <header className={`${styles.modal_header} ${HeadModelStyle.head} ${getModalTypeClass()}`}>
                             {title}
                             <BaseButton
                                 type="default"
