@@ -3,10 +3,50 @@ import InputFieldPurchase from "@components/common/InputFieldPurchase";
 import CustomIco from "@components/common/CustomIco";
 import styles from './index.module.css';
 import Modal from "@components/common/Modal";
-import {useState} from "react";
+import React, {useState} from "react";
+import RadioButtonGroup from "@components/common/RadioButtonGroup";
+import EthereumIcon from "@icon/ethereum-16.svg";
+import BNBIcon from "@icon/bnb-16.svg";
+import SOLIcon16 from "@icon/sol-16.svg";
+
+import ChoosePaymentTokenRadioGroup from "@components/common/ChoosePaymentTokenRadioGroup";
 
 
 const totalPurchasedFormV2 = () => {
+    const [selectedToken, setSelectedToken] = React.useState('eth');
+
+    const options1 = [
+        {label: 'ETH', value: 'eth', icon: <EthereumIcon/>},
+        {label: 'BNB', value: 'bnb', icon: <BNBIcon/>},
+        {label: 'SOL', value: 'sol', icon: <SOLIcon16/>}
+    ];
+    const tokenOptions = [
+        {
+            value: 'eth',
+            mainIcon: <CustomIco name={'ethWallet'} size={40}/>,
+            smallIcon: <CustomIco name={'ethWallet'} size={16}/>, // опционально
+            title: 'Ethereum',
+            subtitle: 'ETH',
+            balance: '0.0057 ETH',
+            fiatEquivalent: '$12.00'
+        },
+        {
+            value: 'usdt',
+            mainIcon: <CustomIco name={'usdt'} size={40}/>,
+            title: 'Tether',
+            subtitle: 'USDT',
+            balance: '100.00 USDT',
+            fiatEquivalent: '$100.00'
+        },
+        {
+            value: 'usdc',
+            mainIcon: <CustomIco name={'usdc'} size={40}/>,
+            title: 'USDC',
+            subtitle: 'USDC',
+            balance: '50.00 USDC',
+            fiatEquivalent: '$50.00'
+        }
+    ];
     const [isOpenChooseToken, setOpenChooseToken] = useState(false);
 
 
@@ -83,7 +123,19 @@ const totalPurchasedFormV2 = () => {
                     aria-labelledby="connect-wallet-title"
                 >
 
-                    <h1>Content</h1>
+                    <RadioButtonGroup
+                        options={options1}
+                        name="sourceOfFunds"
+                        onChange={() => (console.log('change'))}
+                        typeStyle="style2"
+                    />
+                    <ChoosePaymentTokenRadioGroup
+                        className={'mt-12'}
+                        options={tokenOptions}
+                        name="paymentToken"
+                        selectedValue={selectedToken}
+                        onChange={setSelectedToken}
+                    />
                 </Modal>
             )}
         </div>
