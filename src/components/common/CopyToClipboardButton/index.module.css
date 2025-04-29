@@ -1,0 +1,58 @@
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 8px;
+    background-color: var(--beige-7);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: var(--beige-6);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.notification {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+    padding: 6px 12px;
+    background-color: var(--green-7);
+    color: var(--monochrome-9);
+    border-radius: 4px;
+    white-space: nowrap;
+    animation: fade-in-out 2s ease-in-out;
+    z-index: 999;
+}
+
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+    
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
