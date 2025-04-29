@@ -143,6 +143,8 @@
     width: 14px;
     height: 14px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     border: 2px solid var(--monochrome-1);
 }

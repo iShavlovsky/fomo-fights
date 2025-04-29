@@ -1,0 +1,52 @@
+.tokenOption {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background: var(--beige-7, #F1DFC3);
+    color: var(--monochrome-8);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    gap: 12px;
+}
+
+.tokenOption:hover {
+    border-color: #57C4FF;
+}
+
+.tokenOption.selected {
+    background: var(--beige-4, #cfb388);
+}
+
+.hiddenInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.iconContainer {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.smallIcon {
+    position: absolute;
+    overflow: hidden;
+    bottom: -2px;
+    right: -2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--monochrome-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--monochrome-1);
+}
+
+

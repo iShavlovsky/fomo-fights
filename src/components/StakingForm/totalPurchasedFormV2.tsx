@@ -24,27 +24,25 @@ const totalPurchasedFormV2 = () => {
         {
             value: 'eth',
             mainIcon: <CustomIco name={'ethWallet'} size={40}/>,
-            smallIcon: <CustomIco name={'ethWallet'} size={16}/>, // опционально
+            smallIcon: <CustomIco name={'ethWallet'} size={16}/>,
             title: 'Ethereum',
             subtitle: 'ETH',
-            balance: '0.0057 ETH',
+            balance: '0.0057',
             fiatEquivalent: '$12.00'
         },
         {
             value: 'usdt',
             mainIcon: <CustomIco name={'usdt'} size={40}/>,
+            smallIcon: <CustomIco name={'ethWallet'} size={16}/>,
             title: 'Tether',
             subtitle: 'USDT',
-            balance: '100.00 USDT',
-            fiatEquivalent: '$100.00'
         },
         {
             value: 'usdc',
             mainIcon: <CustomIco name={'usdc'} size={40}/>,
+            smallIcon: <CustomIco name={'ethWallet'} size={16}/>,
             title: 'USDC',
             subtitle: 'USDC',
-            balance: '50.00 USDC',
-            fiatEquivalent: '$50.00'
         }
     ];
     const [isOpenChooseToken, setOpenChooseToken] = useState(false);
