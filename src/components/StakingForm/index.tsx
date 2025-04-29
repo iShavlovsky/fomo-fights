@@ -1,14 +1,14 @@
 import styles from './index.module.css';
 
 import stylesHead from '@styles/baseBlock.module.css';
-import BaseButton from '@components/common/Button/baseButton.tsx';
 import AutorizeWindow from '@components/StakingForm/autorizeWindow.tsx';
-import BalanceRadioBtns from '@components/StakingForm/balanceRadioBtns.tsx';
-import ErrorWindow from '@components/StakingForm/errorWindow.tsx';
+// import BaseButton from '@components/common/Button/baseButton.tsx';
+// import BalanceRadioBtns from '@components/StakingForm/balanceRadioBtns.tsx';
+// import ErrorWindow from '@components/StakingForm/errorWindow.tsx';
+// import TotalPurchasedForm from "@components/StakingForm/totalPurchasedForm.tsx";
 import PresaleLimit from '@components/StakingForm/presaleLimit.tsx';
 import FistIcon from '@icon/fist-20.svg';
 import HowLikeToPay from "@components/StakingForm/howLikeToPay.tsx";
-import TotalPurchasedForm from "@components/StakingForm/totalPurchasedForm.tsx";
 import TotalPurchasedFormV2 from "@components/StakingForm/totalPurchasedFormV2.tsx";
 import PurchaseRejected from "@components/StakingForm/purchaseRejected.tsx";
 
@@ -74,9 +74,9 @@ function StakingForm() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-12px">
-                    <BalanceRadioBtns/>
+                    {/*<BalanceRadioBtns/>*/}
 
-                    <TotalPurchasedForm/>
+                    {/*<TotalPurchasedForm/>*/}
                     <TotalPurchasedFormV2/>
                     <PurchaseRejected/>
                     <div
@@ -92,10 +92,10 @@ function StakingForm() {
                         </p>
                     </div>
                     <AutorizeWindow/>
-                    <ErrorWindow/>
-                    <BaseButton type="primary" className="w-full">connect wallet</BaseButton>
-                    <BaseButton type="secondary2" className="w-full">Buy and stake for 84%</BaseButton>
-                    <BaseButton type="secondary" className="w-full">Not enough ETH? Top up now</BaseButton>
+                    {/*<ErrorWindow/>*/}
+                    {/*<BaseButton type="primary" className="w-full">connect wallet</BaseButton>*/}
+                    {/*<BaseButton type="secondary2" className="w-full">Buy and stake for 84%</BaseButton>*/}
+                    {/*<BaseButton type="secondary" className="w-full">Not enough ETH? Top up now</BaseButton>*/}
 
                     <HowLikeToPay/>
                 </div>
