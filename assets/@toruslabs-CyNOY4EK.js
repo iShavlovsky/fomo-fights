@@ -1,1 +1,0 @@
-import{a as e}from"./@babel-D6-XlEtG.js";import"./@solana-CKixXqEH.js";const t={},r=Object.freeze(Object.defineProperty({__proto__:null,default:t},Symbol.toStringTag,{value:"Module"})),n=e(r);export{n as r};
