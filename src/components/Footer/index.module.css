@@ -27,10 +27,22 @@
     background-size: contain;
 }
 
+.copy-text-w {
+    position: absolute;
+    left: 60px;
+    bottom: 26px;
+    max-width: 320px;
+}
+
 @media (width <= 1440px) {
     .footer-container-w {
         padding-top: 15vw;
         padding-bottom: 20vw;
+    }
+
+    .copy-text-w {
+        left: 40px;
+        bottom: 16px;
     }
 }
 
@@ -44,6 +56,12 @@
         padding-bottom: 380px;
         background-image: url("@assets/animation/screen5/BgFooterTablet.webp");
         background-size: cover;
+    }
+
+    .copy-text-w {
+        left: 16px;
+        bottom: 10px;
+        max-width: 205px;
     }
 }
 
