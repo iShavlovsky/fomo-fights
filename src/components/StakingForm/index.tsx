@@ -51,7 +51,7 @@ function StakingForm() {
 
                         <div className="flex flex-col items-center gap-4px grow">
                             <p className="body-s-2 text-center">
-                                Your purchased $FOFI
+                                Your purchased $DEFIG
                             </p>
                             <div className="flex flex-row items-center gap-4px">
                                 <FistIcon/>
@@ -62,7 +62,7 @@ function StakingForm() {
 
                         <div className="flex flex-col items-center gap-4px grow">
                             <p className="body-s-2 text-center">
-                                Your stakeable $FOFI
+                                Your stakeable $DEFIG
                             </p>
                             <div className="flex flex-row items-center gap-4px">
                                 <FistIcon/>

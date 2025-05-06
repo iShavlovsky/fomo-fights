@@ -21,12 +21,12 @@ const AutorizeWindow = () => {
                 <div
                     className={`${styles.stakingFormAutorizeProgressItem} ${stylesHead.head} ${stylesHead.headGreen}`}
                 />
-                <div className={`${styles.stakingFormAutorizeProgressItem}`} />
-                <div className={`${styles.stakingFormAutorizeProgressItem}`} />
-                <div className={`${styles.stakingFormAutorizeProgressItem}`} />
+                <div className={`${styles.stakingFormAutorizeProgressItem}`}/>
+                <div className={`${styles.stakingFormAutorizeProgressItem}`}/>
+                <div className={`${styles.stakingFormAutorizeProgressItem}`}/>
             </div>
             <p className="mt-8 body-s-2 text-color-monochrome-8">
-                In order to buy $FLOFI with ETH, you first need to authorize us to access the ETH in your wallet.
+                In order to buy $DEFIG with ETH, you first need to authorize us to access the ETH in your wallet.
             </p>
         </div>
     );

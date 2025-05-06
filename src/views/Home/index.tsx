@@ -93,89 +93,89 @@ function HomePage() {
         },
         {
             title: 'About game',
-            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+            content: 'Grab your $DEFIG tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
         }
     ];
 
     const dataMarquee = [
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         },
         {
             logo: <LogoExampleIcon/>,
-            content: 'FOMO Fights - The Legendary Blockchain Meme Battle'
+            content: 'Degen Fighters - The Legendary Blockchain Meme Battle'
         }
     ];
 
     const dataFAQDD = [
         {
-            title: 'What is FOMO Fights?',
-            content: 'FOMO Fights is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
+            title: 'What is Degen Fighters?',
+            content: 'Degen Fighters is a blockchain-based Play-to-Earn multiplayer game, where you can pick your favorite character, battle other memes, and earn rewards.'
         },
         {
             title: 'How can I play the game?',
-            content: 'Once the game is released, you’ll be able to download FOMO Fights from the Google Play Store or Apple App Store and play on your Android or iOS device. For a closer look at the development process and upcoming milestones, be sure to check our Roadmap.'
+            content: 'Once the game is released, you’ll be able to download Degen Fighters from the Google Play Store or Apple App Store and play on your Android or iOS device. For a closer look at the development process and upcoming milestones, be sure to check our Roadmap.'
         },
         {
             title: 'What meme characters can I play for?',
-            content: 'You can choose from 5 characters: Pepe, Doge, Shiba, Floki, and Brett. As FOMO Fights evolves, more iconic meme characters will be added to the game through future updates. Feel free to suggest characters you\'d like to see via our social media channels.'
+            content: 'You can choose from 5 characters: Pepe, Doge, Shiba, Floki, and Brett. As Degen Fighters evolves, more iconic meme characters will be added to the game through future updates. Feel free to suggest characters you\'d like to see via our social media channels.'
         },
         {
-            title: 'What is the $FOFI token and where can I buy it?',
-            content: '$FOFI is the official token of FOMO Fights. You can purchase $FOFI at a special rate during the Presale via the widget at the top of the page. Once the token is listed on exchanges, you will also be able to buy and sell it there.'
+            title: 'What is the $DEFIG token and where can I buy it?',
+            content: '$DEFIG is the official token of Degen Fighters. You can purchase $DEFIG at a special rate during the Presale via the widget at the top of the page. Once the token is listed on exchanges, you will also be able to buy and sell it there.'
         },
         {
-            title: 'Which blockchains support $FOFI?',
-            content: '$FOFI exists on the Ethereum blockchain. However, you can use your assets on BNB Smart Chain and Solana to purchase $FOFI during the Presale. Please note that you will be able to claim $FOFI only on Ethereum.'
+            title: 'Which blockchains support $DEFIG?',
+            content: '$DEFIG exists on the Ethereum blockchain. However, you can use your assets on BNB Smart Chain and Solana to purchase $DEFIG during the Presale. Please note that you will be able to claim $DEFIG only on Ethereum.'
         },
         {
-            title: 'Can $FOFI be staked? What APR can I receive?',
-            content: 'Yes, you can stake $FOFI through our website to grow your holdings over time. Staking is available on the Ethereum blockchain, with a dynamic APR that adjusts to market conditions. You will be able to receive staking rewards 7 days after the Presale ends.'
+            title: 'Can $DEFIG be staked? What APR can I receive?',
+            content: 'Yes, you can stake $DEFIG through our website to grow your holdings over time. Staking is available on the Ethereum blockchain, with a dynamic APR that adjusts to market conditions. You will be able to receive staking rewards 7 days after the Presale ends.'
         },
         {
-            title: 'When will I be able to claim the $FOFI I purchased?',
-            content: 'You will be able to claim the $FOFI you bought once the Presale is over. We will have a dedicated claiming page on our website to guide you through the process.'
+            title: 'When will I be able to claim the $DEFIG I purchased?',
+            content: 'You will be able to claim the $DEFIG you bought once the Presale is over. We will have a dedicated claiming page on our website to guide you through the process.'
         },
         {
             title: 'How can I play the game?',
-            content: 'Grab your $FOFI tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
+            content: 'Grab your $DEFIG tokens now and be a part of the most exciting blockchain revolution. Start earning today!'
         },
         {
-            title: 'How do I claim my $FOFI tokens?',
-            content: 'The Ethereum, BNB, or Solana wallet you used for the purchase will be whitelisted, and on the claiming page, connect the same wallet and provide an Ethereum wallet address to receive your $FOFI tokens. Claiming is only available on Ethereum. If you used an Ethereum wallet to buy $FOFI, you can use the same or provide a different Ethereum address to claim your tokens.'
+            title: 'How do I claim my $DEFIG tokens?',
+            content: 'The Ethereum, BNB, or Solana wallet you used for the purchase will be whitelisted, and on the claiming page, connect the same wallet and provide an Ethereum wallet address to receive your $DEFIG tokens. Claiming is only available on Ethereum. If you used an Ethereum wallet to buy $DEFIG, you can use the same or provide a different Ethereum address to claim your tokens.'
         },
         {
             title: 'How can I claim the tokens if I pay with a card?',
-            content: 'When you pay with a card, you\'ll be asked to provide an Ethereum wallet address during the purchase. Use the same wallet to claim your $FOFI.'
+            content: 'When you pay with a card, you\'ll be asked to provide an Ethereum wallet address during the purchase. Use the same wallet to claim your $DEFIG.'
         }
     ];
 
@@ -211,16 +211,17 @@ function HomePage() {
             tab: (
                 <>
                     <FloppyDiskYellowIcon/>
-                    <span className="body-s-1">$FOFI</span>
+                    <span className="body-s-1">$DEFIG</span>
                 </>
             ),
             content: (
                 <div className="flex flex-col gap-16px">
-                    <h2>About $FOFI</h2>
+                    <h2>About $DEFIG</h2>
                     <p className="body-m-1">
-                        With the $FOFI token, you’re more than just a player — you become part of the game's development
+                        With the $DEFIG token, you’re more than just a player — you become part of the game's
+                        development
                         and can benefit from its success. Secure your tokens at the Presale price, stake them, and grow
-                        together with us as we build the future of FOMO Fights.
+                        together with us as we build the future of Degen Fighters.
                     </p>
                 </div>
             )
@@ -236,9 +237,9 @@ function HomePage() {
                 <div className="flex flex-col gap-16px">
                     <h2>Community</h2>
                     <p className="body-m-1">
-                        By holding $FOFI and joining our community on social media, you can help shape the game's
+                        By holding $DEFIG and joining our community on social media, you can help shape the game's
                         direction, connect with fellow players, and stay updated on the latest developments. Once the
-                        game is live, use $FOFI to purchase in-game items and earn even more by jumping right into the
+                        game is live, use $DEFIG to purchase in-game items and earn even more by jumping right into the
                         battle!
                     </p>
                 </div>
@@ -588,10 +589,10 @@ function HomePage() {
 
                                 </div>
                                 <div className={`${styles.s6SliderContentW}`}>
-                                    <h3>Purchase $FOFI</h3>
+                                    <h3>Purchase $DEFIG</h3>
                                     <p className="body-m-1">
                                         In the widget, select the network of your choice, input the amount, and proceed
-                                        to purchase your $FOFI.
+                                        to purchase your $DEFIG.
                                     </p>
                                 </div>
                             </div>
@@ -613,9 +614,9 @@ function HomePage() {
 
                                 </div>
                                 <div className={`${styles.s6SliderContentW}`}>
-                                    <h3>Display $FOFI</h3>
+                                    <h3>Display $DEFIG</h3>
                                     <p className="body-m-1">
-                                        Your $FOFI tokens will be displayed in the widget. You will be able to claim
+                                        Your $DEFIG tokens will be displayed in the widget. You will be able to claim
                                         them once the presale is over.
                                     </p>
                                 </div>
@@ -637,9 +638,10 @@ function HomePage() {
 
                                 </div>
                                 <div className={`${styles.s6SliderContentW}`}>
-                                    <h3>Choose $FOFI</h3>
+                                    <h3>Choose $DEFIG</h3>
                                     <p className="body-m-1">
-                                        You can also choose to stake $FOFI through the widget to grow your holdings over
+                                        You can also choose to stake $DEFIG through the widget to grow your holdings
+                                        over
                                         time.
                                     </p>
                                 </div>
