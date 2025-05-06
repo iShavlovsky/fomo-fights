@@ -71,18 +71,18 @@ function HomePage() {
         {
             label: 'Fundraising',
             icon: <FundraisingIcon/>,
-            text: '$FOFI will help us raise funds to bring FOMO Fights to life. Buying early supports the game and allows you to benefit from potential price increases as the game progresses.'
+            text: '$DEFIG will help us raise funds to bring Degen Fighters to life. Buying early supports the game and allows you to benefit from potential price increases as the game progresses.'
         },
         {
             label: 'Earn while playing',
             icon: <EarnIcon/>,
-            text: 'Receive $FOFI as rewards as you advance through game levels. Once the token is listed on exchanges, convert it to other cryptocurrencies on DEXs and CEXs.'
+            text: 'Receive $DEFIG I as rewards as you advance through game levels. Once the token is listed on exchanges, convert it to other cryptocurrencies on DEXs and CEXs.'
         },
 
         {
             label: 'Functionality',
             icon: <FunctionalityIcon/>,
-            text: 'Use $FOFI within the game to purchase items, skins, and unlock special features. Customize your character with hundreds of unique combinations.'
+            text: 'Use $DEFIG within the game to purchase items, skins, and unlock special features. Customize your character with hundreds of unique combinations.'
         }
     ];
 
@@ -198,11 +198,10 @@ function HomePage() {
             ),
             content: (
                 <div className="flex flex-col gap-16px">
-                    <h2>About FOMO Fights</h2>
+                    <h2>About Degen Fighters</h2>
                     <p className="body-m-1">
-                        In FOMO Fights, you can choose from iconic crypto memes like Pepe, Doge, Shiba,
-                        Floki, or Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through
-                        the
+                        In Degen Fighters, you can choose from iconic crypto memes like Pepe, Doge, Shiba, Floki, or
+                        Brett and battle your way up in the DeFi ecosystem. Enter the arena and rise through the
                         leaderboard as you compete against other players.
                     </p>
                 </div>
@@ -219,8 +218,7 @@ function HomePage() {
                 <div className="flex flex-col gap-16px">
                     <h2>About $FOFI</h2>
                     <p className="body-m-1">
-                        With the $FOFI token, you’re more than just a player — you become part of the game&apos;s
-                        development
+                        With the $FOFI token, you’re more than just a player — you become part of the game's development
                         and can benefit from its success. Secure your tokens at the Presale price, stake them, and grow
                         together with us as we build the future of FOMO Fights.
                     </p>
@@ -238,7 +236,7 @@ function HomePage() {
                 <div className="flex flex-col gap-16px">
                     <h2>Community</h2>
                     <p className="body-m-1">
-                        By holding $FOFI and joining our community on social media, you can help shape the game&apos;s
+                        By holding $FOFI and joining our community on social media, you can help shape the game's
                         direction, connect with fellow players, and stay updated on the latest developments. Once the
                         game is live, use $FOFI to purchase in-game items and earn even more by jumping right into the
                         battle!
@@ -267,7 +265,7 @@ function HomePage() {
                                 </h2>
                                 <p className="body-m-1 text-color-monochrome-9">
                                     Degen Fighters is a Web3 Play-to-Earn multiplayer game where memecoin characters
-                                    clash for the ultimate meme supremacy
+                                    clash for the ultimate meme supremacy.
                                 </p>
                                 <ul className={`flex flex-col gap-12px ${styles.s1DdInfoW}`}>
                                     {dataHeroDD.map((item, index) => (
@@ -393,9 +391,9 @@ function HomePage() {
                             </div>
 
                             <ul className={`${styles.s4CardContent}  ${styles.round2}`}>
-                                <li><p className="body-m-1">Main Marketing Campaign</p></li>
-                                <li><p className="body-m-1">Game Testing</p></li>
-                                <li><p className="body-m-1">Beta Version Release</p></li>
+                                <li><p className="body-m-1">Presale Conclusion</p></li>
+                                <li><p className="body-m-1">Development Kickoff</p></li>
+                                <li><p className="body-m-1">$DEFIG Token Listing on DEXs</p></li>
                             </ul>
                             <div className={`${styles.s4CardLineAndPlanetW} ${styles.line2}`}>
                                 <RoadMapLine2Icon/>
@@ -430,7 +428,7 @@ function HomePage() {
                             <ul className={`${styles.s4CardContent}  ${styles.round4}`}>
                                 <li><p className="body-m-1">Full Game Launch</p></li>
                                 <li><p className="body-m-1">Community Airdrop</p></li>
-                                <li><p className="body-m-1">$FOFI Token Listing on CEXs</p></li>
+                                <li><p className="body-m-1">$DEFIG Token Listing on CEXs</p></li>
                             </ul>
                             <div className={`${styles.s4CardLineAndPlanetW} ${styles.line4}`}>
                                 <RoadMapLine4Icon/>
@@ -445,7 +443,7 @@ function HomePage() {
                 <div className={`container ${styles.s5ContainerW}`}>
                     <div className={`${styles.s5ContentW}`}>
                         <div className={`${styles.s5TitleW} ${stylesHead.head} ${stylesHead.headYellow}`}>
-                            <h2 className="h2-1">$FOFI Token Features</h2>
+                            <h2 className="h2-1">$DEFIG Token Features</h2>
                         </div>
                         <ul className={`${styles.s5List} grow`}>
 
@@ -512,16 +510,15 @@ function HomePage() {
                                             <span/>
                                             <span/>
                                         </div>
-                                        <h2 className="h2-2">Connect</h2>
+                                        <h2 className="h2-2">Choose</h2>
                                     </div>
 
                                 </div>
                                 <div className={`${styles.s6SliderContentW}`}>
-                                    <h3>Connect your wallet</h3>
+                                    <h3>Choose your way to buy</h3>
                                     <p className="body-m-1">
-                                        Connect your wallet to the presale widget at the top of this page. When you
-                                        click
-                                        Connect Wallet, you will see the list of the wallets we support.
+                                        Select whether you want to buy $DEFIG with crypto (ETH, USDT, USDC) or card
+                                        directly from the presale widget.
                                     </p>
                                 </div>
                             </div>
@@ -531,6 +528,30 @@ function HomePage() {
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
                                         <h2 className="h2-2">Step 2</h2>
+                                        <div className={`${styles.s6SliderTitleDivider}`}>
+                                            <span/>
+                                            <span/>
+                                            <span/>
+                                            <span/>
+                                        </div>
+                                        <h2 className="h2-2">Connect</h2>
+                                    </div>
+
+                                </div>
+                                <div className={`${styles.s6SliderContentW}`}>
+                                    <h3>Connect your wallet</h3>
+                                    <p className="body-m-1">
+                                        Connect your wallet to the presale widget at the top of this page. When you
+                                        click Connect Wallet, you will see the list of the wallets we support.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles.s6SliderSlide}>
+                                <div
+                                    className={`${stylesHead.head} ${stylesHead.headLightPink}`}
+                                >
+                                    <div className={`${styles.s6SliderTitleW}`}>
+                                        <h2 className="h2-2">Step 3</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
                                             <span/>
                                             <span/>
@@ -549,12 +570,13 @@ function HomePage() {
                                     </p>
                                 </div>
                             </div>
+
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headLightPink}`}
+                                    className={`${stylesHead.head} ${stylesHead.headYellow}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
-                                        <h2 className="h2-2">Step 3</h2>
+                                        <h2 className="h2-2">Step 4</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
                                             <span/>
                                             <span/>
@@ -568,19 +590,18 @@ function HomePage() {
                                 <div className={`${styles.s6SliderContentW}`}>
                                     <h3>Purchase $FOFI</h3>
                                     <p className="body-m-1">
-                                        Select the network of your choice, input the amount, and proceed to purchase
-                                        your
-                                        $FOFI.
+                                        In the widget, select the network of your choice, input the amount, and proceed
+                                        to purchase your $FOFI.
                                     </p>
                                 </div>
                             </div>
 
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headYellow}`}
+                                    className={`${stylesHead.head} ${stylesHead.headGreenLight}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
-                                        <h2 className="h2-2">Step 4</h2>
+                                        <h2 className="h2-2">Step 5</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
                                             <span/>
                                             <span/>
@@ -599,13 +620,12 @@ function HomePage() {
                                     </p>
                                 </div>
                             </div>
-
                             <div className={styles.s6SliderSlide}>
                                 <div
-                                    className={`${stylesHead.head} ${stylesHead.headGreenLight}`}
+                                    className={`${stylesHead.head} ${stylesHead.headLightPink}`}
                                 >
                                     <div className={`${styles.s6SliderTitleW}`}>
-                                        <h2 className="h2-2">Step 5</h2>
+                                        <h2 className="h2-2">Step 6</h2>
                                         <div className={`${styles.s6SliderTitleDivider}`}>
                                             <span/>
                                             <span/>
