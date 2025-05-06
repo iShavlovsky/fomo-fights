@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 
 import styles from './index.module.css';
 
@@ -29,13 +29,13 @@ function StakingPage() {
 
                 <div className={styles.stakingH1Container}>
                     <div className={`${styles.stakingH1W} ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
-                        <h1>$FOFI Staking</h1>
+                        <h1>$DEFIG Staking</h1>
                     </div>
                     <div className="p-16">
-                        <h2 className="h2-3">FOMO Fights ($FOFI) Staking</h2>
+                        <h2 className="h2-3">FOMO Fights ($DEFIG) Staking</h2>
                         <p className="body-m-1 mt-12">
-                            Stake $FOFI on Ethereum to earn rewards over time. The APR is
-                            dynamic and adjusts based on market conditions to ensure optimal returns.
+                            Stake $DEFIG on Ethereum to earn rewards over time. The APR is dynamic and adjusts based on
+                            market conditions to ensure optimal returns.
                         </p>
                         <p className="body-m-1 mt-12">
                             Staking rewards can be claimed 7 days after the Presale has ended.
@@ -52,17 +52,17 @@ function StakingPage() {
                 </div>
 
                 <div className={styles.stakingRightFormsW}>
-                    <StakedBalance />
-                    <StakedWithdraw />
-                    <StakedRewards />
-                    <StakedClaim />
+                    <StakedBalance/>
+                    <StakedWithdraw/>
+                    <StakedRewards/>
+                    <StakedClaim/>
                 </div>
 
                 <div className={styles.stakingH1Container}>
                     <div className={`${styles.stakingH1W} ${stylesHead.head} ${stylesHead.headDarkBeige6}`}>
                         <h2 className="h1">Total Supply</h2>
                     </div>
-                    <Graph />
+                    <Graph/>
                 </div>
             </div>
 
@@ -74,12 +74,12 @@ function StakingPage() {
                     role="dialog"
                     aria-labelledby="stake-with-bnb-title"
                 >
-                    <div />
+                    <div/>
                 </Modal>
             )}
         </section>
     )
-    ;
+        ;
 }
 
 export default StakingPage;
