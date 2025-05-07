@@ -17,6 +17,9 @@ import LanguageIcon from '@icon/language-20.svg';
 import MenuIcon from '@icon/menu-20.svg';
 import TelegramIcon from '@icon/telegram-16.svg';
 import TwitterXIcon from '@icon/twitterX-16.svg';
+import Ethereum from '@icon/eth-16.svg';
+import Logout from '@icon/logout-16.svg';
+import Fist from '@icon/fist-20.svg';
 import useMediaQuery from '@hooks/useMediaQuery.ts';
 import WalletTypeModal from "@components/Connect/WalletType/WalletTypeModal.tsx";
 import SelectWalletModal from "@components/Connect/SelectWallet/SelectWalletModal.tsx";
@@ -136,6 +139,29 @@ function NavBar() {
         }
     ] satisfies DropdownOptionSelected[];
 
+    const connectWallet = [
+        {
+            abbreviation: 'Log out',
+            active: 'disabled',
+            label: (
+                <div className='flex flex-row justify-content-center items-center body-s-1 text-color-monochrome-1 gap-6px'>
+                    <Fist></Fist>
+                    0.00
+                </div>),
+            onClick: () => console.log('Selected Bulgarian')
+        },
+        {
+            abbreviation: 'Log out',
+            label: (
+                <div className='flex flex-row justify-content-center items-center body-s-1 text-color-monochrome-1 gap-6px'>
+                    <Logout></Logout>
+                    Log out
+                </div>),
+            onClick: () => console.log('Selected Bulgarian')
+        },
+
+    ] satisfies DropdownOptionSelected[];
+
     const handleSelect = (selectedOption: DropdownOption) => {
         console.log('Selected item:', selectedOption);
     };
@@ -220,6 +246,15 @@ function NavBar() {
                                 </BaseButton>
                                 <div className="flex flex-row gap-4px">
                                     <Dropdown
+                                        options={connectWallet}
+                                        ddTitle="0le92c...0c12"
+                                        ddIcon={<Ethereum/>}
+                                        ddPortalTop={<p className='body-s-1 text-color-monochrome-1'>Total purchased</p>}
+                                        ddToggleIcon={<ArrowIcon/>}
+                                        selectedLabel={false}
+                                        ulClassName="body-m-1"
+                                    />
+                                    <Dropdown
                                         options={optionalsLocale}
                                         autoClose={false}
                                         ddTitle="En"
@@ -237,7 +272,6 @@ function NavBar() {
                                         selectedLabel={false}
                                         ulClassName="body-m-1"
                                     />
-
                                 </div>
                             </div>
 

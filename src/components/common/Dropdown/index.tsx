@@ -7,6 +7,7 @@ import useClickOutside from '@hooks/useClickOutside.ts';
 export type DropdownOption = {
     label: ReactNode;
     href?: string;
+    active?: 'disabled';
     onClick?: () => void;
 };
 
@@ -25,6 +26,7 @@ interface DropdownPropsMain {
     position?: 'right' | 'left';
     onSelect?: (option: DropdownOption | DropdownOptionSelected) => void;
 }
+
 
 type DropdownPropsSelected = DropdownPropsMain & {
     selectedLabel: true;
@@ -112,8 +114,9 @@ function Dropdown({
                             : null}
                         {options.map((option, index) => (
                             <li
-                                onClick={() => handleOptionClick(option)}
+                                onClick={() => {if (option.active === 'disabled') handleOptionClick(option)}}
                                 key={index}
+                                datatype={option.active === 'disabled' ? 'disabled' : 'active'}
                                 className={styles.dropdownLi}
                                 role="option"
                                 aria-selected={label === (option as DropdownOptionSelected).abbreviation}
