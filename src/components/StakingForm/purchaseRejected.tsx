@@ -6,6 +6,7 @@ import CustomIco from "@components/common/CustomIco";
 import styles from './index.module.css';
 import YellowWarningBox from "@components/common/YellowWarningBox";
 import CopyToClipboardButton from "@components/common/CopyToClipboardButton";
+import {CustomQRCodeSVG} from "@components/CustomQRCodeSVG";
 
 
 const purchaseRejected = () => {
@@ -63,9 +64,8 @@ const purchaseRejected = () => {
                                 </div>
                             </div>
                             <p className={'body-s-2 text-center text-color-monochrome-8'}>1 DEFIG = $0.00654</p>
-                            {/*todo QR component вместо дивки */}
-                            <div>
-                                <h2>QR component</h2>
+                            <div style={{width: '200px', height: '200px'}}>
+                                <CustomQRCodeSVG value={'0xbhjmvbh123132'}/>
                             </div>
                         </div>
 

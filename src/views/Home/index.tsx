@@ -31,7 +31,6 @@ import RoadMapLine3Icon from '@icon/rodamap-line-3.svg';
 import RoadMapLine4Icon from '@icon/rodamap-line-4.svg';
 import ScheduleIcon from '@icon/Schedule.svg';
 import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
-import {SolanaConnect} from "@components/Connect/SolanaConnect.tsx";
 
 const Lottie = React.lazy(() => import('lottie-react'));
 
@@ -251,7 +250,7 @@ function HomePage() {
         <>
             <section className="bg-purple-4">
                 <div className="container relative">
-                    <SolanaConnect/>
+
                     <div className={`${styles.s1ContainerW}`}>
 
                         <div className={`${styles.s1H1ContentW}`}>
