@@ -35,10 +35,15 @@ import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
 const Lottie = React.lazy(() => import('lottie-react'));
 
 const animationsLottie = [
-    () => import('@assets/animation/screen1/screen1.json'),
-    () => import('@assets/animation/screen2/screen2.json'),
-    () => import('@assets/animation/screen3/screen3.json'),
-    () => import('@assets/animation/screen4/screen4.json')
+    () => import('@assets/animation/screen1/screen1.json'), //0 - 4
+    () => import('@assets/animation/screen2/screen2.json'), //1 - 5
+    () => import('@assets/animation/screen3/screen3.json'), //2 - 6
+    () => import('@assets/animation/screen4/screen4.json'), //3 - 7
+
+    () => import('@assets/animation/screen1/screen1_mobile.json'), //4
+    () => import('@assets/animation/screen2/screen2_mobile.json'), //5
+    () => import('@assets/animation/screen3/screen3_mobile.json'), //6
+    () => import('@assets/animation/screen4/screen4_mobile.json')  //7
 ];
 
 interface OpenStates {
@@ -656,6 +661,10 @@ function HomePage() {
                             : (
                                 <div/>
                             )}
+                        {!isAboveMobile && (
+                            <Lottie animationData={animations[6]} loop={true} autoplay={true}/>
+                        )}
+
                     </div>
                 </div>
             </section>
