@@ -435,10 +435,6 @@
 
 
 @media (width <= 1440px) {
-    .s6-section {
-        background-size: 165%;
-    }
-
     .s6-container-w {
         padding-bottom: 35vw;
     }
@@ -448,16 +444,16 @@
 
 @media (width <= 1024px) {
     .s1-container-w {
-        padding-bottom: 50vw;
+        padding-bottom: 60vw;
     }
 
     .s1-animation-w {
         background-color: #798BD4;
         background-image: url("@assets/animation/screen1/tablet/moon.webp"),
-        url("@assets/animation/screen1/tablet/characters.webp"),
-        url("@assets/animation/screen1/tablet/sky.webp");
+        url("@assets/animation/screen1/mobile/floor.webp"),
+        url("@assets/animation/screen1/mobile/sky.webp");
         background-size: 112px 112px, 100% auto, 100% auto;
-        background-position: 60px -60px, bottom, bottom;
+        background-position: -20px 10px, bottom, bottom;
         background-repeat: no-repeat;
     }
 
@@ -504,25 +500,22 @@
         padding-top: 20vw;
     }
 
-    .s6-section {
-        background-image: url("@assets/animation/screen3/tablet/BgSteps.webp");
-        background-size: cover;
-    }
 
     .s6-container-w {
         padding-top: 126px;
-        padding-bottom: 60vw;
+        padding-bottom: 75vw;
     }
 
     .s7-animation-w {
-        background-image: url("@assets/animation/screen4/tablet/FAQ.webp");
+        background-image: url("@assets/animation/screen4/mobile/s4-bg-mobile.webp");
         background-size: cover;
         background-position: bottom;
+        background-color: var(--blue-4);
     }
 
     .s7-container-w {
         padding-top: 146px;
-        padding-bottom: 60vw;
+        padding-bottom: 85vw;
     }
 
 }
@@ -544,16 +537,6 @@
     .s1-h1-content-w {
         max-width: 400px;
         place-self: center;
-    }
-
-    .s1-animation-w {
-        background-color: #798BD4;
-        background-image: url("@assets/animation/screen1/tablet/moon.webp"),
-        url("@assets/animation/screen1/mobile/characters.webp"),
-        url("@assets/animation/screen1/mobile/sky.webp");
-        background-size: 112px 112px, 100% auto, 100% auto;
-        background-position: -20px 10px, bottom, bottom;
-        background-repeat: no-repeat;
     }
 
     .s3-container-w {
@@ -641,16 +624,8 @@
         padding: 24px;
     }
 
-    .s6-section {
-        background-image: url("@assets/animation/screen3/mobile/BgSteps-mobile.webp");
-    }
-
     .s6-container-w {
         padding-bottom: 120vw;
-    }
-
-    .s7-animation-w {
-        background-image: url("@assets/animation/screen4/mobile/FAQ-mobile.webp");
     }
 
     .s7-container-w {

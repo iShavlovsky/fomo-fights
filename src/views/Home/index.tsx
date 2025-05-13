@@ -289,13 +289,11 @@ function HomePage() {
                         <StakingForm/>
                     </div>
                     <div className={`absolute ${styles.s1AnimationW}`}>
-                        {isAboveMobile && animations[0]
-                            ? (
-                                <Lottie animationData={animations[0]} loop={true} autoplay={true}/>
-                            )
-                            : (
-                                <div/>
-                            )}
+                        {
+                            isAboveMobile
+                                ? animations[0] && <Lottie animationData={animations[0]} loop autoplay/> || <div/>
+                                : animations[4] && <Lottie animationData={animations[4]} loop autoplay/> || <div/>
+                        }
                     </div>
                 </div>
             </section>
@@ -356,13 +354,11 @@ function HomePage() {
                     </div>
 
                     <div className={`${styles.s3AnimationW}`}>
-                        {isAboveMobile && animations[1]
-                            ? (
-                                <Lottie animationData={animations[1]} loop={true} autoplay={true}/>
-                            )
-                            : (
-                                <div/>
-                            )}
+                        {
+                            isAboveMobile
+                                ? animations[1] && <Lottie animationData={animations[1]} loop autoplay/> || <div/>
+                                : animations[5] && <Lottie animationData={animations[5]} loop autoplay/> || <div/>
+                        }
                     </div>
                 </div>
             </section>
@@ -654,16 +650,11 @@ function HomePage() {
                     </div>
 
                     <div className={`absolute ${styles.s6AnimationW}`}>
-                        {isAboveMobile && animations[2]
-                            ? (
-                                <Lottie animationData={animations[2]} loop={true} autoplay={true}/>
-                            )
-                            : (
-                                <div/>
-                            )}
-                        {!isAboveMobile && (
-                            <Lottie animationData={animations[6]} loop={true} autoplay={true}/>
-                        )}
+                        {
+                            isAboveMobile
+                                ? animations[2] && <Lottie animationData={animations[2]} loop autoplay/> || <div/>
+                                : animations[6] && <Lottie animationData={animations[6]} loop autoplay/> || <div/>
+                        }
 
                     </div>
                 </div>
@@ -692,13 +683,11 @@ function HomePage() {
                         </ul>
                     </ScrollContainer>
                     <div className={`absolute ${styles.s7AnimationW}`}>
-                        {isAboveMobile && animations[3]
-                            ? (
-                                <Lottie animationData={animations[3]} loop={true} autoplay={true}/>
-                            )
-                            : (
-                                <div/>
-                            )}
+                        {
+                            isAboveMobile
+                                ? animations[3] && <Lottie animationData={animations[3]} loop autoplay/> || <div/>
+                                : animations[7] && <Lottie animationData={animations[7]} loop autoplay/> || <div/>
+                        }
                     </div>
                 </div>
 

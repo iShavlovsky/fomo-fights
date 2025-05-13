@@ -10,14 +10,15 @@ import TwitterXIcon from '@icon/twitterX-20.svg';
 import useAnimationsLoader from '@hooks/useAnimationsLoader.ts';
 
 const animationsLottie = [
-    () => import('@assets/animation/screen5/screen6.json')
+    () => import('@assets/animation/screen5/screen6.json'),
+    () => import('@assets/animation/screen5/screen5_mobile.json')
 ];
 
 const Lottie = React.lazy(() => import('lottie-react'));
 
 function Footer() {
     const {animations, isAboveMobile} = useAnimationsLoader(
-        '(min-width: 1025px)',
+        '(min-width: 768px)',
         animationsLottie
     );
 
@@ -42,13 +43,11 @@ function Footer() {
                     </BaseButton>
                 </div>
                 <div className={`${styles.footerAnimationW}`}>
-                    {isAboveMobile && animations[0]
-                        ? (
-                            <Lottie animationData={animations[0]} loop={true} autoplay={true}/>
-                        )
-                        : (
-                            <div/>
-                        )}
+                    {
+                        isAboveMobile
+                            ? animations[0] && <Lottie animationData={animations[0]} loop autoplay/> || <div/>
+                            : animations[1] && <Lottie animationData={animations[1]} loop autoplay/> || <div/>
+                    }
                 </div>
                 <div className={styles.copyTextW}>
                     <p className={'body-s-2 text-color-monochrome-1'}>

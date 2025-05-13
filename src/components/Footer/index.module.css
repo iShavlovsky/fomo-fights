@@ -2,6 +2,7 @@
     background-image: url("@assets/animation/screen5/footer-bg.webp");
     background-size: auto 102%;
     background-position: bottom;
+    overflow: hidden;
 }
 
 .footer-container-w {
@@ -51,11 +52,14 @@
         background-image: none;
     }
 
+    .footer-animation-w {
+        width: 155%;
+    }
+
     .footer-container-w {
-        padding-top: 193px;
-        padding-bottom: 380px;
-        background-image: url("@assets/animation/screen5/BgFooterTablet.webp");
-        background-size: cover;
+        padding-top: 20vw;
+        padding-bottom: 35vw;
+        background-size: 200% auto;
     }
 
     .copy-text-w {
@@ -68,7 +72,14 @@
 @media (width <= 767px) {
     .footer-container-w {
         padding-top: 30vw;
-        padding-bottom: 140vw;
+        padding-bottom: 120vw;
         background-image: url("@assets/animation/screen5/BgFooterMobile.webp");
+        background-size: 100% auto;
+        background-color: var(--blue-1);
+
+    }
+
+    .footer-animation-w {
+        width: 100%;
     }
 }
