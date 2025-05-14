@@ -1,31 +1,51 @@
-import { useEffect, useState } from 'react';
-
+import {useEffect, useState} from 'react';
 import useMediaQuery from './useMediaQuery';
 
 type AnimationData = Record<string, unknown>;
 type ImportFunction = () => Promise<{ default: AnimationData }>;
 
 function useAnimationsLoader(mediaQuery: string, importFunctions: ImportFunction[]) {
-    const [animations, setAnimations] = useState<Array<AnimationData | null>>([]);
+    const [animations, setAnimations] = useState<Array<AnimationData | null>>(
+        Array(importFunctions.length).fill(null)
+    );
+    const [isLoading, setIsLoading] = useState(true);
     const isAboveMobile = useMediaQuery(mediaQuery);
 
     useEffect(() => {
-        if (isAboveMobile) {
-            Promise.allSettled(importFunctions.map((importFunc) => importFunc()))
-                .then((results) => {
+        let isMounted = true;
+
+        const loadAnimations = async () => {
+            try {
+                const results = await Promise.allSettled(
+                    importFunctions.map((importFunc) => importFunc())
+                );
+
+                if (isMounted) {
                     const loadedAnimations = results.map((result) =>
                         result.status === 'fulfilled' ? result.value.default : null
                     );
                     setAnimations(loadedAnimations);
-                    return true;
-                })
-                .catch((error) => console.error('Error loading animations:', error));
-        }
-    }, [isAboveMobile, importFunctions]);
+                }
+            } catch (error) {
+                console.error('Error loading animations:', error);
+            } finally {
+                if (isMounted) {
+                    setIsLoading(false);
+                }
+            }
+        };
+
+        loadAnimations();
+
+        return () => {
+            isMounted = false;
+        };
+    }, [importFunctions]);
 
     return {
         animations,
-        isAboveMobile
+        isAboveMobile,
+        isLoading
     };
 }
 
