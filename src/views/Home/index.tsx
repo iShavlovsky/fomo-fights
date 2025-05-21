@@ -41,7 +41,7 @@ const animationsLottie = [
     () => import('@assets/animation/screen4/screen4.json'), //3 - 7
 
     () => import('@assets/animation/screen1/screen1_mobile.json'), //4
-    () => import('@assets/animation/screen2/screen2_mobile.json'), //5
+    () => import('@assets/animation/screen2/mobile_screen2.json'), //5
     () => import('@assets/animation/screen3/screen3_mobile.json'), //6
     () => import('@assets/animation/screen4/screen4_mobile.json')  //7
 ];
