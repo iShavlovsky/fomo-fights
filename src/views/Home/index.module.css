@@ -464,7 +464,7 @@
     .s3-animation-w {
         height: 480px;
         min-width: 276px;
-        background-image: url("@assets/animation/screen2/tablet/phone.webp");
+        background-image: url("@assets/animation/screen2/tablet/phone-tablet.webp");
         margin: auto;
     }
 
